@@ -13,6 +13,10 @@ const {
     astate,
     occupation,
     bio,
+    loanAmount,
+    loanCategory,
+    loanDescription,
+    loanDurationUnit,
   },
 } = ApplicationFormModel;
 
@@ -30,11 +34,18 @@ const validation = [
     zipcode: Yup.number().required(`${zipcode.requiredErrorMsg}`),
   }),
   Yup.object().shape({
-    amount: Yup.number().required(`${amount.requiredErrorMsg}`),
-    timePeriod: Yup.number().required(`${timePeriod.requiredErrorMsg}`),
+    // loanAmount: Yup.string().required(`${loanAmount.requiredErrorMsg}`),
+    loanCategory: Yup.number().required(`${loanCategory.requiredErrorMsg}`),
+    loanDescription: Yup.string().required(
+      `${loanDescription.requiredErrorMsg}`
+    ),
+    loanDurationUnit: Yup.string().required(
+      `${loanDurationUnit.requiredErrorMsg}`
+    ),
+    loanDuration: Yup.number().required(`${loanDurationUnit.requiredErrorMsg}`),
   }),
   Yup.object().shape({
-    occupation: Yup.string().required(`${occupation.requiredErrorMsg}`),
+    // occupation: Yup.string().required(`${occupation.requiredErrorMsg}`),
   }),
 ];
 export default validation;

@@ -40,7 +40,7 @@ function renderStepContent(step) {
 const steps = [1, 2, 3, 4];
 const BorrowerApplication = (props) => {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(1);
   const currentValidationSchema = ValidationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
 
@@ -55,7 +55,7 @@ const BorrowerApplication = (props) => {
   }
 
   function handleSubmit(values, actions) {
-    console.log("hello");
+    console.log({ values, actions });
     if (isLastStep) {
       submitForm(values, actions);
     } else {

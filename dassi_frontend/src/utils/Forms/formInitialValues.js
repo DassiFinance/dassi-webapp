@@ -12,6 +12,11 @@ const {
     astate,
     occupation,
     bio,
+    loanAmount,
+    loanCategory,
+    loanDescription,
+    loanDuration,
+    loanDurationUnit,
   },
 } = ApplicationFormModel;
 
@@ -27,5 +32,10 @@ const DefaultFields = {
   [astate.name]: "",
   [occupation.name]: "",
   [bio.name]: "",
+  [loanAmount.name]: "",
+  [loanCategory.name]: 0,
+  [loanDescription.name]: "",
+  [loanDuration.name]: "",
+  [loanDurationUnit.name]: "",
 };
 export default DefaultFields;

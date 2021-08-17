@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
   formId: "BorrowerApplicationForm",
   formField: {
@@ -55,5 +56,34 @@ export default {
       label: "Occupation*",
       requiredErrorMsg: "Occupation is required",
     },
+    loanAmount: {
+      name: "loanAmmount",
+      label: "Loan Ammount Needed *",
+      requiredErrorMsg: "Loan Ammount is required",
+    },
+    loanCategory: {
+      name: "loanCategory",
+      label: "Loan category *",
+      requiredErrorMsg: "Loan Category is required",
+    },
+    loanDuration: {
+      name: "loanDuration",
+      label: "Time for which you need loan *",
+      requiredErrorMsg: "Please select loan Duration",
+    },
+    loanDurationUnit: {
+      name: "loanDurationUnit",
+      label: "Please select weeks/months/years *",
+      requiredErrorMsg: "Please select weeks/months/years",
+    },
+    loanDescription: {
+      name: "loanDescription",
+      label: "Why you need this loan?",
+      requiredErrorMsg: "Please enter loan description",
+    },
+    // repaymentStartDate : {
+    //   name:"repaymentStartDate",
+    //   label : ""
+    // }
   },
 };
