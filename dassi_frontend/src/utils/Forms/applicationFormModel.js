@@ -17,11 +17,6 @@ export default {
       label: "Email",
       requiredErrorMsg: "Email is required",
     },
-    amount: {
-      name: "amount",
-      label: "Amount*",
-      requiredErrorMsg: "Amount is required",
-    },
     timePeriod: {
       name: "timePeriod",
       label: "Time Period*",
@@ -57,7 +52,7 @@ export default {
       requiredErrorMsg: "Occupation is required",
     },
     loanAmount: {
-      name: "loanAmmount",
+      name: "loanAmount",
       label: "Loan Ammount Needed *",
       requiredErrorMsg: "Loan Ammount is required",
     },
@@ -81,9 +76,9 @@ export default {
       label: "Why you need this loan?",
       requiredErrorMsg: "Please enter loan description",
     },
-    // repaymentStartDate : {
-    //   name:"repaymentStartDate",
-    //   label : ""
-    // }
+    repaymentStartDate: {
+      name: "repaymentStartDate",
+      label: "",
+    },
   },
 };

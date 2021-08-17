@@ -5,19 +5,19 @@ import SelectField from "../../utils/FormFields/SelectField";
 
 const loanCategories = [
   {
-    value: 0,
+    value: "0",
     label: "None",
   },
   {
-    value: 1,
+    value: "1",
     label: "Women and Children",
   },
   {
-    value: 2,
+    value: "2",
     label: "Education Loan",
   },
   {
-    value: 3,
+    value: "3",
     label: "Home Loan",
   },
 ];
@@ -80,7 +80,6 @@ export default function LoanDetailsDetails1(props) {
 
         <Grid item xs={12} sm={6}>
           <SelectField
-            defaultValue={loanDurationUnits[0].value}
             name={loanDurationUnit.name}
             label={loanDurationUnit.label}
             data={loanDurationUnits}
