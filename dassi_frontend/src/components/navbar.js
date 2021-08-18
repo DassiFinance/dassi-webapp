@@ -6,7 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import { logoutUser } from "../redux/actions/userActions";
+import { logoutUser } from "../redux/actions/user";
 
 const NavHome = (props) => {
   return (

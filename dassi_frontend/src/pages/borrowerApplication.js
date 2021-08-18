@@ -22,6 +22,9 @@ import FormInitialValues from "../utils/Forms/formInitialValues";
 
 import useStyles from "../css/styles";
 
+import { sendUserDetails } from "../redux/actions/user";
+import { sendLoanDetails } from "../redux/actions/loan";
+
 const { formId, formField } = ApplicationFormModel;
 
 function renderStepContent(step) {
@@ -43,7 +46,7 @@ function renderStepContent(step) {
 const steps = [1, 2, 3, 4, 5];
 const BorrowerApplication = (props) => {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(4);
   const currentValidationSchema = ValidationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
 
@@ -52,7 +55,33 @@ const BorrowerApplication = (props) => {
   }
   async function submitForm(values, actions) {
     await sleep(1000);
-    alert(JSON.stringify(values, null, 2));
+    //alert(JSON.stringify(values, null, 2));
+
+    const personalDetails = {
+      username: values.firstName,
+      email: values.email,
+      occupation: values.occupation,
+      income: values.income,
+      bio: values.bio,
+      address: {
+        pincode: values.zipcode,
+      },
+    };
+    const loanDetails = {
+      loanAmount: values.loanAmount,
+      category: values.loanCategory,
+      description: values.loanDescription,
+      duration: values.loanDuration
+        .toString()
+        .concat(" ", values.loanDurationUnit),
+      emiRepetition: values.emiRepetition,
+      repaymentStartDate: values.repaymentStartDate,
+    };
+    sendLoanDetails(loanDetails);
+    sendUserDetails(personalDetails);
+    props.history.push("/");
+    console.log(personalDetails);
+    console.log(loanDetails);
     actions.setSubmitting(false);
     setActiveStep(activeStep + 1);
   }
@@ -79,11 +108,13 @@ const BorrowerApplication = (props) => {
         Application
       </Typography>
       <Stepper activeStep={activeStep} className={classes.stepper}>
-        {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel>{label}</StepLabel>
-          </Step>
-        ))}
+        {steps.map((label) => {
+          return label !== 5 ? (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          ) : null;
+        })}
       </Stepper>
       <React.Fragment>
         {activeStep === steps.length ? (

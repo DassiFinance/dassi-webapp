@@ -6,7 +6,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { loginUser } from "../redux/actions/userActions";
+import { loginUser } from "../redux/actions/user";
 
 //Fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

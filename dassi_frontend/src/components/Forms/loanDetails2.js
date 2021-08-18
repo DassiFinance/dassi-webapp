@@ -5,15 +5,15 @@ import DateField from "../../utils/FormFields/DateField";
 
 const emiRepetitionUnit = [
   {
-    value: "0",
+    value: "Weekly",
     label: "Weekly",
   },
   {
-    value: "1",
+    value: "Monthly",
     label: "Monthly",
   },
   {
-    value: "2",
+    value: "Yearly",
     label: "Yearly",
   },
 ];

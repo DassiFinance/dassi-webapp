@@ -1,27 +1,32 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
-import InputField from "../../utils/FormFields/InputField";
+import { useFormikContext } from "formik";
+import { Typography, Grid, Container } from "@material-ui/core";
+import PDReview from "./pdreview";
+import LD1Review from "./ld1review";
+import LD2Review from "./ld2review";
+import LD3Review from "./ld3review";
 
-export default function Review(props) {
-  const {
-    formField: { firstName, lastName, email },
-  } = props;
+export default function ReviewOrder() {
+  const { values: formValues } = useFormikContext();
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        LoanDetails1
+        Preview
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <InputField name={firstName.name} label={firstName.label} fullWidth />
+      <Container>
+        <Grid container>
+          <PDReview formValues={formValues} />
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <InputField name={lastName.name} label={lastName.label} fullWidth />
+        <Grid container>
+          <LD1Review formValues={formValues} />
         </Grid>
-        <Grid item xs={12}>
-          <InputField name={email.name} label={email.label} fullWidth />
+        <Grid container>
+          <LD2Review formValues={formValues} />
         </Grid>
-      </Grid>
+        <Grid container>
+          <LD3Review formValues={formValues} />
+        </Grid>
+      </Container>
     </React.Fragment>
   );
 }

@@ -5,34 +5,34 @@ import SelectField from "../../utils/FormFields/SelectField";
 
 const loanCategories = [
   {
-    value: "0",
+    value: "None",
     label: "None",
   },
   {
-    value: "1",
+    value: "Women and Children",
     label: "Women and Children",
   },
   {
-    value: "2",
+    value: "Education Loan",
     label: "Education Loan",
   },
   {
-    value: "3",
+    value: "Home Loan",
     label: "Home Loan",
   },
 ];
 
 const loanDurationUnits = [
   {
-    value: "0",
+    value: "Weeks",
     label: "Weeks",
   },
   {
-    value: "1",
+    value: "Months",
     label: "Months",
   },
   {
-    value: "2",
+    value: "Years",
     label: "Years",
   },
 ];

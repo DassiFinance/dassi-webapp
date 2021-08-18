@@ -4,11 +4,11 @@ import SelectField from "../../utils/FormFields/SelectField";
 
 const guarantorsAvailable = [
   {
-    value: "0",
+    value: "Self Approve",
     label: "Self Approve",
   },
   {
-    value: "1",
+    value: "Dassi Labs",
     label: "Dassi Labs",
   },
 ];

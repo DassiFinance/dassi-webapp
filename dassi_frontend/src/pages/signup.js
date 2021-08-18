@@ -7,7 +7,7 @@ import * as Yup from "yup";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { signupUser } from "../redux/actions/userActions";
+import { signupUser } from "../redux/actions/user";
 
 //Fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

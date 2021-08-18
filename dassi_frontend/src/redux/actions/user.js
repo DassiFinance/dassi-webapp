@@ -11,12 +11,12 @@ import {
 import Storage from "../../config/storage";
 const { setAuthorizationHeader } = Storage();
 
-axios.defaults.baseURL = "http://localhost:8080/api/user/";
+axios.defaults.baseURL = "http://localhost:8080/api/";
 export const loginUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_USER });
   console.log(userData);
   axios
-    .post("login", userData)
+    .post("user/login", userData)
     .then((res) => {
       if (res.data.token) {
         console.log(res.data);
@@ -54,7 +54,7 @@ export const logoutUser = (history) => (dispatch) => {
 export const signupUser = (newUserData, history) => (dispatch) => {
   dispatch({ type: LOADING_USER });
   axios
-    .post("register", newUserData)
+    .post("user/register", newUserData)
     .then((res) => {
       console.log(res.data);
       if (res.data.message) {
@@ -81,12 +81,23 @@ export const signupUser = (newUserData, history) => (dispatch) => {
 
 export const getUser = () => (dispatch) => {
   axios
-    .get("getUser")
+    .get("user/getUser")
     .then((res) => {
       dispatch({
         type: GET_USER,
         payload: res.data[0],
       });
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const sendUserDetails = (userDetails) => {
+  axios
+    .post("user/userDetails", userDetails)
+    .then((res) => {
       console.log(res.data);
     })
     .catch((err) => {
