@@ -5,14 +5,17 @@ const {
     firstName,
     lastName,
     email,
-    amount,
-    city,
     zipcode,
-    country,
-    timePeriod,
-    astate,
+    income,
     occupation,
     bio,
+    loanAmount,
+    loanCategory,
+    loanDescription,
+    loanDuration,
+    loanDurationUnit,
+    repaymentStartDate,
+    emiRepetition,
   },
 } = ApplicationFormModel;
 
@@ -23,18 +26,30 @@ const validation = [
       .required(`${email.requiredErrorMsg}`),
     firstName: Yup.string().required(`${firstName.requiredErrorMsg}`),
     lastName: Yup.string().required(`${lastName.requiredErrorMsg}`),
-    //city: Yup.string().required(`${city.requiredErrorMsg}`),
-    //country: Yup.string().required(`${country.requiredErrorMsg}`),
-    //astate: Yup.string().required(`${astate.requiredErrorMsg}`),
-    //bio: Yup.string().required(`${bio.requiredErrorMsg}`),
     zipcode: Yup.number().required(`${zipcode.requiredErrorMsg}`),
-  }),
-  Yup.object().shape({
-    amount: Yup.number().required(`${amount.requiredErrorMsg}`),
-    timePeriod: Yup.number().required(`${timePeriod.requiredErrorMsg}`),
-  }),
-  Yup.object().shape({
+    income: Yup.number().required(`${income.requiredErrorMsg}`),
     occupation: Yup.string().required(`${occupation.requiredErrorMsg}`),
+    bio: Yup.string().required(`${bio.requiredErrorMsg}`),
+  }),
+  Yup.object().shape({
+    loanAmount: Yup.number().required(`${loanAmount.requiredErrorMsg}`),
+    loanCategory: Yup.string().required(`${loanCategory.requiredErrorMsg}`),
+    loanDescription: Yup.string().required(
+      `${loanDescription.requiredErrorMsg}`
+    ),
+    loanDurationUnit: Yup.string().required(
+      `${loanDurationUnit.requiredErrorMsg}`
+    ),
+    loanDuration: Yup.number().required(`${loanDuration.requiredErrorMsg}`),
+  }),
+  Yup.object().shape({
+    todaysDate: Yup.date().default(function () {
+      return new Date();
+    }),
+    emiRepetition: Yup.string().required(`${emiRepetition.requiredErrorMsg}`),
+    repaymentStartDate: Yup.date()
+      .min(Yup.ref("todaysDate"), "Repayment start date has already passed")
+      .required(`${repaymentStartDate.requiredErrorMsg}`),
   }),
 ];
 export default validation;

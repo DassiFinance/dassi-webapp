@@ -3,58 +3,49 @@ import { Grid, Typography } from "@material-ui/core";
 import InputField from "../../utils/FormFields/InputField";
 import SelectField from "../../utils/FormFields/SelectField";
 
-const cities = [
+const loanCategories = [
   {
-    value: undefined,
+    value: "0",
     label: "None",
   },
   {
     value: "1",
-    label: "Mumbai",
+    label: "Women and Children",
   },
   {
     value: "2",
-    label: "Banglore",
+    label: "Education Loan",
   },
   {
     value: "3",
-    label: "Hyderabad",
+    label: "Home Loan",
   },
 ];
 
-const states = [
+const loanDurationUnits = [
   {
-    value: undefined,
-    label: "None",
+    value: "0",
+    label: "Weeks",
   },
   {
-    value: "11",
-    label: "Maharashtra",
+    value: "1",
+    label: "Months",
   },
   {
-    value: "22",
-    label: "Karnataka",
-  },
-  {
-    value: "33",
-    label: "Andhra Pradesh",
-  },
-];
-
-const countries = [
-  {
-    value: null,
-    label: "None",
-  },
-  {
-    value: "111",
-    label: "India",
+    value: "2",
+    label: "Years",
   },
 ];
 
 export default function LoanDetailsDetails1(props) {
   const {
-    formField: { firstName, lastName, email, city, state, zipcode, country },
+    formField: {
+      loanAmount,
+      loanCategory,
+      loanDuration,
+      loanDurationUnit,
+      loanDescription,
+    },
   } = props;
   return (
     <React.Fragment>
@@ -63,41 +54,46 @@ export default function LoanDetailsDetails1(props) {
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
-          <InputField name={firstName.name} label={firstName.label} fullWidth />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <InputField name={lastName.name} label={lastName.label} fullWidth />
-        </Grid>
-        <Grid item xs={12}>
-          <InputField name={email.name} label={email.label} fullWidth />
-        </Grid>
-        {/* <Grid item xs={12} sm={6}>
-          <SelectField
-            name={city.name}
-            label={city.label}
-            data={cities}
+          <InputField
+            name={loanAmount.name}
+            label={loanAmount.label}
             fullWidth
           />
         </Grid>
+
         <Grid item xs={12} sm={6}>
           <SelectField
-            name={state.name}
-            label={state.label}
-            data={states}
+            name={loanCategory.name}
+            label={loanCategory.label}
+            data={loanCategories}
             fullWidth
           />
         </Grid>
+
         <Grid item xs={12} sm={6}>
-          <InputField name={zipcode.name} label={zipcode.label} fullWidth />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <SelectField
-            name={country.name}
-            label={country.label}
-            data={countries}
+          <InputField
+            name={loanDuration.name}
+            label={loanDuration.label}
             fullWidth
           />
-  </Grid>*/}
+        </Grid>
+
+        <Grid item xs={12} sm={6}>
+          <SelectField
+            name={loanDurationUnit.name}
+            label={loanDurationUnit.label}
+            data={loanDurationUnits}
+            fullWidth
+          />
+        </Grid>
+
+        <Grid item xs={12} sm={6}>
+          <InputField
+            name={loanDescription.name}
+            label={loanDescription.label}
+            fullWidth
+          />
+        </Grid>
       </Grid>
     </React.Fragment>
   );

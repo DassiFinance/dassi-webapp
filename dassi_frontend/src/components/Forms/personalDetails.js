@@ -1,60 +1,10 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import InputField from "../../utils/FormFields/InputField";
-import SelectField from "../../utils/FormFields/SelectField";
-
-const cities = [
-  {
-    value: undefined,
-    label: "None",
-  },
-  {
-    value: "1",
-    label: "Mumbai",
-  },
-  {
-    value: "2",
-    label: "Banglore",
-  },
-  {
-    value: "3",
-    label: "Hyderabad",
-  },
-];
-
-const astates = [
-  {
-    value: undefined,
-    label: "None",
-  },
-  {
-    value: "11",
-    label: "Maharashtra",
-  },
-  {
-    value: "22",
-    label: "Karnataka",
-  },
-  {
-    value: "33",
-    label: "Andhra Pradesh",
-  },
-];
-
-const countries = [
-  {
-    value: null,
-    label: "None",
-  },
-  {
-    value: "111",
-    label: "India",
-  },
-];
 
 export default function PersonalDetails(props) {
   const {
-    formField: { firstName, lastName, email, city, astate, zipcode, country },
+    formField: { firstName, lastName, email, zipcode, occupation, bio, income },
   } = props;
   return (
     <React.Fragment>
@@ -74,31 +24,19 @@ export default function PersonalDetails(props) {
         <Grid item xs={12} sm={6}>
           <InputField name={zipcode.name} label={zipcode.label} fullWidth />
         </Grid>
-        {/*<Grid item xs={12} sm={6}>
-          <SelectField
-            name={city.name}
-            label={city.label}
-            data={cities}
+        <Grid item xs={12} sm={6}>
+          <InputField name={income.name} label={income.label} fullWidth />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <InputField
+            name={occupation.name}
+            label={occupation.label}
             fullWidth
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <SelectField
-            name={astate.name}
-            label={astate.label}
-            data={astates}
-            fullWidth
-          />
+          <InputField name={bio.name} label={bio.label} fullWidth />
         </Grid>
-       
-        <Grid item xs={12} sm={6}>
-          <SelectField
-            name={country.name}
-            label={country.label}
-            data={countries}
-            fullWidth
-          />
-  </Grid>*/}
       </Grid>
     </React.Fragment>
   );
