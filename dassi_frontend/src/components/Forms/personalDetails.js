@@ -4,7 +4,7 @@ import InputField from "../../utils/FormFields/InputField";
 
 export default function PersonalDetails(props) {
   const {
-    formField: { firstName, lastName, email, city, astate, zipcode, country },
+    formField: { firstName, lastName, email, zipcode },
   } = props;
   return (
     <React.Fragment>

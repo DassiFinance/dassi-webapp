@@ -12,7 +12,10 @@ const {
     loanAmount,
     loanCategory,
     loanDescription,
+    loanDuration,
     loanDurationUnit,
+    repaymentStartDate,
+    emiRepetition,
   },
 } = ApplicationFormModel;
 
@@ -34,10 +37,16 @@ const validation = [
     loanDurationUnit: Yup.string().required(
       `${loanDurationUnit.requiredErrorMsg}`
     ),
-    loanDuration: Yup.number().required(`${loanDurationUnit.requiredErrorMsg}`),
+    loanDuration: Yup.number().required(`${loanDuration.requiredErrorMsg}`),
   }),
   Yup.object().shape({
-    // occupation: Yup.string().required(`${occupation.requiredErrorMsg}`),
+    todaysDate: Yup.date().default(function () {
+      return new Date();
+    }),
+    emiRepetition: Yup.string().required(`${emiRepetition.requiredErrorMsg}`),
+    repaymentStartDate: Yup.date()
+      .min(Yup.ref("todaysDate"), "Repayment start date has already passed")
+      .required(`${repaymentStartDate.requiredErrorMsg}`),
   }),
 ];
 export default validation;

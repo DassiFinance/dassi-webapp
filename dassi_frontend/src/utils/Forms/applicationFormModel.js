@@ -2,6 +2,7 @@
 export default {
   formId: "BorrowerApplicationForm",
   formField: {
+    // personalDetails.js
     firstName: {
       name: "firstName",
       label: "First name*",
@@ -51,10 +52,11 @@ export default {
       label: "Occupation*",
       requiredErrorMsg: "Occupation is required",
     },
+    // loanDetails1.js
     loanAmount: {
       name: "loanAmount",
-      label: "Loan Ammount Needed *",
-      requiredErrorMsg: "Loan Ammount is required",
+      label: "Loan Amount Needed *",
+      requiredErrorMsg: "Loan Amount is required",
     },
     loanCategory: {
       name: "loanCategory",
@@ -64,7 +66,7 @@ export default {
     loanDuration: {
       name: "loanDuration",
       label: "Time for which you need loan *",
-      requiredErrorMsg: "Please select loan Duration",
+      requiredErrorMsg: "Please enter valid number of weeks/months/years",
     },
     loanDurationUnit: {
       name: "loanDurationUnit",
@@ -76,9 +78,22 @@ export default {
       label: "Why you need this loan?",
       requiredErrorMsg: "Please enter loan description",
     },
+    // loanDetails2.js
     repaymentStartDate: {
       name: "repaymentStartDate",
-      label: "",
+      label: "Repayment starting date *",
+      requiredErrorMsg: "Please select a date",
+    },
+    emiRepetition: {
+      name: "emiRepetition",
+      label: "EMI repetition *",
+      requiredErrorMsg: "Please select a emi repetition",
+    },
+    // loanDetails3.js
+    guarantor: {
+      name: "guarantor",
+      label: "Choose a guarantor *",
+      requiredErrorMsg: "Please select a guarantor",
     },
   },
 };

@@ -16,6 +16,8 @@ const {
     loanDescription,
     loanDuration,
     loanDurationUnit,
+    repaymentStartDate,
+    emiRepetition,
   },
 } = ApplicationFormModel;
 
@@ -35,5 +37,7 @@ const DefaultFields = {
   [loanDescription.name]: "",
   [loanDuration.name]: "",
   [loanDurationUnit.name]: "",
+  [repaymentStartDate.name]: "",
+  [emiRepetition.name]: "",
 };
 export default DefaultFields;

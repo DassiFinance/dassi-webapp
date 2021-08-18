@@ -11,6 +11,7 @@ import { Formik, Form } from "formik";
 
 import LoanDetails1 from "../components/Forms/loanDetails1";
 import LoanDetails2 from "../components/Forms/loanDetails2";
+import LoanDetails3 from "../components/Forms/loanDetails3";
 import PersonalDetails from "../components/Forms/personalDetails";
 import Review from "../components/Forms/review";
 import HomePage from "./homepage";
@@ -32,15 +33,17 @@ function renderStepContent(step) {
     case 2:
       return <LoanDetails2 formField={formField} />;
     case 3:
+      return <LoanDetails3 formField={formField} />;
+    case 4:
       return <Review formField={formField} />;
     default:
       return <div>Not Found</div>;
   }
 }
-const steps = [1, 2, 3, 4];
+const steps = [1, 2, 3, 4, 5];
 const BorrowerApplication = (props) => {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(0);
   const currentValidationSchema = ValidationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
 
