@@ -4,7 +4,7 @@ import InputField from "../../utils/FormFields/InputField";
 
 export default function PersonalDetails(props) {
   const {
-    formField: { firstName, lastName, email, zipcode },
+    formField: { firstName, lastName, email, zipcode, occupation, bio, income },
   } = props;
   return (
     <React.Fragment>
@@ -23,6 +23,19 @@ export default function PersonalDetails(props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <InputField name={zipcode.name} label={zipcode.label} fullWidth />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <InputField name={income.name} label={income.label} fullWidth />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <InputField
+            name={occupation.name}
+            label={occupation.label}
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <InputField name={bio.name} label={bio.label} fullWidth />
         </Grid>
       </Grid>
     </React.Fragment>

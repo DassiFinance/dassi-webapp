@@ -52,16 +52,21 @@ export default {
       label: "Occupation*",
       requiredErrorMsg: "Occupation is required",
     },
+    income: {
+      name: "income",
+      label: "Annual income (per annum) *",
+      requiredErrorMsg: "Annual income is required",
+    },
     // loanDetails1.js
     loanAmount: {
       name: "loanAmount",
-      label: "Loan Amount Needed *",
-      requiredErrorMsg: "Loan Amount is required",
+      label: "Loan amount Needed *",
+      requiredErrorMsg: "Loan amount is required",
     },
     loanCategory: {
       name: "loanCategory",
       label: "Loan category *",
-      requiredErrorMsg: "Loan Category is required",
+      requiredErrorMsg: "Loan category is required",
     },
     loanDuration: {
       name: "loanDuration",

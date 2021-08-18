@@ -6,7 +6,7 @@ const {
     lastName,
     email,
     zipcode,
-    timePeriod,
+    income,
     occupation,
     bio,
     loanAmount,
@@ -27,6 +27,9 @@ const validation = [
     firstName: Yup.string().required(`${firstName.requiredErrorMsg}`),
     lastName: Yup.string().required(`${lastName.requiredErrorMsg}`),
     zipcode: Yup.number().required(`${zipcode.requiredErrorMsg}`),
+    income: Yup.number().required(`${income.requiredErrorMsg}`),
+    occupation: Yup.string().required(`${occupation.requiredErrorMsg}`),
+    bio: Yup.string().required(`${bio.requiredErrorMsg}`),
   }),
   Yup.object().shape({
     loanAmount: Yup.number().required(`${loanAmount.requiredErrorMsg}`),
