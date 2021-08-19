@@ -19,6 +19,7 @@ const {
     repaymentStartDate,
     emiRepetition,
     guarantor,
+    imgURL,
   },
 } = ApplicationFormModel;
 
@@ -34,12 +35,13 @@ const DefaultFields = {
   [bio.name]: "21yrs",
   [income.name]: "1800000",
   [loanAmount.name]: "5000",
-  [loanCategory.name]: "Women",
+  [loanCategory.name]: "None",
   [loanDescription.name]: "Start-up/Bussiness",
   [loanDuration.name]: "5",
   [loanDurationUnit.name]: "months",
-  [repaymentStartDate.name]: "2017-05-24",
+  [repaymentStartDate.name]: "2022-05-24",
   [emiRepetition.name]: "Monthly",
   [guarantor.name]: "Self Approve",
+  [imgURL.name]: "",
 };
 export default DefaultFields;

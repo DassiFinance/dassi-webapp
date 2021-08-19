@@ -1,7 +1,8 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography, Container } from "@material-ui/core";
 import InputField from "../../utils/FormFields/InputField";
 import SelectField from "../../utils/FormFields/SelectField";
+import useStyles from "../../css/baForm";
 
 const loanCategories = [
   {
@@ -38,6 +39,7 @@ const loanDurationUnits = [
 ];
 
 export default function LoanDetailsDetails1(props) {
+  const classes = useStyles();
   const {
     formField: {
       loanAmount,
@@ -49,52 +51,56 @@ export default function LoanDetailsDetails1(props) {
   } = props;
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" gutterBottom className={classes.subHeader}>
         Loan Details
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <InputField
-            name={loanAmount.name}
-            label={loanAmount.label}
-            fullWidth
-          />
-        </Grid>
+      <Container>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <InputField
+              name={loanAmount.name}
+              label={loanAmount.label}
+              fullWidth
+            />
+          </Grid>
 
-        <Grid item xs={12} sm={6}>
-          <SelectField
-            name={loanCategory.name}
-            label={loanCategory.label}
-            data={loanCategories}
-            fullWidth
-          />
-        </Grid>
+          <Grid item xs={12} sm={6}>
+            <SelectField
+              name={loanCategory.name}
+              label={loanCategory.label}
+              data={loanCategories}
+              fullWidth
+            />
+          </Grid>
 
-        <Grid item xs={12} sm={6}>
-          <InputField
-            name={loanDuration.name}
-            label={loanDuration.label}
-            fullWidth
-          />
-        </Grid>
+          <Grid item xs={12} sm={6}>
+            <InputField
+              name={loanDuration.name}
+              label={loanDuration.label}
+              fullWidth
+            />
+          </Grid>
 
-        <Grid item xs={12} sm={6}>
-          <SelectField
-            name={loanDurationUnit.name}
-            label={loanDurationUnit.label}
-            data={loanDurationUnits}
-            fullWidth
-          />
-        </Grid>
+          <Grid item xs={12} sm={6}>
+            <SelectField
+              name={loanDurationUnit.name}
+              label={loanDurationUnit.label}
+              data={loanDurationUnits}
+              fullWidth
+            />
+          </Grid>
 
-        <Grid item xs={12} sm={6}>
-          <InputField
-            name={loanDescription.name}
-            label={loanDescription.label}
-            fullWidth
-          />
+          <Grid item xs={12}>
+            <InputField
+              multiline
+              rows={4}
+              name={loanDescription.name}
+              label={loanDescription.label}
+              fullWidth
+            />
+          </Grid>
         </Grid>
-      </Grid>
+      </Container>
     </React.Fragment>
   );
 }

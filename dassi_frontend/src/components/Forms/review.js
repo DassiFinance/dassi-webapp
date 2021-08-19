@@ -5,15 +5,17 @@ import PDReview from "./pdreview";
 import LD1Review from "./ld1review";
 import LD2Review from "./ld2review";
 import LD3Review from "./ld3review";
+import useStyles from "../../css/baForm";
 
 export default function ReviewOrder() {
+  const classes = useStyles();
   const { values: formValues } = useFormikContext();
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" gutterBottom className={classes.textCommon}>
         Preview
       </Typography>
-      <Container>
+      <Container className={classes.ba_review_container}>
         <Grid container>
           <PDReview formValues={formValues} />
         </Grid>

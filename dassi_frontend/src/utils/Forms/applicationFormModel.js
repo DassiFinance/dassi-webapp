@@ -57,6 +57,11 @@ export default {
       label: "Annual income (per annum) *",
       requiredErrorMsg: "Annual income is required",
     },
+    imgURL: {
+      name: "imgURL",
+      label: "Image",
+      requiredErrorMsg: "Image is required",
+    },
     // loanDetails1.js
     loanAmount: {
       name: "loanAmount",

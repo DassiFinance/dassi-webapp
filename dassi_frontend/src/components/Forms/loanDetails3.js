@@ -1,6 +1,7 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography, Container } from "@material-ui/core";
 import SelectField from "../../utils/FormFields/SelectField";
+import useStyles from "../../css/baForm";
 
 const guarantorsAvailable = [
   {
@@ -14,22 +15,25 @@ const guarantorsAvailable = [
 ];
 
 export default function LoanDetails2(props) {
+  const classes = useStyles();
   const {
     formField: { guarantor },
   } = props;
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        LoanDetails3
+      <Typography variant="h6" gutterBottom className={classes.subHeader}>
+        Select Guarantor
       </Typography>
-      <Grid container spacing={3}>
-        <SelectField
-          name={guarantor.name}
-          label={guarantor.label}
-          data={guarantorsAvailable}
-          fullWidth
-        />
-      </Grid>
+      <Container>
+        <Grid container>
+          <SelectField
+            name={guarantor.name}
+            label={guarantor.label}
+            data={guarantorsAvailable}
+            fullWidth
+          />
+        </Grid>
+      </Container>
     </React.Fragment>
   );
 }

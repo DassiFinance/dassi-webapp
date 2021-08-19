@@ -8,7 +8,8 @@ import Signup from "./pages/signup";
 import BorrowerApplication from "./pages/borrowerApplication";
 import Storage from "./config/storage";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
+
 import createHistory from "history/createBrowserHistory";
 const history = createHistory();
 const { config } = Storage();
