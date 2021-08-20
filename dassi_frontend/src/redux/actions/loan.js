@@ -2,10 +2,19 @@ import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:8080/api/";
 export const sendLoanDetails = (loanDetails) => {
+  const formData = new FormData();
+  for (var key in loanDetails) {
+    if (loanDetails.hasOwnProperty(key)) {
+      formData.append(key, loanDetails[key]);
+      // console.log(key + " -> " + loanDetails[key]);
+    }
+  }
+  console.log(formData);
   axios
-    .post("loan/create", loanDetails)
-    .then((res) => {
-      console.log(res.data);
+    .post("loan/create", formData, {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
     })
     .then((err) => {
       console.log(err);

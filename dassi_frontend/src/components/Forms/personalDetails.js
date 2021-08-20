@@ -55,8 +55,24 @@ export default function PersonalDetails(props) {
               fullWidth
             />
           </Grid>
+          {/*<Grid item xs={12}>
+            <Grid item xs={8}>
+              <InputField
+                name={occupation.name}
+                label={occupation.label}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <InputField
+                name={occupation.name}
+                label={occupation.label}
+                fullWidth
+              />
+            </Grid>
+  </Grid>*/}
           <Grid item xs={12}>
-            <img src={preview} />
+            <img src={preview} className={classes.imageDiv} />
           </Grid>
           <Grid item xs={12}>
             <input

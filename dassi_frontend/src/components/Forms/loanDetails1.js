@@ -73,23 +73,24 @@ export default function LoanDetailsDetails1(props) {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
-            <InputField
-              name={loanDuration.name}
-              label={loanDuration.label}
-              fullWidth
-            />
+          <Grid item xs={12} className={classes.splitInputFieldGrid}>
+            <Grid item xs={8}>
+              <InputField
+                name={loanDuration.name}
+                label={loanDuration.label}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <SelectField
+                name={loanDurationUnit.name}
+                label={loanDurationUnit.label}
+                data={loanDurationUnits}
+                fullWidth
+                className={classes.splitSelectField}
+              />
+            </Grid>
           </Grid>
-
-          <Grid item xs={12} sm={6}>
-            <SelectField
-              name={loanDurationUnit.name}
-              label={loanDurationUnit.label}
-              data={loanDurationUnits}
-              fullWidth
-            />
-          </Grid>
-
           <Grid item xs={12}>
             <InputField
               multiline

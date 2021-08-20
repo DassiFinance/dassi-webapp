@@ -80,7 +80,7 @@ export default {
     },
     loanDurationUnit: {
       name: "loanDurationUnit",
-      label: "Please select weeks/months/years *",
+      label: "",
       requiredErrorMsg: "Please select weeks/months/years",
     },
     loanDescription: {

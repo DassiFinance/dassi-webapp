@@ -21,7 +21,7 @@ export default makeStyles((theme) => ({
   buttons: {
     width: "100%",
     display: "flex",
-    marginBottom: "2%",
+    marginBottom: "10%",
     marginTop: "5%",
     position: "relative",
   },
@@ -49,6 +49,12 @@ export default makeStyles((theme) => ({
     marginBottom: "10px",
     marginTop: "10px",
   },
+  splitSelectField: {
+    borderLeft: "1px solid #fff !important",
+  },
+  splitInputFieldGrid: {
+    display: "flex",
+  },
   textFieldUnderline: {
     "&:before": {
       borderBottom: "0px",
@@ -61,7 +67,10 @@ export default makeStyles((theme) => ({
     fontSize: "20px",
     color: "#fff",
   },
-
+  imageDiv: {
+    width: "100%",
+    height: "300px",
+  },
   stepper: {
     padding: theme.spacing(3, 0, 5),
     backgroundColor: "#15202B",

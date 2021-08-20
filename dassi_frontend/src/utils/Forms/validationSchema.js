@@ -7,6 +7,7 @@ const {
     email,
     zipcode,
     income,
+
     occupation,
     bio,
     loanAmount,
