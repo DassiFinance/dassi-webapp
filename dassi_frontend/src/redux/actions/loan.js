@@ -6,10 +6,8 @@ export const sendLoanDetails = (loanDetails) => {
   for (var key in loanDetails) {
     if (loanDetails.hasOwnProperty(key)) {
       formData.append(key, loanDetails[key]);
-      // console.log(key + " -> " + loanDetails[key]);
     }
   }
-  console.log(formData);
   axios
     .post("loan/create", formData, {
       headers: {
