@@ -1,11 +1,18 @@
 import React from "react";
-import NavHome from "../components/navbar";
+import { Grid } from "@material-ui/core";
+import useStyles from "../css/homepage";
 
-export default function Homepage() {
+const HomePage = (props) => {
+  const classes = useStyles();
+
   return (
-    <div>
-      <NavHome />
-      <h1>Welcome to dassi</h1>
-    </div>
+    <Grid container className={classes.homepage_main}>
+      <Grid item xs={3} className={classes.homepage_subNav}></Grid>
+      <Grid item xs={6} className={classes.homepage_subMain}>
+        <h1>Hello</h1>
+      </Grid>
+      <Grid item xs={3} className={classes.homepage_subNav}></Grid>
+    </Grid>
   );
-}
+};
+export default HomePage;

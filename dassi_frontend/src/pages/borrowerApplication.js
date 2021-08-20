@@ -49,7 +49,7 @@ function renderStepContent(step, setFieldValue) {
 const steps = [1, 2, 3, 4, 5];
 const BorrowerApplication = (props) => {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = useState(4);
+  const [activeStep, setActiveStep] = useState(0);
   const currentValidationSchema = ValidationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
 
