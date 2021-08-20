@@ -7,8 +7,8 @@ export default function PersonalDetails(props) {
   const {
     formField: {
       firstName,
-      lastName,
-      email,
+      // lastName,
+      // email,
       zipcode,
       occupation,
       bio,
@@ -72,7 +72,11 @@ export default function PersonalDetails(props) {
             </Grid>
   </Grid>*/}
           <Grid item xs={12}>
-            <img src={preview} className={classes.imageDiv} />
+            <img
+              src={preview}
+              alt="Loan Details"
+              className={classes.imageDiv}
+            />
           </Grid>
           <Grid item xs={12}>
             <input
