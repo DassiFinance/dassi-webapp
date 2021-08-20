@@ -73,21 +73,26 @@ export default function LoanDetailsDetails1(props) {
             />
           </Grid>
 
-          <Grid item xs={12} className={classes.splitInputFieldGrid}>
-            <Grid item xs={8}>
+          <Grid item xs={6} className={classes.splitInputFieldGrid}>
+            <Grid item xs={7}>
               <InputField
                 name={loanDuration.name}
                 label={loanDuration.label}
                 fullWidth
+                InputProps={{
+                  disableUnderline: true,
+                  classes: {
+                    input: classes.splitInputField,
+                  },
+                }}
               />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={5}>
               <SelectField
                 name={loanDurationUnit.name}
                 label={loanDurationUnit.label}
                 data={loanDurationUnits}
                 fullWidth
-                className={classes.splitSelectField}
               />
             </Grid>
           </Grid>

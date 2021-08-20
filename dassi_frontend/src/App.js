@@ -9,9 +9,7 @@ import BorrowerApplication from "./pages/borrowerApplication";
 import Storage from "./config/storage";
 
 //import "bootstrap/dist/css/bootstrap.min.css";
-
-import createHistory from "history/createBrowserHistory";
-const history = createHistory();
+const history = require("history").createBrowserHistory();
 const { config } = Storage();
 config();
 

@@ -7,25 +7,21 @@ const LD1Review = (props) => {
   const { emiRepetition, repaymentStartDate } = formValues;
   return (
     <>
-      <Typography variant="h6" className={classes.textCommon}>
+      <Typography variant="h6" className={classes.review_subheader}>
         Repayment Details
       </Typography>
-      <Grid container>
+      <Grid container spacing={3}>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            Emi Repetition*
+            Repayment Start Date *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {emiRepetition}
-          </Typography>
+          <div className={classes.textFieldInput}> {repaymentStartDate}</div>
         </Grid>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            Repayment Start Date*
+            Emi Repetition *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {repaymentStartDate}
-          </Typography>
+          <div className={classes.textFieldInput}> {emiRepetition}</div>
         </Grid>
       </Grid>
     </>

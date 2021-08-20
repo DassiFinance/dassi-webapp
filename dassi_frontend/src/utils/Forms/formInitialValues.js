@@ -20,6 +20,8 @@ const {
     emiRepetition,
     guarantor,
     imgURL,
+    idNumber,
+    idDoc,
   },
 } = ApplicationFormModel;
 
@@ -38,10 +40,12 @@ const DefaultFields = {
   [loanCategory.name]: "None",
   [loanDescription.name]: "Start-up/Bussiness",
   [loanDuration.name]: "5",
-  [loanDurationUnit.name]: "months",
+  [loanDurationUnit.name]: "Months",
   [repaymentStartDate.name]: "2022-05-24",
   [emiRepetition.name]: "Monthly",
   [guarantor.name]: "Self Approve",
   [imgURL.name]: "",
+  [idDoc.name]: "Aadhar Card",
+  [idNumber.name]: "165872493",
 };
 export default DefaultFields;

@@ -1,7 +1,27 @@
 import React, { useState } from "react";
 import { Grid, Typography, Container } from "@material-ui/core";
 import InputField from "../../utils/FormFields/InputField";
+import SelectField from "../../utils/FormFields/SelectField";
 import useStyles from "../../css/baForm";
+
+const IdProof = [
+  {
+    value: "Aadhar Card",
+    label: "Aadhar Card",
+  },
+  {
+    value: "Passport",
+    label: "Passport",
+  },
+  {
+    value: "Voter Id",
+    label: "Voter Id",
+  },
+  {
+    value: "Drivind License",
+    label: "Drivind License",
+  },
+];
 
 export default function PersonalDetails(props) {
   const {
@@ -14,6 +34,8 @@ export default function PersonalDetails(props) {
       bio,
       income,
       imgURL,
+      idDoc,
+      idNumber,
     },
     setFieldValue,
   } = props;
@@ -55,28 +77,33 @@ export default function PersonalDetails(props) {
               fullWidth
             />
           </Grid>
-          {/*<Grid item xs={12}>
+          <Grid item xs={12} className={classes.splitInputFieldGrid}>
             <Grid item xs={8}>
               <InputField
-                name={occupation.name}
-                label={occupation.label}
+                name={idNumber.name}
+                label={idNumber.label}
                 fullWidth
+                placeholder="Enter ID Number"
+                InputProps={{
+                  disableUnderline: true,
+                  classes: {
+                    input: classes.splitInputField,
+                  },
+                }}
               />
             </Grid>
             <Grid item xs={4}>
-              <InputField
-                name={occupation.name}
-                label={occupation.label}
+              <SelectField
+                name={idDoc.name}
+                label={idDoc.label}
+                data={IdProof}
                 fullWidth
               />
             </Grid>
-  </Grid>*/}
+          </Grid>
+
           <Grid item xs={12}>
-            <img
-              src={preview}
-              alt="Loan Details"
-              className={classes.imageDiv}
-            />
+            <img src={preview} className={classes.imageDiv} alt="" />
           </Grid>
           <Grid item xs={12}>
             <input
