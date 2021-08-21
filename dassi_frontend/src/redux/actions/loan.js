@@ -1,4 +1,5 @@
 import axios from "axios";
+import { GET_ACTIVE_LOANS } from "../types";
 
 axios.defaults.baseURL = "http://localhost:8080/api/";
 export const sendLoanDetails = (loanDetails) => {
@@ -17,4 +18,22 @@ export const sendLoanDetails = (loanDetails) => {
     .then((err) => {
       console.log(err);
     });
+};
+
+export const getActiveLoans = () => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get("loan/activeLoans")
+      .then((res) => {
+        dispatch({
+          type: GET_ACTIVE_LOANS,
+          payload: res.data,
+        });
+        resolve(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        reject(err);
+      });
+  });
 };
