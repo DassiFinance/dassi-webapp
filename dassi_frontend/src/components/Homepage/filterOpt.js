@@ -37,7 +37,7 @@ const FilterOpt = (props) => {
           item.id == filter ? classes.active_filterBtn : classes.filterBtn
         }
       >
-        <p>{item.name}</p>
+        <p className={classes.filterBtnText}>{item.name}</p>
       </div>
     );
   });
