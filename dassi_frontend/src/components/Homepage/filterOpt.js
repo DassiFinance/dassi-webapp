@@ -30,9 +30,10 @@ const FilterOpt = (props) => {
     },
   ];
   const [filter, setFilter] = useState(0);
-  const dispFilter = filterOpt.map((item) => {
+  const dispFilter = filterOpt.map((item, i) => {
     return (
       <div
+        key={i}
         className={
           item.id == filter ? classes.active_filterBtn : classes.filterBtn
         }

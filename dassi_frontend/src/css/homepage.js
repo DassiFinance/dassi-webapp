@@ -21,7 +21,7 @@ export default makeStyles((theme) => ({
   },
   //Header
   search_div: {
-    padding: "12px 15px",
+    padding: "12px 16px",
     borderBottom: "2px solid #222D37",
   },
   search_root: {
@@ -46,7 +46,7 @@ export default makeStyles((theme) => ({
     textAlign: "-webkit-center",
     overflow: "auto !important",
     whiteSpace: "nowrap !important",
-    padding: "12px 15px 0px 15px",
+    padding: "12px 16px 0px 16px",
     "&::-webkit-scrollbar": {
       width: "0px !important",
     },
@@ -77,7 +77,7 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center !important",
-    fontWeight: "600",
+    fontWeight: 600,
     height: "40px",
     padding: "0px 24px",
     borderRadius: "2rem",
@@ -85,5 +85,78 @@ export default makeStyles((theme) => ({
   },
   filterBtnText: {
     marginTop: "1rem !important",
+  },
+
+  //DisplayLoans
+  dispLoans_text: {
+    fontSize: "18px",
+    color: "#fff",
+    fontWeight: 400,
+    margin: "16px 12px",
+  },
+  loanCard_main: {
+    backgroundColor: "#192734",
+    margin: "18px 0",
+    boxShadow: "none",
+    padding: "12px 16px",
+  },
+  loanCard_headerText: {
+    fontSize: "1.63rem",
+    color: "#fff",
+
+    fontWeight: 500,
+  },
+  loanCard_media: {
+    height: "280px",
+  },
+  progressBar_main: {
+    height: 10,
+    borderRadius: 5,
+    marginBottom: "0.5rem",
+  },
+  progressBar_colorPrimary: {
+    backgroundColor: "#253341",
+  },
+  progressBar_barColorPrimary: {
+    backgroundColor: "#DCFF8F",
+  },
+  loanCard_amtDiv: {
+    display: "inline-flex",
+    width: "100%",
+    justifyContent: "space-between",
+  },
+  loanCard_xtraInfoDiv: {
+    backgroundColor: "#253341",
+    padding: "16px 12px",
+    display: "inline-flex",
+    width: "100%",
+  },
+  loanCard_readBtn: {
+    width: "25%",
+    backgroundColor: "#15202B",
+    border: "2px solid #BBF146",
+    color: "#BBF146",
+    letterSpacing: "1px !important",
+  },
+  loanCard_supportBtn: {
+    width: "75%",
+    backgroundColor: "#BBF146",
+    border: "2px solid #BBF146",
+    color: "#15202B",
+    letterSpacing: "1px !important",
+  },
+  loanCard_keyIcon: {
+    fontSize: "1.6rem",
+    color: "#8899A6",
+    marginTop: "5px",
+    marginRight: "1%",
+  },
+  loanCard_key: {
+    fontSize: "1.25rem",
+    color: "#8899A6",
+  },
+  loanCard_value: {
+    fontSize: "1.25rem",
+    color: "#fff",
   },
 }));
