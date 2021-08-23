@@ -64,6 +64,7 @@ export default makeStyles((theme) => ({
     fontWeight: "600",
     height: "40px",
     padding: "0px 24px",
+    cursor: "pointer",
 
     borderRadius: "2rem",
     backgroundColor: "#C3CCD3",
@@ -79,6 +80,7 @@ export default makeStyles((theme) => ({
     textAlign: "center !important",
     fontWeight: 600,
     height: "40px",
+    cursor: "pointer",
     padding: "0px 24px",
     borderRadius: "2rem",
     backgroundColor: "#8899A6",

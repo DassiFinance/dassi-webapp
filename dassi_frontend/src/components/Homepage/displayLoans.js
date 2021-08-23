@@ -26,6 +26,19 @@ const DisplayLoans = (props) => {
       imgURL:
         "https://images.outlookindia.com/public/uploads/articles/2019/11/21/boat_men_20191202.jpg",
     },
+    {
+      id: 1,
+      creditScore: 800,
+      title:
+        "A loan of Rs.65000 helps a father of two to keep a growing and expand his boat tour business.",
+      totalAmt: 70000,
+      amtRaised: 65000,
+      amtLeft: 5000,
+      timeLeft: 12,
+      guarantor: "Self-Approved",
+      imgURL:
+        "https://images.outlookindia.com/public/uploads/articles/2019/11/21/boat_men_20191202.jpg",
+    },
   ];
 
   const dispLoans = activeLoans.map((item, id) => {
