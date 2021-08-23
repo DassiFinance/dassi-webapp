@@ -55,7 +55,7 @@ export default makeStyles((theme) => ({
   filterBtn: {
     display: "inline-flex",
     minWidth: "100px",
-    height: "3rem !important",
+    // height: "3rem !important",
     zIndex: "1",
     margin: "0 0.5rem",
     justifyContent: "center",
@@ -64,6 +64,7 @@ export default makeStyles((theme) => ({
     fontWeight: "600",
     height: "40px",
     padding: "0px 24px",
+    cursor: "pointer",
 
     borderRadius: "2rem",
     backgroundColor: "#C3CCD3",
@@ -71,7 +72,7 @@ export default makeStyles((theme) => ({
   active_filterBtn: {
     display: "inline-flex",
     minWidth: "100px",
-    height: "3rem !important",
+    // height: "3rem !important",
     zIndex: "1",
     margin: "0 0.5rem",
     justifyContent: "center",
@@ -79,6 +80,7 @@ export default makeStyles((theme) => ({
     textAlign: "center !important",
     fontWeight: 600,
     height: "40px",
+    cursor: "pointer",
     padding: "0px 24px",
     borderRadius: "2rem",
     backgroundColor: "#8899A6",
@@ -128,8 +130,19 @@ export default makeStyles((theme) => ({
   loanCard_xtraInfoDiv: {
     backgroundColor: "#253341",
     padding: "16px 12px",
-    display: "inline-flex",
+
     width: "100%",
+  },
+  loanCard_infoDiv: {
+    width: " 100%",
+    display: " inline-flex",
+    justifyContent: " space-between",
+
+    backgroundColor: " #253341",
+  },
+  loanCard_infoItem: {
+    display: "inline-flex",
+    width: "50%",
   },
   loanCard_readBtn: {
     width: "25%",

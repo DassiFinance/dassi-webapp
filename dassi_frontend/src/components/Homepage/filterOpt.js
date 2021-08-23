@@ -1,44 +1,21 @@
 import React, { useState } from "react";
 import useStyles from "../../css/homepage";
+import { loanCategories } from "../../utils/json/loanCategories";
 
 const FilterOpt = (props) => {
   const classes = useStyles();
-  const filterOpt = [
-    {
-      id: 0,
-      name: "All",
-    },
-    {
-      id: 1,
-      name: "Covid Affected",
-    },
-    {
-      id: 2,
-      name: "Agriculture",
-    },
-    {
-      id: 3,
-      name: "Digitalization",
-    },
-    {
-      id: 4,
-      name: "Small Business",
-    },
-    {
-      id: 5,
-      name: "Start-up",
-    },
-  ];
+
+  // eslint-disable-next-line no-unused-vars
   const [filter, setFilter] = useState(0);
-  const dispFilter = filterOpt.map((item, i) => {
+  const dispFilter = loanCategories.map((item, i) => {
     return (
       <div
         key={i}
         className={
-          item.id == filter ? classes.active_filterBtn : classes.filterBtn
+          item.value === filter ? classes.active_filterBtn : classes.filterBtn
         }
       >
-        <p className={classes.filterBtnText}>{item.name}</p>
+        <p className={classes.filterBtnText}>{item.label}</p>
       </div>
     );
   });
