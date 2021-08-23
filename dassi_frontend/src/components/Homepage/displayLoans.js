@@ -15,6 +15,7 @@ const DisplayLoans = (props) => {
   const activeLoans = [
     {
       id: 0,
+      creditScore: 800,
       title:
         "A loan of Rs.65000 helps a father of two to keep a growing and expand his boat tour business.",
       totalAmt: 70000,
@@ -29,6 +30,7 @@ const DisplayLoans = (props) => {
 
   const dispLoans = activeLoans.map((item, id) => {
     const progress = ((item.amtRaised - 0) * 100) / item.totalAmt;
+
     return (
       <Card key={id} className={classes.loanCard_main}>
         <CardActionArea>
@@ -71,11 +73,35 @@ const DisplayLoans = (props) => {
               </p>
             </div>
             <div className={classes.loanCard_xtraInfoDiv}>
-              <Icon className={classes.loanCard_keyIcon}>task_alt</Icon>
-              <p className={classes.loanCard_key}>
-                Guarantor :{" "}
-                <span className={classes.loanCard_value}>{item.guarantor}</span>
-              </p>
+              <div className={classes.loanCard_infoDiv}>
+                <div className={classes.loanCard_infoItem}>
+                  <Icon className={classes.loanCard_keyIcon}>stars</Icon>
+                  <p className={classes.loanCard_key}>
+                    Credit Score :{" "}
+                    <span className={classes.loanCard_value}>
+                      {item.creditScore}
+                    </span>
+                  </p>
+                </div>
+                <div className={classes.loanCard_infoItem}>
+                  <Icon className={classes.loanCard_keyIcon}>schedule</Icon>
+                  <p className={classes.loanCard_key}>
+                    Time Left :{" "}
+                    <span className={classes.loanCard_value}>
+                      {item.timeLeft} hours
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div className={classes.loanCard_infoItem}>
+                <Icon className={classes.loanCard_keyIcon}>task_alt</Icon>
+                <p className={classes.loanCard_key}>
+                  Guarantor :{" "}
+                  <span className={classes.loanCard_value}>
+                    {item.guarantor}
+                  </span>
+                </p>
+              </div>
             </div>
           </CardContent>
         </CardActionArea>

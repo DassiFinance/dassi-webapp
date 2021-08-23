@@ -128,8 +128,19 @@ export default makeStyles((theme) => ({
   loanCard_xtraInfoDiv: {
     backgroundColor: "#253341",
     padding: "16px 12px",
-    display: "inline-flex",
+
     width: "100%",
+  },
+  loanCard_infoDiv: {
+    width: " 100%",
+    display: " inline-flex",
+    justifyContent: " space-between",
+
+    backgroundColor: " #253341",
+  },
+  loanCard_infoItem: {
+    display: "inline-flex",
+    width: "50%",
   },
   loanCard_readBtn: {
     width: "25%",
