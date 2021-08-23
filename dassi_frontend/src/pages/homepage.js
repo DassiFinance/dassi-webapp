@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
-import NavHome from "../components/navbar";
-import { useDispatch } from "react-redux";
-import { getActiveLoans } from "../redux/actions/loan";
-import { useSelector } from "react-redux";
+import React from "react";
+import { Grid } from "@material-ui/core";
+import Header from "../components/Homepage/header";
+import FilterOpt from "../components/Homepage/filterOpt";
+import useStyles from "../css/homepage";
+import DisplayLoans from "../components/Homepage/displayLoans";
 
-export default function Homepage() {
-  const dispatch = useDispatch();
-  const activeLoans = useSelector((state) => state.loan.activeLoans);
+const HomePage = (props) => {
+  const classes = useStyles();
 
-  useEffect(() => {
-    dispatch(getActiveLoans());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
-    <div>
-      <NavHome />
-      {activeLoans.map((loan, i) => {
-        return <li key={i}>loan.id</li>;
-      })}
-    </div>
+    <Grid container className={classes.homepage_main}>
+      <Grid item xs={3} className={classes.homepage_subNav}></Grid>
+      <Grid item xs={6} className={classes.homepage_subMain}>
+        <Header />
+        <FilterOpt />
+        <DisplayLoans />
+      </Grid>
+      <Grid item xs={3} className={classes.homepage_subNav}></Grid>
+    </Grid>
   );
-}
+};
+export default HomePage;

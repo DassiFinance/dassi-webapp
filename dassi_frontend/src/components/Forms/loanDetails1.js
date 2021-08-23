@@ -6,20 +6,24 @@ import useStyles from "../../css/baForm";
 
 const loanCategories = [
   {
-    value: "None",
-    label: "None",
+    value: "61233a4e229a1059582c411c",
+    label: "Miscellaneous",
   },
   {
-    value: "Women and Children",
-    label: "Women and Children",
+    value: "612335aa2a61253fb0ac03f0",
+    label: "Covid 19",
   },
   {
-    value: "Education Loan",
-    label: "Education Loan",
+    value: "612335b42a61253fb0ac03f2",
+    label: "Women and children",
   },
   {
-    value: "Home Loan",
-    label: "Home Loan",
+    value: "612335c22a61253fb0ac03f4",
+    label: "Startup",
+  },
+  {
+    value: "612335d32a61253fb0ac03f6",
+    label: "Home loan",
   },
 ];
 

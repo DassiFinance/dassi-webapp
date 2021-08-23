@@ -35,7 +35,7 @@ const DefaultFields = {
   [bio.name]: "21yrs",
   [income.name]: "1800000",
   [loanAmount.name]: "5000",
-  [loanCategory.name]: "None",
+  [loanCategory.name]: "Miscellaneous",
   [loanDescription.name]: "Start-up/Bussiness",
   [loanDuration.name]: "5",
   [loanDurationUnit.name]: "months",
