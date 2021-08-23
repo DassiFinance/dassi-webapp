@@ -46,7 +46,11 @@ export default makeStyles((theme) => ({
     textAlign: "-webkit-center",
     overflow: "auto !important",
     whiteSpace: "nowrap !important",
-    padding: "12px 15px",
+    padding: "12px 15px 0px 15px",
+    "&::-webkit-scrollbar": {
+      width: "0px !important",
+    },
+    borderBottom: "2px solid #222D37",
   },
   filterBtn: {
     display: "inline-flex",
