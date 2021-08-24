@@ -20,7 +20,7 @@ const DisplayLoans = (props) => {
 
   const getSlug = (description) => {
     return description.length > 100
-      ? description.substring(0, 100)
+      ? description.substring(0, 120) + "...."
       : description;
   };
 
