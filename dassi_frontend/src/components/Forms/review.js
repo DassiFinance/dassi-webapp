@@ -12,7 +12,7 @@ export default function ReviewOrder() {
   const { values: formValues } = useFormikContext();
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom className={classes.textCommon}>
+      <Typography variant="h5" gutterBottom className={classes.review_header}>
         Preview
       </Typography>
       <Container className={classes.ba_review_container}>

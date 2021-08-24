@@ -8,7 +8,7 @@ const LD2Review = (props) => {
   const { emiRepetition, repaymentStartDate } = formValues;
   return (
     <>
-      <Typography variant="h6" className={classes.textCommon}>
+      <Typography variant="h6" className={classes.review_subheader}>
         Repayment Details
       </Typography>
       <Grid container spacing={3}>

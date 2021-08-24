@@ -13,49 +13,40 @@ const LD1Review = (props) => {
   } = formValues;
   return (
     <>
-      <Typography variant="h6" className={classes.textCommon}>
+      <Typography variant="h6" className={classes.review_subheader}>
         Loan Details
       </Typography>
-      <Grid container>
+      <Grid container spacing={3}>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            Loan Amount*
+            Loan Amount *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {loanAmount}
-          </Typography>
+
+          <div className={classes.textFieldInput}> {loanAmount}</div>
         </Grid>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            Loan Category*
+            Loan Category *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {loanCategory}
-          </Typography>
+
+          <div className={classes.textFieldInput}> {loanCategory}</div>
         </Grid>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            Loan Duration*
+            Time for which you need loan *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {loanDuration}
-          </Typography>
-        </Grid>
-        <Grid item xs={6}>
-          <Typography gutterBottom className={classes.textCommon}>
-            Loan Duration*
-          </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {loanDurationUnit}
-          </Typography>
+
+          <div className={classes.textFieldInput}>
+            {" "}
+            {loanDuration} {loanDurationUnit}
+          </div>
         </Grid>
         <Grid item xs={12}>
           <Typography gutterBottom className={classes.textCommon}>
-            Loan Description*
+            Loan Description *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {loanDescription}
-          </Typography>
+
+          <div className={classes.textFieldInput}> {loanDescription}</div>
         </Grid>
       </Grid>
     </>

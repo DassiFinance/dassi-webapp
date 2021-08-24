@@ -1,76 +1,86 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useStyles from "../../css/baForm";
-
 import { Typography, Grid } from "@material-ui/core";
 const PDReview = (props) => {
   const { formValues } = props;
+  const [preview, setPreview] = useState("");
   const classes = useStyles();
-  const { firstName, lastName, email, zipcode, occupation, bio, income } =
-    formValues;
+  const {
+    firstName,
+    lastName,
+    email,
+    zipcode,
+    occupation,
+    bio,
+    income,
+    idDoc,
+    idNumber,
+    imgURL,
+  } = formValues;
+
+  useEffect(() => {
+    if (imgURL) {
+      const fileReader = new FileReader();
+      fileReader.onload = () => {
+        if (fileReader.readyState === 2) {
+          console.log(fileReader.result);
+          setPreview(fileReader.result);
+        }
+      };
+      fileReader.readAsDataURL(imgURL);
+    }
+  }, [imgURL]);
   return (
     <>
-      <Typography variant="h6" className={classes.textCommon}>
+      <Typography variant="h6" className={classes.review_subheader}>
         Personal Details
       </Typography>
-      <Grid container>
+      <Grid container spacing={3}>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            First Name*
+            First Name *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {firstName}
-          </Typography>
+          <div className={classes.review_textFieldInput}>{firstName}</div>
         </Grid>
-
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            Last Name*
+            Zipcode *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {lastName}
-          </Typography>
+          <div className={classes.review_textFieldInput}>{zipcode}</div>
         </Grid>
-
         <Grid item xs={12}>
           <Typography gutterBottom className={classes.textCommon}>
-            Bio*
+            Bio *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {bio}
-          </Typography>
+          <div className={classes.review_textFieldInput}>{bio}</div>
         </Grid>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            Occupation*
+            Occupation *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {occupation}
-          </Typography>
+          <div className={classes.review_textFieldInput}> {occupation}</div>
         </Grid>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            Income*
+            Income *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {income}
-          </Typography>
+          <div className={classes.review_textFieldInput}>{income}</div>
         </Grid>
-
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           <Typography gutterBottom className={classes.textCommon}>
-            Email*
+            ID Details *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {email}
-          </Typography>
+          <div className={classes.textFieldInput}>
+            {idDoc}
+            {" : "}
+            {idNumber}
+          </div>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           <Typography gutterBottom className={classes.textCommon}>
-            Zipcode*
+            Picture of your business *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {zipcode}
-          </Typography>
+          <img src={preview} className={classes.imageDiv} alt="" />
         </Grid>
       </Grid>
     </>

@@ -7,17 +7,17 @@ const LD3Review = (props) => {
   const classes = useStyles();
   return (
     <>
-      <Typography variant="h6" className={classes.textCommon}>
-        Select Gaurantor{" "}
+      <Typography variant="h6" className={classes.review_subheader}>
+        Select Guarantor
       </Typography>
       <Grid container>
         <Grid item xs={12}>
           <Typography gutterBottom className={classes.textCommon}>
-            Gaurantor*
+            Guarantor *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {guarantor.name}
-          </Typography>
+          <Grid item xs={12}>
+            <div className={classes.textFieldInput}> {guarantor}</div>
+          </Grid>
         </Grid>
       </Grid>
     </>
