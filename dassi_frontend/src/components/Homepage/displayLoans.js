@@ -16,10 +16,11 @@ const DisplayLoans = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const activeLoans = useSelector((state) => state.loan.activeLoans);
+  const filterCategory = useSelector((state) => state.loan.filterCategory);
 
   useEffect(() => {
-    dispatch(getActiveLoans());
-  }, [dispatch]);
+    dispatch(getActiveLoans(filterCategory));
+  }, [dispatch, filterCategory]);
 
   const dispLoans = activeLoans.map((item, id) => {
     const progress = ((item.amountLeft - 0) * 100) / item.totalAmt;
@@ -100,12 +101,21 @@ const DisplayLoans = (props) => {
     );
   });
 
-  return (
-    <div className={classes.dispLoans_main}>
-      <p className={classes.dispLoans_text}> Causes to show support</p>
-
-      {dispLoans}
-    </div>
-  );
+  if (dispLoans.length) {
+    return (
+      <div className={classes.dispLoans_main}>
+        <p className={classes.dispLoans_text}> Causes to show support</p>
+        {dispLoans}
+      </div>
+    );
+  } else {
+    return (
+      <div className={classes.dispLoans_main}>
+        <p className={classes.dispLoans_text}>
+          There are no loans to show in this category!
+        </p>
+      </div>
+    );
+  }
 };
 export default DisplayLoans;

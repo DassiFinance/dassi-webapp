@@ -1,21 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import useStyles from "../../css/homepage";
 import { loanCategories } from "../../utils/json/loanCategories";
+import { setCategoryFilter } from "../../redux/actions/loan";
+import { useDispatch, useSelector } from "react-redux";
+
+// Unshift adds this to the start of the array
+loanCategories.unshift({
+  value: "",
+  label: "All",
+});
 
 const FilterOpt = (props) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const filterCategory = useSelector((state) => state.loan.filterCategory);
 
-  // eslint-disable-next-line no-unused-vars
-  const [filter, setFilter] = useState(0);
-  const dispFilter = loanCategories.map((item, i) => {
+  const selectCategory = (categoryValue) => {
+    dispatch(setCategoryFilter(categoryValue));
+  };
+
+  const dispFilter = loanCategories.map((item) => {
     return (
       <div
-        key={i}
+        key={item.value}
         className={
-          item.value === filter ? classes.active_filterBtn : classes.filterBtn
+          item.value === filterCategory
+            ? classes.active_filterBtn
+            : classes.filterBtn
         }
       >
-        <p className={classes.filterBtnText}>{item.label}</p>
+        <p
+          className={classes.filterBtnText}
+          onClick={() => selectCategory(item.value)}
+        >
+          {item.label}
+        </p>
       </div>
     );
   });

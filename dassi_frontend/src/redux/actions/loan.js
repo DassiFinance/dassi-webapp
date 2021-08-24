@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ACTIVE_LOANS } from "../types";
+import { GET_ACTIVE_LOANS, SET_CATEGORY_FILTER } from "../types";
 
 axios.defaults.baseURL = "http://localhost:8080/api/";
 export const sendLoanDetails = (loanDetails) => {
@@ -20,10 +20,10 @@ export const sendLoanDetails = (loanDetails) => {
     });
 };
 
-export const getActiveLoans = () => (dispatch) => {
+export const getActiveLoans = (filterCategory) => (dispatch) => {
   return new Promise((resolve, reject) => {
     axios
-      .get("loan/activeLoans")
+      .get(`loan/activeLoans/${filterCategory}`)
       .then((res) => {
         dispatch({
           type: GET_ACTIVE_LOANS,
@@ -35,5 +35,12 @@ export const getActiveLoans = () => (dispatch) => {
         console.log(err);
         reject(err);
       });
+  });
+};
+
+export const setCategoryFilter = (categoryValue) => (dispatch) => {
+  dispatch({
+    type: SET_CATEGORY_FILTER,
+    payload: categoryValue,
   });
 };
