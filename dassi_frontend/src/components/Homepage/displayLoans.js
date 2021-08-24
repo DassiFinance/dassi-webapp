@@ -29,7 +29,9 @@ const DisplayLoans = (props) => {
   }, [dispatch, filterCategory]);
 
   const dispLoans = activeLoans.map((item, id) => {
-    const progress = ((item.amountLeft - 0) * 100) / item.totalAmt;
+    const progress =
+      ((item.loanAmount - item.amountLeft) * 100) / item.loanAmount;
+    console.log(progress);
 
     return (
       <Card key={id} className={classes.loanCard_main}>
