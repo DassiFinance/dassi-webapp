@@ -5,7 +5,7 @@ export default {
     // personalDetails.js
     firstName: {
       name: "firstName",
-      label: "First name*",
+      label: "First name *",
       requiredErrorMsg: "First name is required",
     },
     lastName: {
@@ -20,12 +20,12 @@ export default {
     },
     timePeriod: {
       name: "timePeriod",
-      label: "Time Period*",
+      label: "Time Period *",
       requiredErrorMsg: "Time Period is required",
     },
     city: {
       name: "city",
-      label: "City*",
+      label: "City *",
       requiredErrorMsg: "City is required",
     },
     astate: {
@@ -34,22 +34,22 @@ export default {
     },
     zipcode: {
       name: "zipcode",
-      label: "Zipcode*",
+      label: "Zipcode *",
       requiredErrorMsg: "Zipcode is required",
     },
     country: {
       name: "country",
-      label: "Country*",
+      label: "Country *",
       requiredErrorMsg: "Country is required",
     },
     bio: {
       name: "bio",
-      label: "Bio*",
+      label: "Bio *",
       requiredErrorMsg: "Bio is required",
     },
     occupation: {
       name: "occupation",
-      label: "Occupation*",
+      label: "Occupation *",
       requiredErrorMsg: "Occupation is required",
     },
     income: {
@@ -59,8 +59,18 @@ export default {
     },
     imgURL: {
       name: "imgURL",
-      label: "Image",
+      label: "Upload a picture of your business *",
       requiredErrorMsg: "Image is required",
+    },
+    idDoc: {
+      name: "idDoc",
+      label: "",
+      requiredErrorMsg: "ID Proof required",
+    },
+    idNumber: {
+      name: "idNumber",
+      label: "ID details *",
+      requiredErrorMsg: "ID Number required",
     },
     // loanDetails1.js
     loanAmount: {
@@ -85,7 +95,7 @@ export default {
     },
     loanDescription: {
       name: "loanDescription",
-      label: "Why you need this loan?",
+      label: "Why you need this loan? *",
       requiredErrorMsg: "Please enter loan description",
     },
     // loanDetails2.js

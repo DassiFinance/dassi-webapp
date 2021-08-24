@@ -7,7 +7,9 @@ const {
     email,
     zipcode,
     income,
-
+    idNumber,
+    idDoc,
+    imgURL,
     occupation,
     bio,
     loanAmount,
@@ -31,6 +33,9 @@ const validation = [
     income: Yup.number().required(`${income.requiredErrorMsg}`),
     occupation: Yup.string().required(`${occupation.requiredErrorMsg}`),
     bio: Yup.string().required(`${bio.requiredErrorMsg}`),
+    imgURL: Yup.string().required(`${imgURL.requiredErrorMsg}`),
+    idDoc: Yup.string().required(`${idDoc.requiredErrorMsg}`),
+    idNumber: Yup.string().required(`${idNumber.requiredErrorMsg}`),
   }),
   Yup.object().shape({
     loanAmount: Yup.number().required(`${loanAmount.requiredErrorMsg}`),
