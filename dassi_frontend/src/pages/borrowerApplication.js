@@ -114,8 +114,8 @@ const BorrowerApplication = (props) => {
           <Typography
             component="h1"
             variant="h4"
-            align="center"
-            className={classes.textCommon}
+            align="left"
+            className={classes.textHeader}
           >
             Application
           </Typography>
@@ -127,7 +127,6 @@ const BorrowerApplication = (props) => {
                   classes={{
                     root: classes.step,
                     completed: classes.completed,
-                    active: classes.active,
                   }}
                 >
                   <StepLabel
