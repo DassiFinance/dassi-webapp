@@ -23,18 +23,14 @@ const FilterOpt = (props) => {
     return (
       <div
         key={item.value}
+        onClick={() => selectCategory(item.value)}
         className={
           item.value === filterCategory
             ? classes.active_filterBtn
             : classes.filterBtn
         }
       >
-        <p
-          className={classes.filterBtnText}
-          onClick={() => selectCategory(item.value)}
-        >
-          {item.label}
-        </p>
+        <p className={classes.filterBtnText}>{item.label}</p>
       </div>
     );
   });

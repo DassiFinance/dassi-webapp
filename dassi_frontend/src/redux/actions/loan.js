@@ -2,7 +2,7 @@ import axios from "axios";
 import { GET_ACTIVE_LOANS, SET_CATEGORY_FILTER } from "../types";
 
 axios.defaults.baseURL = "http://localhost:8080/api/";
-export const sendLoanDetails = (loanDetails) => {
+export const sendLoanDetails = (loanDetails, history) => {
   const formData = new FormData();
   for (var key in loanDetails) {
     if (loanDetails.hasOwnProperty(key)) {
@@ -15,7 +15,10 @@ export const sendLoanDetails = (loanDetails) => {
         "content-type": "multipart/form-data",
       },
     })
-    .then((err) => {
+    .then(() => {
+      history.push("/");
+    })
+    .catch((err) => {
       console.log(err);
     });
 };

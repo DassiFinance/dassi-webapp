@@ -81,9 +81,9 @@ const BorrowerApplication = (props) => {
       repaymentStartDate: values.repaymentStartDate,
       photo: values.imgURL,
     };
-    sendLoanDetails(loanDetails);
+    sendLoanDetails(loanDetails, props.history);
     sendUserDetails(personalDetails);
-    props.history.push("/");
+
     console.log(personalDetails);
     console.log(loanDetails);
     actions.setSubmitting(false);

@@ -3,25 +3,7 @@ import { Grid, Typography, Container } from "@material-ui/core";
 import InputField from "../../utils/FormFields/InputField";
 import SelectField from "../../utils/FormFields/SelectField";
 import useStyles from "../../css/baForm";
-
-const loanCategories = [
-  {
-    value: "None",
-    label: "None",
-  },
-  {
-    value: "Women and Children",
-    label: "Women and Children",
-  },
-  {
-    value: "Education Loan",
-    label: "Education Loan",
-  },
-  {
-    value: "Home Loan",
-    label: "Home Loan",
-  },
-];
+import { loanCategories } from "../../utils/json/loanCategories";
 
 const loanDurationUnits = [
   {

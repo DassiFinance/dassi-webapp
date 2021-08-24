@@ -24,11 +24,8 @@ const {
 
 const validation = [
   Yup.object().shape({
-    email: Yup.string()
-      .email("Invalid Email")
-      .required(`${email.requiredErrorMsg}`),
     firstName: Yup.string().required(`${firstName.requiredErrorMsg}`),
-    lastName: Yup.string().required(`${lastName.requiredErrorMsg}`),
+
     zipcode: Yup.number().required(`${zipcode.requiredErrorMsg}`),
     income: Yup.number().required(`${income.requiredErrorMsg}`),
     occupation: Yup.string().required(`${occupation.requiredErrorMsg}`),

@@ -98,9 +98,10 @@ export default makeStyles((theme) => ({
     },
   },
   textFieldLabel: {
-    fontSize: "20px",
+    fontSize: "16px",
     color: "#fff",
     width: "150%",
+    transform: "none",
   },
   imageDiv: {
     width: "100%",
