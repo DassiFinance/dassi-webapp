@@ -1,7 +1,8 @@
 import React from "react";
 import { Typography, Grid } from "@material-ui/core";
 import useStyles from "../../css/baForm";
-const LD1Review = (props) => {
+import * as moment from "moment";
+const LD2Review = (props) => {
   const classes = useStyles();
   const { formValues } = props;
   const { emiRepetition, repaymentStartDate } = formValues;
@@ -10,26 +11,24 @@ const LD1Review = (props) => {
       <Typography variant="h6" className={classes.textCommon}>
         Repayment Details
       </Typography>
-      <Grid container>
+      <Grid container spacing={3}>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            Emi Repetition*
+            Repayment Start Date *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {emiRepetition}
-          </Typography>
+          <div className={classes.textFieldInput}>
+            {moment(repaymentStartDate).format("DD/MM/YY")}
+          </div>
         </Grid>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            Repayment Start Date*
+            Emi Repetition *
           </Typography>
-          <Typography gutterBottom className={classes.textCommon}>
-            {repaymentStartDate}
-          </Typography>
+          <div className={classes.textFieldInput}> {emiRepetition}</div>
         </Grid>
       </Grid>
     </>
   );
 };
 
-export default LD1Review;
+export default LD2Review;

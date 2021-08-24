@@ -35,11 +35,7 @@ export default function LoanDetails2(props) {
             id="date"
             label={repaymentStartDate.label}
             type="date"
-            defaultValue="2017-05-24"
             name={repaymentStartDate.name}
-            InputLabelProps={{
-              shrink: true,
-            }}
           />
           <SelectField
             name={emiRepetition.name}

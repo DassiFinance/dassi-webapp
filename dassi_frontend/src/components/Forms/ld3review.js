@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Grid } from "@material-ui/core";
 import useStyles from "../../css/baForm";
-const LD1Review = (props) => {
+const LD3Review = (props) => {
   const { formValues } = props;
   const { guarantor } = formValues;
   const classes = useStyles();
@@ -24,4 +24,4 @@ const LD1Review = (props) => {
   );
 };
 
-export default LD1Review;
+export default LD3Review;
