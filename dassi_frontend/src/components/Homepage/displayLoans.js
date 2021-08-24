@@ -18,6 +18,12 @@ const DisplayLoans = (props) => {
   const activeLoans = useSelector((state) => state.loan.activeLoans);
   const filterCategory = useSelector((state) => state.loan.filterCategory);
 
+  const getSlug = (description) => {
+    return description.length > 100
+      ? description.substring(0, 100)
+      : description;
+  };
+
   useEffect(() => {
     dispatch(getActiveLoans(filterCategory));
   }, [dispatch, filterCategory]);
@@ -34,7 +40,7 @@ const DisplayLoans = (props) => {
               className={classes.loanCard_headerText}
               component="h2"
             >
-              {item.title}
+              {getSlug(item.description)}
             </Typography>
           </CardContent>
           <CardMedia
