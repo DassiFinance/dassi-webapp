@@ -30,6 +30,7 @@ export default function InputField(props) {
         classes: {
           formControl: classes.textFieldLabel,
         },
+        shrink: true,
       }}
       helperText={_renderHelperText()}
       {...field}

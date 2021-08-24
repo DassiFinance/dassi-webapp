@@ -38,7 +38,6 @@ function SelectField(props) {
         disableUnderline
         classes={{
           select: classes.textFieldInput,
-          underline: classes.textFieldUnderline,
         }}
       >
         {data.map((item, index) => (
