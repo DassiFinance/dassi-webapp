@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import useStyles from "../../css/homepage";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -102,7 +103,14 @@ const DisplayLoans = (props) => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button className={classes.loanCard_readBtn}>Read More</Button>
+          <Button
+            component={Link}
+            to={`/loanInfo/${item._id}`}
+            className={classes.loanCard_readBtn}
+          >
+            Read More
+          </Button>
+
           <Button className={classes.loanCard_supportBtn}>Support</Button>
         </CardActions>
       </Card>

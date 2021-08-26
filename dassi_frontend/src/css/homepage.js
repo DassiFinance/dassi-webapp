@@ -112,8 +112,8 @@ export default makeStyles((theme) => ({
     height: "280px",
   },
   progressBar_main: {
-    height: 10,
-    borderRadius: 5,
+    height: "16px",
+    borderRadius: "40px",
     marginBottom: "0.5rem",
   },
   progressBar_colorPrimary: {

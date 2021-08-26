@@ -81,11 +81,11 @@ export const signupUser = (newUserData, history) => (dispatch) => {
 
 export const getUser = () => (dispatch) => {
   axios
-    .get("user/getUser")
+    .get("user/profile")
     .then((res) => {
       dispatch({
         type: GET_USER,
-        payload: res.data[0],
+        payload: res.data,
       });
       console.log(res.data);
     })
