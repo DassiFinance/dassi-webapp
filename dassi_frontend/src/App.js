@@ -9,7 +9,6 @@ import BorrowerApplication from "./pages/borrowerApplication";
 import LoanInfo from "./pages/loanInfo";
 import Storage from "./config/storage";
 import { getUser } from "./redux/actions/user";
-import { useSelector, useDispatch } from "react-redux";
 
 //import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -24,7 +23,7 @@ const App = () => {
       store.dispatch(getUser());
       console.log("heyyyyyyyyyyyyyyyyyy");
     }
-  }, [localStorage.Token]);
+  }, []);
   return (
     <Provider store={store}>
       <BrowserRouter history={history}>

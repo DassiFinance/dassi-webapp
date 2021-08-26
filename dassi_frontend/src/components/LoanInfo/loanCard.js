@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import useStyles from "../../css/loanInfo";
 
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
@@ -30,8 +28,7 @@ const LoanCard = (props) => {
   useEffect(() => {
     console.log("hello");
     dispatch(getLoanDetails(props.id));
-    console.log(loanDetails);
-  }, [dispatch, loanDetails._id]);
+  }, [dispatch, props.id]);
   if (loanDetails._id) {
     return (
       <Card className={classes.loanCard_main}>

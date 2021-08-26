@@ -7,8 +7,7 @@ const PDReview = (props) => {
   const classes = useStyles();
   const {
     firstName,
-    lastName,
-    email,
+
     zipcode,
     occupation,
     bio,

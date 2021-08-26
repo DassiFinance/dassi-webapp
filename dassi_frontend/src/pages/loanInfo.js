@@ -34,9 +34,9 @@ const HomePage = (props) => {
           <Button onClick={() => handleClick(1)}>Loan Details</Button>
           <Button onClick={() => handleClick(2)}>Guarantor</Button>
         </div>
-        {page == 0 && <UserStory />}
-        {page == 1 && <LoanDets />}
-        {page == 2 && <Guarantor />}
+        {page === 0 && <UserStory />}
+        {page === 1 && <LoanDets />}
+        {page === 2 && <Guarantor />}
       </Grid>
     </Grid>
   );

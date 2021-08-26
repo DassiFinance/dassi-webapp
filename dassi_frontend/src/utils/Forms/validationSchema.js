@@ -3,8 +3,6 @@ import * as Yup from "yup";
 const {
   formField: {
     firstName,
-    lastName,
-    email,
     zipcode,
     income,
     idNumber,

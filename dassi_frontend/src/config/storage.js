@@ -1,8 +1,6 @@
 import axios from "axios";
 import store from "../redux/store";
-import { useDispatch } from "react-redux";
 import { SET_AUTHENTICATED } from "../redux/types";
-import { getUser } from "../redux/actions/user";
 
 const Storage = () => {
   const config = () => {
