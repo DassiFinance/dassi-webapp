@@ -22,7 +22,7 @@ export default makeStyles((theme) => ({
   },
 
   loanInfo_header: {
-    padding: "12px 16px",
+    padding: "6px 16px",
     borderBottom: "2px solid #222D37",
   },
 
@@ -105,5 +105,26 @@ export default makeStyles((theme) => ({
     border: "2px solid #BBF146",
     color: "#15202B",
     letterSpacing: "1px !important",
+  },
+  loanInfo_subnav: {
+    padding: "2px 12px",
+    borderBottom: "2px solid #222D37",
+  },
+  loanInfo_subnav_btns: {
+    color: "#fff",
+    letterSpacing: "1px",
+  },
+  userStory_div: {
+    color: "#fff",
+    padding: "10px 16px",
+  },
+  guarantorDiv: {
+    color: "#fff",
+    padding: "10px 16px",
+    fontWeight: "600",
+  },
+  guarantor_key: {
+    fontWeight: "500",
+    color: "#DDE4EA",
   },
 }));
