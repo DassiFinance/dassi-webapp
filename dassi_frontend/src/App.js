@@ -19,6 +19,12 @@ const { config } = Storage();
 config();
 
 const App = () => {
+  useEffect(() => {
+    if (localStorage.Token) {
+      store.dispatch(getUser());
+      console.log("heyyyyyyyyyyyyyyyyyy");
+    }
+  }, [localStorage.Token]);
   return (
     <Provider store={store}>
       <BrowserRouter history={history}>
