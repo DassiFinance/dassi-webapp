@@ -104,7 +104,7 @@ const LoanCard = (props) => {
                     Read More
                   </Button>
                   <Button className={classes.loanCard_supportBtn}>
-                    Support
+                    Lend Now
                   </Button>
                 </div>
               </Grid>

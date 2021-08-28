@@ -8,6 +8,8 @@ import Signup from "./pages/signup";
 import BorrowerApplication from "./pages/borrowerApplication";
 import LoanInfo from "./pages/loanInfo";
 import Storage from "./config/storage";
+import MyLoans from "./pages/myLoans";
+import Wallet from "./pages/wallet";
 import { getUser } from "./redux/actions/user";
 
 //import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,7 +23,6 @@ const App = () => {
   useEffect(() => {
     if (localStorage.Token) {
       store.dispatch(getUser());
-      console.log("heyyyyyyyyyyyyyyyyyy");
     }
   }, []);
   return (
@@ -33,6 +34,8 @@ const App = () => {
           <Route path="/" exact component={Homepage} />
           <Route path="/baForm" exact component={BorrowerApplication} />
           <Route path="/loanInfo/:id" exact component={LoanInfo} />
+          <Route path="/myLoans/:id" exact component={MyLoans} />
+          <Route path="/wallet" exact component={Wallet} />
         </Switch>
       </BrowserRouter>
     </Provider>

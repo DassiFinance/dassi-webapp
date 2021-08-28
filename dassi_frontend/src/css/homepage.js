@@ -144,6 +144,7 @@ export default makeStyles((theme) => ({
     display: "inline-flex",
     width: "50%",
   },
+
   loanCard_readBtn: {
     width: "25%",
     backgroundColor: "#15202B",
@@ -171,5 +172,9 @@ export default makeStyles((theme) => ({
   loanCard_value: {
     fontSize: "1.25rem",
     color: "#fff",
+  },
+  //Borrow
+  borrow_readBtn: {
+    justifyContent: "flex-end !important",
   },
 }));
