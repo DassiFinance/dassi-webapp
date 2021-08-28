@@ -32,15 +32,15 @@ export const loginUser = (userData, history) => (dispatch) => {
         console.log(res);
         dispatch({
           type: SET_ERROR_LOGIN,
-          payload: res.data.message,
+          payload: res.data.error,
         });
       }
     })
     .catch((err) => {
-      console.log(err.response.data.message);
+      console.log(err.response.data.error);
       dispatch({
         type: SET_ERROR_LOGIN,
-        payload: err.response.data.message,
+        payload: err.response.data.error,
       });
     });
 };
@@ -57,11 +57,11 @@ export const signupUser = (newUserData, history) => (dispatch) => {
     .post("user/register", newUserData)
     .then((res) => {
       console.log(res.data);
-      if (res.data.message) {
-        console.log(res.data.message);
+      if (res.data.error) {
+        console.log(res.data.error);
         dispatch({
           type: SET_ERROR_SIGNUP,
-          payload: res.data.message,
+          payload: res.data.error,
         });
       } else {
         console.log(res);
@@ -74,7 +74,7 @@ export const signupUser = (newUserData, history) => (dispatch) => {
       console.log(err);
       dispatch({
         type: SET_ERROR_SIGNUP,
-        payload: err.response.data.message,
+        payload: err.response.data.error,
       });
     });
 };
