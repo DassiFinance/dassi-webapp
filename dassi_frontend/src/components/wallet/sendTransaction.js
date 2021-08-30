@@ -11,8 +11,23 @@ import {
 import { useSnackbar, VariantType } from "notistack";
 import React, { useCallback } from "react";
 import { useNotify } from "./notify";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: "#15202B !important",
+    color: "#BBF146 !important",
+    fontWeight: "500",
+    fontSize: "15px",
+    textAlign: "center",
+    border: "2px solid #BBF146 !important",
+    width: "100% !important",
+    "&.Mui-disabled": {
+      display: "none !important",
+    },
+  },
+}));
 
 const SendTransaction = () => {
+  const classes = useStyles();
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
   const notify = useNotify();
@@ -45,12 +60,7 @@ const SendTransaction = () => {
   }, [publicKey, notify, connection, sendTransaction]);
 
   return (
-    <Button
-      variant="contained"
-      color="secondary"
-      onClick={onClick}
-      disabled={!publicKey}
-    >
+    <Button className={classes.root} onClick={onClick} disabled={!publicKey}>
       Send Transaction (devnet)
     </Button>
   );

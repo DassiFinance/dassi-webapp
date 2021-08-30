@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../redux/actions/user";
+import ConnectBtn from "./wallet/connectBtn";
+import RequestAirDrop from "./wallet/requestAirdrop";
 
 // Material - UI
 import AppBar from "@material-ui/core/AppBar";
@@ -160,7 +162,7 @@ function ResponsiveDrawer(props) {
               <Icon>paid</Icon>
             ) : (
               <Icon>
-                <span class="material-icons-outlined">paid</span>
+                <span className="material-icons-outlined">paid</span>
               </Icon>
             )}
           </ListItemIcon>
@@ -200,6 +202,7 @@ function ResponsiveDrawer(props) {
           </ListItemIcon>
           <ListItemText primary={`Logout`} />
         </ListItem>
+        <ConnectBtn />
       </List>
     </div>
   );
