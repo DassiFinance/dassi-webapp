@@ -10,7 +10,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Icon from "@material-ui/core/Icon";
-import { getActiveLoans } from "../../redux/actions/loan";
+import { getBorrowedLoans } from "../../redux/actions/loan";
 import { useSelector, useDispatch } from "react-redux";
 
 const Borrow = (props) => {
@@ -26,8 +26,8 @@ const Borrow = (props) => {
   };
 
   useEffect(() => {
-    dispatch(getActiveLoans(filterCategory));
-  }, [dispatch, filterCategory]);
+    dispatch(getBorrowedLoans());
+  }, [dispatch]);
 
   const dispLoans = activeLoans.map((item, id) => {
     const progress =

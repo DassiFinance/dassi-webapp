@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useStyles from "../../css/homepage";
+
+//Matrial-ui
+import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -10,6 +13,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Icon from "@material-ui/core/Icon";
+
+//Redux
 import { getActiveLoans } from "../../redux/actions/loan";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -119,10 +124,12 @@ const Lent = (props) => {
 
   if (dispLoans.length) {
     return (
-      <div className={classes.dispLoans_main}>
-        <p className={classes.dispLoans_text}> Causes to show support</p>
-        {dispLoans}
-      </div>
+      <Grid container>
+        <Grid item xs={3}></Grid>
+        <Grid item xs={9}>
+          {dispLoans}
+        </Grid>
+      </Grid>
     );
   } else {
     return (

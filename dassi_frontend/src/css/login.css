@@ -1,6 +1,7 @@
 .login_main {
-  background-color: #fff;
-  margin-top: 10% !important;
+  background-color: #15202b;
+  padding-top: 10% !important;
+  height: 100vh;
 }
 .login_logo_div {
   position: relative;
@@ -14,7 +15,7 @@
 }
 
 .login_brandName {
-  color: #ed5a6b !important;
+  color: #bbf146 !important;
 
   text-align: center;
   font-weight: 700;
@@ -24,7 +25,7 @@
 
 .login_header,
 .signup_header {
-  color: #ed5a6b !important;
+  color: #bbf146 !important;
   margin-bottom: 5%;
   text-align: center;
   font-weight: 300 !important;
@@ -42,7 +43,7 @@
 .login_inputMain:focus,
 .login_inputMain:active,
 .login_inputMain:hover {
-  border: 1.5px solid #ed5a6b !important;
+  border: 1.5px solid #bbf146 !important;
   border-radius: 3rem;
 }
 .login_inputError {
@@ -54,14 +55,14 @@
   border-bottom-right-radius: 0 !important;
   background-color: #f5f5f5 !important;
   border: 1px solid #f5f5f5 !important;
-  color: #ed5a6b !important ;
+  color: #bbf146 !important ;
 }
 
 .login_input {
   border-radius: 3rem !important;
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
-  color: #ed5a6b !important;
+  color: #bbf146 !important;
   border: 1px solid #f5f5f5 !important;
   background-color: #f5f5f5 !important;
 }
@@ -90,8 +91,8 @@
   font-family: "Poppins", sans-serif !important;
   letter-spacing: 1px !important;
   font-weight: 600 !important;
-  background-color: #ed5a6b !important;
-  border: 1px solid #ed5a6b !important;
+  background-color: #bbf146 !important;
+  border: 1px solid #bbf146 !important;
 }
 .login_connect {
   margin-top: 3%;
@@ -108,7 +109,7 @@
 }
 .login_signup > a > span {
   font-weight: 700;
-  color: #ed5a6b !important;
+  color: #bbf146 !important;
 }
 .login_socialMedia {
   display: flex;
@@ -171,7 +172,7 @@
 .signup_inputNameError,
 .signup_inputError {
   border-radius: 3rem !important;
-  color: #ed5a6b !important;
+  color: #bbf146 !important;
   border: 1px solid #f5f5f5 !important;
   background-color: #f5f5f5 !important;
   margin: auto;
@@ -199,7 +200,7 @@
 .signup_input:hover,
 .signup_inputName:focus,
 .signup_inputName:hover {
-  border: 1.5px solid #ed5a6b !important;
+  border: 1.5px solid #bbf146 !important;
   box-shadow: none !important;
   background-color: #f5f5f5 !important;
 }

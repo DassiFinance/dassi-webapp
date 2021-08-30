@@ -2,12 +2,14 @@ import {
   GET_ACTIVE_LOANS,
   SET_CATEGORY_FILTER,
   GET_LOAN_BY_ID,
+  CREATE_LEND_REQUEST,
 } from "../types";
 
 const initialState = {
   activeLoans: [],
   loanDetails: {},
   filterCategory: "",
+  payment: [],
 };
 export default function loanReducer(state = initialState, action) {
   switch (action.type) {
@@ -26,6 +28,13 @@ export default function loanReducer(state = initialState, action) {
         ...state,
         filterCategory: action.payload,
       };
+
+    case CREATE_LEND_REQUEST: {
+      return {
+        ...state,
+        payment: action.payload,
+      };
+    }
 
     default:
       return state;

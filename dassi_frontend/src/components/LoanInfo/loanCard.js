@@ -9,13 +9,22 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Icon from "@material-ui/core/Icon";
-import { getLoanDetails } from "../../redux/actions/loan";
+
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import NativeSelect from "@material-ui/core/NativeSelect";
+import { getLoanDetails, makePayment } from "../../redux/actions/loan";
+
 import { useSelector, useDispatch } from "react-redux";
 
 const LoanCard = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const loanDetails = useSelector((state) => state.loan.loanDetails);
+  const [amt, setAmt] = React.useState(500);
+  const handleChange = (event) => {
+    setAmt(event.target.value);
+  };
   const getSlug = (description) => {
     return description.length > 100
       ? description.substring(0, 120) + "...."
@@ -100,10 +109,33 @@ const LoanCard = (props) => {
                   </p>
                 </div>
                 <div className={classes.loanCard_btnDiv}>
-                  <Button className={classes.loanCard_readBtn}>
-                    Read More
-                  </Button>
-                  <Button className={classes.loanCard_supportBtn}>
+                  <FormControl className={classes.loanCard_readBtn}>
+                    <NativeSelect
+                      id="demo-customized-select-native"
+                      value={amt}
+                      onChange={handleChange}
+                      disableUnderline
+                      classes={{
+                        select: classes.textFieldInput,
+                        icon: classes.selectIcon,
+                      }}
+                    >
+                      <option value={500}>₹500</option>
+                      <option value={1000}>₹1000</option>
+                      <option value={1500}>₹1500</option>
+                      <option value={2000}>₹2000</option>
+                      <option value={3000}>₹3000</option>
+                      <option value={4000}>₹4000</option>
+                      <option value={5000}>₹5000</option>
+                    </NativeSelect>
+                  </FormControl>
+
+                  <Button
+                    className={classes.loanCard_supportBtn}
+                    onClick={() => {
+                      dispatch(makePayment(amt, loanDetails._id));
+                    }}
+                  >
                     Lend Now
                   </Button>
                 </div>

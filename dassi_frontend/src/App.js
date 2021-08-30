@@ -10,6 +10,7 @@ import LoanInfo from "./pages/loanInfo";
 import Storage from "./config/storage";
 import MyLoans from "./pages/myLoans";
 import Wallet from "./pages/wallet";
+import { SnackbarProvider } from "notistack";
 import { getUser } from "./redux/actions/user";
 
 //import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,23 +22,26 @@ config();
 
 const App = () => {
   useEffect(() => {
-    if (localStorage.Token) {
+    if (store.getState().user.authenticated && localStorage.Token) {
+      console.log(store.getState().user.authenticated);
       store.dispatch(getUser());
     }
-  }, []);
+  }, [store.getState().user.authenticated, localStorage.Token]);
   return (
     <Provider store={store}>
-      <BrowserRouter history={history}>
-        <Switch>
-          <Route path="/login" exact component={Login} />
-          <Route path="/signup" exact component={Signup} />
-          <Route path="/" exact component={Homepage} />
-          <Route path="/baForm" exact component={BorrowerApplication} />
-          <Route path="/loanInfo/:id" exact component={LoanInfo} />
-          <Route path="/myLoans/:id" exact component={MyLoans} />
-          <Route path="/wallet" exact component={Wallet} />
-        </Switch>
-      </BrowserRouter>
+      <SnackbarProvider>
+        <BrowserRouter history={history}>
+          <Switch>
+            <Route path="/login" exact component={Login} />
+            <Route path="/signup" exact component={Signup} />
+            <Route path="/" exact component={Homepage} />
+            <Route path="/baForm" exact component={BorrowerApplication} />
+            <Route path="/loanInfo/:id" exact component={LoanInfo} />
+            <Route path="/myLoans" exact component={MyLoans} />
+            <Route path="/wallet" exact component={Wallet} />
+          </Switch>
+        </BrowserRouter>
+      </SnackbarProvider>
     </Provider>
   );
 };

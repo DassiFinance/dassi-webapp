@@ -81,7 +81,7 @@ const Signup = (props) => {
               <Form.Group className="signup_formgroup">
                 <Form.Control
                   type="text"
-                  placeholder="Username"
+                  placeholder="Full name"
                   className={
                     errors.username && touched.username
                       ? "signup_inputError"

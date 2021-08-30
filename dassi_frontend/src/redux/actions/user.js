@@ -94,11 +94,18 @@ export const getUser = () => (dispatch) => {
     });
 };
 
-export const sendUserDetails = (userDetails) => {
+export const sendUserDetails = (userDetails) => (dispatch) => {
   axios
     .post("user/userDetails", userDetails)
     .then((res) => {
       console.log(res.data);
+    })
+    .then((res) => {
+      dispatch({
+        type: GET_USER,
+        payload: res.data.user,
+      });
+      console.log(res.data.user);
     })
     .catch((err) => {
       console.log(err);

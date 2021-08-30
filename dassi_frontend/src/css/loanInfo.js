@@ -127,4 +127,17 @@ export default makeStyles((theme) => ({
     fontWeight: "500",
     color: "#DDE4EA",
   },
+  textFieldInput: {
+    border: "1px solid #253341 !important",
+
+    padding: "10px",
+    backgroundColor: "#253341",
+    color: "#BBF146",
+    "&:not([multiple]) option": {
+      backgroundColor: "#253341 !important",
+    },
+  },
+  selectIcon: {
+    color: "#BBF146",
+  },
 }));

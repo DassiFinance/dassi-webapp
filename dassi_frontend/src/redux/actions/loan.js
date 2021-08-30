@@ -3,6 +3,7 @@ import {
   GET_ACTIVE_LOANS,
   SET_CATEGORY_FILTER,
   GET_LOAN_BY_ID,
+  CREATE_LEND_REQUEST,
 } from "../types";
 
 axios.defaults.baseURL = "http://localhost:8080/api/";
@@ -43,6 +44,41 @@ export const getActiveLoans = (filterCategory) => (dispatch) => {
         reject(err);
       });
   });
+};
+export const getBorrowedLoans = () => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`borrower/myLoans`)
+      .then((res) => {
+        dispatch({
+          type: GET_ACTIVE_LOANS,
+          payload: res.data,
+        });
+        resolve(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        reject(err);
+      });
+  });
+};
+export const makePayment = (amt, id) => (dispatch) => {
+  const payment = {
+    loanId: id,
+    amount: amt,
+  };
+  console.log(payment);
+  axios
+    .post(`lender/lend`, payment)
+    .then((res) => {
+      dispatch({
+        type: CREATE_LEND_REQUEST,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 export const getLoanDetails = (id) => (dispatch) => {
   axios
