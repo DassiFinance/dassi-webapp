@@ -4,30 +4,55 @@ import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../redux/actions/user";
+
+// Material - UI
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import HomeIcon from "@material-ui/icons/Home";
-import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
-import WorkOutlineIcon from "@material-ui/icons/WorkOutline";
-import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
-import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
-import SettingsIcon from "@material-ui/icons/Settings";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+
+//Icons
+import IconButton from "@material-ui/core/IconButton";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+
+import HomeIcon from "@material-ui/icons/Home";
+import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
+
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
+
+import WorkIcon from "@material-ui/icons/Work";
+import WorkOutlineIcon from "@material-ui/icons/WorkOutline";
+
+import BookmarkIcon from "@material-ui/icons/Bookmark";
+import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
+
+import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceWalletOutlined";
+import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
+
+import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
+import SettingsIcon from "@material-ui/icons/Settings";
+
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import MenuIcon from "@material-ui/icons/Menu";
+
+import DescriptionIcon from "@material-ui/icons/Description";
+import Icon from "@material-ui/core/Icon";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+  sideNav_text: {
+    color: "#fff !important",
+  },
   root: {
     display: "flex",
   },
@@ -52,6 +77,8 @@ const useStyles = makeStyles((theme) => ({
     width: "25% !important",
     overflow: "hidden",
     backgroundColor: "#15202B",
+    display: "flex",
+    alignItems: "center",
   },
   content: {
     flexGrow: 1,
@@ -65,7 +92,9 @@ function ResponsiveDrawer(props) {
   const theme = useTheme();
   const dispatch = useDispatch();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [active, setActive] = React.useState("Home");
   const authenticated = useSelector((state) => state.user.authenticated);
+  const username = useSelector((state) => state.user.credentials.username);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -75,64 +104,98 @@ function ResponsiveDrawer(props) {
     <div>
       <div className={classes.toolbar} />
       <Divider />
-      <List>
+      <List className={classes.sideNav_text}>
         <ListItem button>
-          <ListItemIcon>
+          {/* <ListItemIcon className={classes.sideNav_text}>
             <InboxIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Hello User`} />
+          </ListItemIcon> */}
+          <ListItemText primary={`Hello ${username}!`} />
         </ListItem>
-        <ListItem button component={Link} to={`/`}>
-          <ListItemIcon>
-            <HomeIcon />
+        <ListItem
+          button
+          onClick={() => setActive("Home")}
+          component={Link}
+          to={`/`}
+        >
+          <ListItemIcon className={classes.sideNav_text}>
+            {active == "Home" ? <HomeIcon /> : <HomeOutlinedIcon />}
           </ListItemIcon>
           <ListItemText primary={`Home`} />
         </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <NotificationsNoneIcon />
+        <ListItem button onClick={() => setActive("Notifications")}>
+          <ListItemIcon className={classes.sideNav_text}>
+            {active == "Notifications" ? (
+              <NotificationsIcon />
+            ) : (
+              <NotificationsNoneIcon />
+            )}
           </ListItemIcon>
           <ListItemText primary={`Notifications`} />
         </ListItem>
-        <ListItem button component={Link} to={`/myLoans`}>
-          <ListItemIcon>
-            <WorkOutlineIcon />
+        <ListItem
+          button
+          onClick={() => setActive("MyLoans")}
+          component={Link}
+          to={`/myLoans`}
+        >
+          <ListItemIcon className={classes.sideNav_text}>
+            {active == "MyLoans" ? <WorkIcon /> : <WorkOutlineIcon />}
           </ListItemIcon>
           <ListItemText primary={`My Loans`} />
         </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <BookmarkBorderIcon />
+        <ListItem button onClick={() => setActive("Bookmarks")}>
+          <ListItemIcon className={classes.sideNav_text}>
+            {active == "Bookmarks" ? <BookmarkIcon /> : <BookmarkBorderIcon />}
           </ListItemIcon>
           <ListItemText primary={`Bookmarks`} />
         </ListItem>
-        <ListItem button component={Link} to={`/baForm`}>
-          <ListItemIcon>
-            <InboxIcon />
+        <ListItem
+          button
+          onClick={() => setActive("Borrow")}
+          component={Link}
+          to={`/baForm`}
+        >
+          <ListItemIcon className={classes.sideNav_text}>
+            {active == "Borrow" ? (
+              <Icon>paid</Icon>
+            ) : (
+              <Icon>
+                <span class="material-icons-outlined">paid</span>
+              </Icon>
+            )}
           </ListItemIcon>
           <ListItemText primary={`Borrow`} />
         </ListItem>
-        <ListItem button component={Link} to={`/wallet`}>
-          <ListItemIcon>
-            <AccountBalanceWalletIcon />
+        <ListItem
+          button
+          onClick={() => setActive("Wallet")}
+          component={Link}
+          to={`/wallet`}
+        >
+          <ListItemIcon className={classes.sideNav_text}>
+            {active == "Wallet" ? (
+              <AccountBalanceWalletIcon />
+            ) : (
+              <AccountBalanceWalletOutlinedIcon />
+            )}
           </ListItemIcon>
           <ListItemText primary={`Wallet`} />
         </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <InboxIcon />
+        <ListItem button onClick={() => setActive("Applications")}>
+          <ListItemIcon className={classes.sideNav_text}>
+            <DescriptionIcon />
           </ListItemIcon>
           <ListItemText primary={`Applications`} />
         </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <SettingsIcon />
+        <ListItem button onClick={() => setActive("Settings")}>
+          <ListItemIcon className={classes.sideNav_text}>
+            {active == "Settings" ? <SettingsIcon /> : <SettingsOutlinedIcon />}
           </ListItemIcon>
           <ListItemText primary={`Settings`} />
         </ListItem>
 
         <ListItem button onClick={() => dispatch(logoutUser(props.history))}>
-          <ListItemIcon>
+          <ListItemIcon className={classes.sideNav_text}>
             <ExitToAppIcon />
           </ListItemIcon>
           <ListItemText primary={`Logout`} />
@@ -144,34 +207,53 @@ function ResponsiveDrawer(props) {
     <div>
       <div className={classes.toolbar} />
       <Divider />
-      <List>
-        <ListItem button component={Link} to={`/`}>
-          <ListItemIcon>
-            <HomeIcon />
+      <List className={classes.sideNav_text}>
+        <ListItem
+          button
+          onClick={() => setActive("Home")}
+          component={Link}
+          to={`/`}
+        >
+          <ListItemIcon className={classes.sideNav_text}>
+            {active == "Home" ? <HomeIcon /> : <HomeOutlinedIcon />}
           </ListItemIcon>
           <ListItemText primary={`Home`} />
         </ListItem>
-        <ListItem button component={Link} to={`/signup`}>
-          <ListItemIcon>
-            <NotificationsNoneIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Signup`} />
-        </ListItem>
         <ListItem button component={Link} to={`/login`}>
-          <ListItemIcon>
-            <WorkOutlineIcon />
+          <ListItemIcon className={classes.sideNav_text}>
+            <Icon>login</Icon>
           </ListItemIcon>
           <ListItemText primary={`Login`} />
         </ListItem>
-        <ListItem button component={Link} to={`/baForm`}>
-          <ListItemIcon>
-            <InboxIcon />
+        <ListItem
+          button
+          onClick={() => setActive("Borrow")}
+          component={Link}
+          to={`/baForm`}
+        >
+          <ListItemIcon className={classes.sideNav_text}>
+            {active == "Borrow" ? (
+              <Icon>paid</Icon>
+            ) : (
+              <Icon>
+                <span class="material-icons-outlined">paid</span>
+              </Icon>
+            )}
           </ListItemIcon>
           <ListItemText primary={`Borrow`} />
         </ListItem>
-        <ListItem button component={Link} to={`/wallet`}>
-          <ListItemIcon>
-            <AccountBalanceWalletIcon />
+        <ListItem
+          button
+          onClick={() => setActive("Wallet")}
+          component={Link}
+          to={`/wallet`}
+        >
+          <ListItemIcon className={classes.sideNav_text}>
+            {active == "Wallet" ? (
+              <AccountBalanceWalletIcon />
+            ) : (
+              <AccountBalanceWalletOutlinedIcon />
+            )}
           </ListItemIcon>
           <ListItemText primary={`Wallet`} />
         </ListItem>

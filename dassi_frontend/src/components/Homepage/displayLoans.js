@@ -101,7 +101,7 @@ const DisplayLoans = (props) => {
                 <Icon className={classes.loanCard_keyIcon}>task_alt</Icon>
                 <p className={classes.loanCard_key}>
                   Guarantor :{" "}
-                  <span className={classes.loanCard_value}>Dassi Labs</span>
+                  <span className={classes.loanCard_value}>Self Approved</span>
                 </p>
               </div>
             </div>

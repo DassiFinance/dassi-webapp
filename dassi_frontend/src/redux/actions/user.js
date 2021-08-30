@@ -20,7 +20,10 @@ export const loginUser = (userData, history) => (dispatch) => {
     .then((res) => {
       if (res.data.token) {
         console.log(res.data);
-        setAuthorizationHeader(res.data.token).then(() => history.push("/"));
+        setAuthorizationHeader(res.data.token).then(() => {
+          history.push("/");
+          window.location.reload();
+        });
 
         dispatch({
           type: SET_AUTHENTICATED,
@@ -65,7 +68,10 @@ export const signupUser = (newUserData, history) => (dispatch) => {
         });
       } else {
         console.log(res);
-        setAuthorizationHeader(res.data.token).then(() => history.push("/"));
+        setAuthorizationHeader(res.data.token).then(() => {
+          history.push("/");
+          window.location.reload();
+        });
         dispatch({ type: SET_AUTHENTICATED });
         dispatch({ type: CLEAR_ERRORS });
       }
