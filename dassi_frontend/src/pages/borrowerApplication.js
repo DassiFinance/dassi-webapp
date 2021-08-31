@@ -55,11 +55,11 @@ const BorrowerApplication = (props) => {
   const isLastStep = activeStep === steps.length - 1;
   const dispatch = useDispatch();
 
-  // function sleep(ms) {
-  // return new Promise((resolve) => setTimeout(resolve, ms));
-  // }
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
   async function submitForm(values, actions) {
-    // await sleep(1000);
+    await sleep(1000);
     const personalDetails = {
       fullName: values.fullName,
       zipcode: values.zipcode,

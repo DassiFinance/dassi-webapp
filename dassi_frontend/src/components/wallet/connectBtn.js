@@ -16,6 +16,7 @@ import {
   ConnectionProvider,
   useLocalStorage,
   WalletProvider,
+  useWallet,
 } from "@solana/wallet-adapter-react";
 import {
   getPhantomWallet,
@@ -113,6 +114,7 @@ const Wallet = () => {
   const endpoint = useMemo(() => clusterApiUrl("devnet"), []);
   const [autoConnect, setAutoConnect] = useLocalStorage("autoConnect", true);
   const wallets = useMemo(() => [getPhantomWallet(), getSolletWallet()], []);
+
   const { enqueueSnackbar } = useSnackbar();
   const onError = useCallback(
     (error) => {

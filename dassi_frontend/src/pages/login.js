@@ -79,7 +79,7 @@ const Login = (props) => {
                     : "login_inputMain mb-3"
                 }
               >
-                <InputGroup.Prepend>
+                <InputGroup.Prepend className="login_prepend">
                   <InputGroup.Text
                     id="basic-addon1"
                     className="login_iconInput"
@@ -108,7 +108,7 @@ const Login = (props) => {
                     : "login_inputMain"
                 }
               >
-                <InputGroup.Prepend>
+                <InputGroup.Prepend className="login_prepend">
                   <InputGroup.Text
                     id="basic-addon1"
                     className="login_iconInput"
