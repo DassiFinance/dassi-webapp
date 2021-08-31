@@ -1,14 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import useStyles from "../../css/loanInfo";
 
 const Guarantor = (props) => {
   const classes = useStyles();
-  const username = useSelector((state) => state.user.credentials.username);
+  // const username = useSelector((state) => state.user.credentials.username);
   return (
     <div className={classes.guarantorDiv}>
       <p>
-        <span className={classes.guarantor_key}>Name</span> : {username}
+        <span className={classes.guarantor_key}>Name</span> : Dassi Labs
       </p>
       <p>
         <span className={classes.guarantor_key}>Default Rate</span> : 0%

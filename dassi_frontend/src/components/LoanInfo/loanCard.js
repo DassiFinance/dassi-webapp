@@ -11,7 +11,6 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Icon from "@material-ui/core/Icon";
 
 import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
 import NativeSelect from "@material-ui/core/NativeSelect";
 import { getLoanDetails, makePayment } from "../../redux/actions/loan";
 
@@ -35,7 +34,6 @@ const LoanCard = (props) => {
     loanDetails.loanAmount;
 
   useEffect(() => {
-    console.log("hello");
     dispatch(getLoanDetails(props.id));
   }, [dispatch, props.id]);
   if (loanDetails._id) {

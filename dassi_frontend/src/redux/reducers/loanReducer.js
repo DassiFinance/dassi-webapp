@@ -7,7 +7,9 @@ import {
 
 const initialState = {
   activeLoans: [],
-  loanDetails: {},
+  loanDetails: {
+    loanUser: {},
+  },
   filterCategory: "",
   payment: [],
 };
