@@ -1,51 +1,55 @@
 import ApplicationFormModel from "./applicationFormModel";
 const {
   formField: {
-    firstName,
-    email,
-    lastName,
-    city,
+    // PersonalDetails.js
+    fullName,
     zipcode,
-    country,
-    astate,
-    occupation,
-    income,
     bio,
+    income,
+    occupation,
+    idNumber,
+    idDoc,
+    imgURL,
+
+    // LoanDetails1.js
     loanAmount,
     loanCategory,
     loanDescription,
     loanDuration,
     loanDurationUnit,
+
+    // LoanDetails2.js
     repaymentStartDate,
     emiRepetition,
+
+    // LoanDetails3.js
     guarantor,
-    imgURL,
-    idNumber,
-    idDoc,
   },
 } = ApplicationFormModel;
 
 const DefaultFields = {
-  [firstName.name]: "",
-  [lastName.name]: "",
-  [email.name]: "",
-  [city.name]: "",
+  // PersonalDetails.js
+  [fullName.name]: "",
   [zipcode.name]: "",
-  [country.name]: "",
-  [astate.name]: "",
-  [occupation.name]: "",
   [bio.name]: "",
   [income.name]: "",
+  [occupation.name]: "",
+  [idDoc.name]: "",
+  [idNumber.name]: "",
+  [imgURL.name]: "",
+
+  // LoanDetails1.js
   [loanAmount.name]: "",
   [loanCategory.name]: "",
   [loanDescription.name]: "",
   [loanDuration.name]: "",
   [loanDurationUnit.name]: "",
+
+  // LoanDetails2.js
   [repaymentStartDate.name]: "",
   [emiRepetition.name]: "",
+
+  // LoanDetails3.js
   [guarantor.name]: "",
-  [imgURL.name]: "",
-  [idDoc.name]: "",
-  [idNumber.name]: "",
 };
 export default DefaultFields;

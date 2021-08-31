@@ -25,6 +25,7 @@ import useStyles from "../css/baForm";
 
 import { sendUserDetails } from "../redux/actions/user";
 import { sendLoanDetails } from "../redux/actions/loan";
+import { useDispatch } from "react-redux";
 
 const { formId, formField } = ApplicationFormModel;
 
@@ -52,23 +53,21 @@ const BorrowerApplication = (props) => {
   const [activeStep, setActiveStep] = useState(0);
   const currentValidationSchema = ValidationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
+  const dispatch = useDispatch();
 
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
+  // function sleep(ms) {
+  // return new Promise((resolve) => setTimeout(resolve, ms));
+  // }
   async function submitForm(values, actions) {
-    await sleep(1000);
-    //alert(JSON.stringify(values, null, 2));
-    console.log(values);
+    // await sleep(1000);
     const personalDetails = {
-      username: values.firstName,
-      email: values.email,
-      occupation: values.occupation,
-      income: values.income,
+      fullName: values.fullName,
+      zipcode: values.zipcode,
       bio: values.bio,
-      address: {
-        pincode: values.zipcode,
-      },
+      income: values.income,
+      occupation: values.occupation,
+      idNumber: values.idNumber,
+      idDoc: values.idDoc,
     };
     const loanDetails = {
       loanAmount: values.loanAmount,
@@ -81,24 +80,21 @@ const BorrowerApplication = (props) => {
       repaymentStartDate: values.repaymentStartDate,
       photo: values.imgURL,
     };
-    sendLoanDetails(loanDetails, props.history);
-    sendUserDetails(personalDetails);
 
-    console.log(personalDetails);
-    console.log(loanDetails);
+    dispatch(sendUserDetails(personalDetails));
+    sendLoanDetails(loanDetails, props.history);
     actions.setSubmitting(false);
     setActiveStep(activeStep + 1);
   }
 
   function handleSubmit(values, actions) {
-    console.log({ values, actions });
+    // console.log({ values, actions });
     if (isLastStep) {
       submitForm(values, actions);
     } else {
       setActiveStep(activeStep + 1);
       actions.setTouched({});
       actions.setSubmitting(false);
-      console.log(activeStep + 1);
     }
   }
 
