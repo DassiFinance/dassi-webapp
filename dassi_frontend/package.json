@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@solana/spl-token": "^0.1.6",
     "@ant-design/icons": "^4.6.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
@@ -14,7 +15,7 @@
     "@material-ui/styles": "^4.11.4",
     "@solana/wallet-adapter-ant-design": "^0.3.0",
     "@solana/wallet-adapter-base": "^0.5.0",
-    "@solana/wallet-adapter-material-ui": "^0.8.3",
+    "@solana/wallet-adapter-material-ui": "^0.8.0",
     "@solana/wallet-adapter-react": "^0.8.0",
     "@solana/wallet-adapter-wallets": "^0.7.0",
     "@solana/web3.js": "^1.24.1",
@@ -36,7 +37,8 @@
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
     "web-vitals": "^1.1.2",
-    "yup": "^0.32.9"
+    "yup": "^0.32.9",
+    "@types/bn.js": "^4.11.6"
   },
   "scripts": {
     "start": "react-scripts start",
