@@ -117,6 +117,11 @@ export default makeStyles((theme) => ({
   userStory_div: {
     color: "#fff",
     padding: "10px 16px",
+    fontWeight: "600",
+  },
+  userStory_key: {
+    fontWeight: "500",
+    color: "#DDE4EA",
   },
   guarantorDiv: {
     color: "#fff",

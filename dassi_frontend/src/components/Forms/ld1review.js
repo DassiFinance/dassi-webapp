@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Grid } from "@material-ui/core";
 import useStyles from "../../css/baForm";
+import { getLoanCategoryFromId } from "../../utils/helpers/loanCategory";
 const LD1Review = (props) => {
   const classes = useStyles();
   const { formValues } = props;
@@ -29,7 +30,10 @@ const LD1Review = (props) => {
             Loan Category *
           </Typography>
 
-          <div className={classes.textFieldInput}> {loanCategory}</div>
+          <div className={classes.textFieldInput}>
+            {" "}
+            {getLoanCategoryFromId(loanCategory)}
+          </div>
         </Grid>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>

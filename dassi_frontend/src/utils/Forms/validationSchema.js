@@ -2,28 +2,36 @@ import ApplicationFormModel from "./applicationFormModel";
 import * as Yup from "yup";
 const {
   formField: {
-    firstName,
+    // PersonalDetails.js
+    fullName,
     zipcode,
+    bio,
     income,
+    occupation,
     idNumber,
     idDoc,
     imgURL,
-    occupation,
-    bio,
+
+    // LoanDetails1.js
     loanAmount,
     loanCategory,
     loanDescription,
     loanDuration,
     loanDurationUnit,
+
+    // LoanDetails2.js
     repaymentStartDate,
     emiRepetition,
+
+    // LoanDetails3.js
+    // guarantor,
   },
 } = ApplicationFormModel;
 
 const validation = [
+  // PersonalDetails.js
   Yup.object().shape({
-    firstName: Yup.string().required(`${firstName.requiredErrorMsg}`),
-
+    fullName: Yup.string().required(`${fullName.requiredErrorMsg}`),
     zipcode: Yup.number().required(`${zipcode.requiredErrorMsg}`),
     income: Yup.number().required(`${income.requiredErrorMsg}`),
     occupation: Yup.string().required(`${occupation.requiredErrorMsg}`),
@@ -32,6 +40,8 @@ const validation = [
     idDoc: Yup.string().required(`${idDoc.requiredErrorMsg}`),
     idNumber: Yup.string().required(`${idNumber.requiredErrorMsg}`),
   }),
+
+  // LoanDetails1.js
   Yup.object().shape({
     loanAmount: Yup.number().required(`${loanAmount.requiredErrorMsg}`),
     loanCategory: Yup.string().required(`${loanCategory.requiredErrorMsg}`),
@@ -43,6 +53,8 @@ const validation = [
     ),
     loanDuration: Yup.number().required(`${loanDuration.requiredErrorMsg}`),
   }),
+
+  // LoanDetails2.js
   Yup.object().shape({
     todaysDate: Yup.date().default(function () {
       return new Date();

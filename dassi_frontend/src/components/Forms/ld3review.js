@@ -8,7 +8,7 @@ const LD3Review = (props) => {
   return (
     <>
       <Typography variant="h6" className={classes.review_subheader}>
-        Select Guarantor
+        Guarantor
       </Typography>
       <Grid container>
         <Grid item xs={12}>

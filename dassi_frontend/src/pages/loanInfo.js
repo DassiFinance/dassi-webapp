@@ -18,7 +18,6 @@ const HomePage = (props) => {
   const [page, setPage] = useState(0);
   const handleClick = (pageVal) => {
     setPage(pageVal);
-    console.log(pageVal);
   };
 
   return (

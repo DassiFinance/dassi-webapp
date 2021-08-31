@@ -6,14 +6,13 @@ const PDReview = (props) => {
   const [preview, setPreview] = useState("");
   const classes = useStyles();
   const {
-    firstName,
-
+    fullName,
     zipcode,
-    occupation,
     bio,
     income,
-    idDoc,
+    occupation,
     idNumber,
+    idDoc,
     imgURL,
   } = formValues;
 
@@ -22,7 +21,6 @@ const PDReview = (props) => {
       const fileReader = new FileReader();
       fileReader.onload = () => {
         if (fileReader.readyState === 2) {
-          console.log(fileReader.result);
           setPreview(fileReader.result);
         }
       };
@@ -37,9 +35,9 @@ const PDReview = (props) => {
       <Grid container spacing={3}>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>
-            First Name *
+            Full Name *
           </Typography>
-          <div className={classes.review_textFieldInput}>{firstName}</div>
+          <div className={classes.review_textFieldInput}>{fullName}</div>
         </Grid>
         <Grid item xs={6}>
           <Typography gutterBottom className={classes.textCommon}>

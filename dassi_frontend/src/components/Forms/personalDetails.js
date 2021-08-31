@@ -18,24 +18,22 @@ const IdProof = [
     label: "Voter Id",
   },
   {
-    value: "Drivind License",
-    label: "Drivind License",
+    value: "Driving License",
+    label: "Driving License",
   },
 ];
 
 export default function PersonalDetails(props) {
   const {
     formField: {
-      firstName,
-      // lastName,
-      // email,
+      fullName,
       zipcode,
-      occupation,
       bio,
       income,
-      imgURL,
-      idDoc,
+      occupation,
       idNumber,
+      idDoc,
+      imgURL,
     },
     setFieldValue,
   } = props;
@@ -49,11 +47,7 @@ export default function PersonalDetails(props) {
       <Container>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <InputField
-              name={firstName.name}
-              label={firstName.label}
-              fullWidth
-            />
+            <InputField name={fullName.name} label={fullName.label} fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
             <InputField name={zipcode.name} label={zipcode.label} fullWidth />
@@ -111,11 +105,11 @@ export default function PersonalDetails(props) {
               type="file"
               label={imgURL.label}
               onChange={(e) => {
-                console.log(e.target.files);
+                // console.log(e.target.files);
                 const fileReader = new FileReader();
                 fileReader.onload = () => {
                   if (fileReader.readyState === 2) {
-                    console.log(fileReader.result);
+                    // console.log(fileReader.result);
                     setPreview(fileReader.result);
                     setFieldValue("imgURL", e.target.files[0]);
                   }
