@@ -6,6 +6,8 @@ import {
 } from "@material-ui/core";
 
 import {
+  WalletConnectButton as MaterialUIWalletConnectButton,
+  WalletDialogButton as MaterialUIWalletDialogButton,
   WalletDialogProvider as MaterialUIWalletDialogProvider,
   WalletDisconnectButton as MaterialUIWalletDisconnectButton,
   WalletMultiButton as MaterialUIWalletMultiButton,
@@ -109,9 +111,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ConnectBtn = () => {
+const SubmitBtn = () => {
   const classes = useStyles();
-
   const endpoint = useMemo(() => clusterApiUrl("devnet"), []);
   const [autoConnect, setAutoConnect] = useLocalStorage("autoConnect", true);
   const wallets = useMemo(() => [getPhantomWallet(), getSolletWallet()], []);
@@ -128,18 +129,6 @@ const ConnectBtn = () => {
     [enqueueSnackbar]
   );
 
-  return (
-    <MaterialUIWalletDialogProvider className={classes.root}>
-      <div style={{ marginTop: "5%" }}>
-        <MaterialUIWalletMultiButton className={classes.multiBtn} />
-      </div>
-      <div style={{ marginTop: "5%" }}>
-        <MaterialUIWalletDisconnectButton className={classes.disconnectBtn} />
-      </div>
-      <div style={{ marginTop: "5%" }}>
-        <RequestDassiCoinAirdrop />
-      </div>
-    </MaterialUIWalletDialogProvider>
-  );
+  return <AddNewLoanByBorrower />;
 };
-export default ConnectBtn;
+export default SubmitBtn;

@@ -6,6 +6,8 @@ import {
 } from "@material-ui/core";
 
 import {
+  WalletConnectButton as MaterialUIWalletConnectButton,
+  WalletDialogButton as MaterialUIWalletDialogButton,
   WalletDialogProvider as MaterialUIWalletDialogProvider,
   WalletDisconnectButton as MaterialUIWalletDisconnectButton,
   WalletMultiButton as MaterialUIWalletMultiButton,
@@ -27,6 +29,8 @@ import RequestAirdrop from "./requestAirdrop";
 import SendTransaction from "./sendTransaction";
 import RequestDassiCoinAirdrop from "./requestDassiAirDrop";
 import AddNewLoanByBorrower from "./addNewLoanByBorrower";
+import ConnectBtn from "./connectBtn";
+import SubmitBtn from "./submitBtn";
 
 const useStyles = makeStyles((theme) => ({
   multiBtn: {
@@ -109,9 +113,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ConnectBtn = () => {
+const Wallet = ({ name }) => {
   const classes = useStyles();
-
   const endpoint = useMemo(() => clusterApiUrl("devnet"), []);
   const [autoConnect, setAutoConnect] = useLocalStorage("autoConnect", true);
   const wallets = useMemo(() => [getPhantomWallet(), getSolletWallet()], []);
@@ -129,17 +132,28 @@ const ConnectBtn = () => {
   );
 
   return (
-    <MaterialUIWalletDialogProvider className={classes.root}>
-      <div style={{ marginTop: "5%" }}>
-        <MaterialUIWalletMultiButton className={classes.multiBtn} />
-      </div>
-      <div style={{ marginTop: "5%" }}>
-        <MaterialUIWalletDisconnectButton className={classes.disconnectBtn} />
-      </div>
-      <div style={{ marginTop: "5%" }}>
-        <RequestDassiCoinAirdrop />
-      </div>
-    </MaterialUIWalletDialogProvider>
+    <ConnectionProvider endpoint={endpoint}>
+      <WalletProvider wallets={wallets} onError={onError} autoConnect={true}>
+        {console.log(endpoint)}
+        {name == "connect" && (
+          <MaterialUIWalletDialogProvider className={classes.root}>
+            <div style={{ marginTop: "5%" }}>
+              <MaterialUIWalletMultiButton className={classes.multiBtn} />
+            </div>
+            <div style={{ marginTop: "5%" }}>
+              <MaterialUIWalletDisconnectButton
+                className={classes.disconnectBtn}
+              />
+            </div>
+            <div style={{ marginTop: "5%" }}>
+              <RequestDassiCoinAirdrop />
+            </div>
+            <AddNewLoanByBorrower />
+          </MaterialUIWalletDialogProvider>
+        )}
+        {name == "submit" && <AddNewLoanByBorrower />}
+      </WalletProvider>
+    </ConnectionProvider>
   );
 };
-export default ConnectBtn;
+export default Wallet;

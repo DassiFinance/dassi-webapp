@@ -47,6 +47,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import MenuIcon from "@material-ui/icons/Menu";
 
+import Wallet from "./wallet/walletHelper";
 import DescriptionIcon from "@material-ui/icons/Description";
 import Icon from "@material-ui/core/Icon";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -202,7 +203,7 @@ function ResponsiveDrawer(props) {
           </ListItemIcon>
           <ListItemText primary={`Logout`} />
         </ListItem>
-        <ConnectBtn />
+        <Wallet name="connect" />
       </List>
     </div>
   );

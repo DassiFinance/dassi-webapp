@@ -22,6 +22,7 @@ export const sendLoanDetails = (loanDetails, history) => {
     })
     .then(() => {
       history.push("/");
+      console.log("push");
     })
     .catch((err) => {
       console.log(err);

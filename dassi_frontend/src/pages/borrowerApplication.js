@@ -10,6 +10,8 @@ import {
 } from "@material-ui/core";
 import { Formik, Form } from "formik";
 
+import Subnav from "../components/sideNav";
+import SubmitBtn from "../components/wallet/submitBtn";
 import LoanDetails1 from "../components/Forms/loanDetails1";
 import LoanDetails2 from "../components/Forms/loanDetails2";
 import LoanDetails3 from "../components/Forms/loanDetails3";
@@ -23,6 +25,7 @@ import FormInitialValues from "../utils/Forms/formInitialValues";
 
 import useStyles from "../css/baForm";
 
+import Wallet from "../components/wallet/walletHelper";
 import { sendUserDetails } from "../redux/actions/user";
 import { sendLoanDetails } from "../redux/actions/loan";
 import { useDispatch } from "react-redux";
@@ -50,16 +53,17 @@ function renderStepContent(step, setFieldValue) {
 const steps = [1, 2, 3, 4, 5];
 const BorrowerApplication = (props) => {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(4);
   const currentValidationSchema = ValidationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
   const dispatch = useDispatch();
 
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
+  // function sleep(ms) {
+  //   return new Promise((resolve) => setTimeout(resolve, ms));
+  // }
   async function submitForm(values, actions) {
-    await sleep(1000);
+    console.log("submit 1");
+    // await sleep(1000);
     const personalDetails = {
       fullName: values.fullName,
       zipcode: values.zipcode,
@@ -104,7 +108,9 @@ const BorrowerApplication = (props) => {
 
   return (
     <Grid container className={classes.ba_main}>
-      <Grid item xs={3} className={classes.ba_subNav}></Grid>
+      <Grid item xs={3} className={classes.ba_subNav}>
+        <Subnav />
+      </Grid>
       <Grid item xs={6} className={classes.ba_subMain}>
         <React.Fragment>
           <Typography
@@ -140,6 +146,7 @@ const BorrowerApplication = (props) => {
               ) : null;
             })}
           </Stepper>
+
           <React.Fragment>
             {activeStep === steps.length ? (
               <HomePage />
@@ -149,8 +156,9 @@ const BorrowerApplication = (props) => {
                 validationSchema={currentValidationSchema}
                 onSubmit={handleSubmit}
               >
-                {({ isSubmitting, setFieldValue }) => (
+                {({ isSubmitting, setFieldValue, values }) => (
                   <Form id={formId}>
+                    {console.log(values)}
                     {renderStepContent(activeStep, setFieldValue)}
                     <div className={classes.buttons}>
                       {activeStep !== 0 && (
@@ -158,15 +166,26 @@ const BorrowerApplication = (props) => {
                           Back
                         </Button>
                       )}
+
                       <div className={classes.wrapper}>
-                        <Button
-                          disabled={isSubmitting}
-                          type="submit"
-                          variant="contained"
-                          className={classes.buttonN}
-                        >
-                          {isLastStep ? "Submit" : "Next"}
-                        </Button>
+                        {isLastStep ? (
+                          <Wallet
+                            name="submit"
+                            type="submit"
+                            variant="contained"
+                            className={classes.buttonN}
+                          />
+                        ) : (
+                          <Button
+                            disabled={isSubmitting}
+                            type="submit"
+                            variant="contained"
+                            className={classes.buttonN}
+                          >
+                            Next{" "}
+                          </Button>
+                        )}
+
                         {isSubmitting && (
                           <CircularProgress
                             size={24}
