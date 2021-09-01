@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useStyles from "../css/loanInfo";
 import LoanCard from "../components/LoanInfo/loanCard";
-
+import SideNav from "../components/sideNav";
 import UserStory from "../components/LoanInfo/userStory";
 import LoanDets from "../components/LoanInfo/loanDets";
 import Guarantor from "../components/LoanInfo/guarantor";
@@ -22,7 +22,10 @@ const HomePage = (props) => {
 
   return (
     <Grid container className={classes.loanInfo_main}>
-      <Grid item xs={3} className={classes.loanInfo_subNav}></Grid>
+      <Grid item xs={3} className={classes.loanInfo_subNav}>
+        {" "}
+        <SideNav />
+      </Grid>
       <Grid item xs={9} className={classes.loanInfo_subMain}>
         <div className={classes.loanInfo_header}>
           <Typography variant="h6" className={classes.loanInfo_headerText}>

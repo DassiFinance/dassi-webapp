@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useStyles from "../css/loanInfo";
-
+import SideNav from "../components/sideNav";
 import Borrow from "../components/MyLoans/borrow";
 import Lent from "../components/MyLoans/lent";
 
@@ -19,7 +19,10 @@ const MyLoans = (props) => {
 
   return (
     <Grid container className={classes.loanInfo_main}>
-      <Grid item xs={3} className={classes.loanInfo_subNav}></Grid>
+      <Grid item xs={3} className={classes.loanInfo_subNav}>
+        {" "}
+        <SideNav />
+      </Grid>
       <Grid item xs={9} className={classes.loanInfo_subMain}>
         <div className={classes.loanInfo_header}>
           <Typography variant="h6" className={classes.loanInfo_headerText}>

@@ -67,7 +67,7 @@ const Signup = (props) => {
           validationSchema={validationSchema}
           onSubmit={(values) => {
             const newUserData = {
-              username: values.username,
+              fullName: values.username,
               password: values.password,
               email: values.email,
             };

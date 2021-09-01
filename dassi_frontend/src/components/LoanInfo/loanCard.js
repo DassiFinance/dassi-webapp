@@ -16,6 +16,8 @@ import { getLoanDetails, makePayment } from "../../redux/actions/loan";
 
 import { useSelector, useDispatch } from "react-redux";
 
+import Wallet from "../wallet/walletHelper";
+
 const LoanCard = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -120,24 +122,25 @@ const LoanCard = (props) => {
                         icon: classes.selectIcon,
                       }}
                     >
-                      <option value={500}>₹500</option>
-                      <option value={1000}>₹1000</option>
-                      <option value={1500}>₹1500</option>
-                      <option value={2000}>₹2000</option>
-                      <option value={3000}>₹3000</option>
-                      <option value={4000}>₹4000</option>
-                      <option value={5000}>₹5000</option>
+                      <option value={10}>10</option>
+                      <option value={50}>50</option>
+                      <option value={100}>100</option>
+                      <option value={200}>200</option>
+                      <option value={300}>300</option>
+                      <option value={500}>500</option>
+                      <option value={1000}>1000</option>
+                      <option value={1500}>1500</option>
+                      <option value={2000}>2000</option>
+                      <option value={3000}>3000</option>
                     </NativeSelect>
                   </FormControl>
 
-                  <Button
-                    className={classes.loanCard_supportBtn}
-                    onClick={() => {
-                      dispatch(makePayment(parseInt(amt), loanDetails._id));
-                    }}
-                  >
-                    Lend Now
-                  </Button>
+                  <Wallet
+                    name="lend"
+                    amount={parseInt(amt)}
+                    loanId={loanDetails._id}
+                    history={props.history}
+                  />
                 </div>
               </Grid>
             </Grid>

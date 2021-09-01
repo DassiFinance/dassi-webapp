@@ -1,4 +1,5 @@
 import { Button } from "@material-ui/core";
+import useStyles from "../../css/baForm";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import {
   Keypair,
@@ -47,6 +48,7 @@ const BORROWER_ACCOUNT_LAYOUT = BufferLayout.struct([
 ]);
 
 const AddNewLoanByBorrower = ({ values, history }) => {
+  const classes = useStyles();
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
   const notify = useNotify();
@@ -192,6 +194,9 @@ const AddNewLoanByBorrower = ({ values, history }) => {
           .confirmTransaction(signature, "processed")
           .then((res) => {
             // Creating the loan in our database
+            values.loan_blockchain_storage_account_pubkey =
+              loanInfoStorageAccount.publicKey.toString();
+            console.log(values.loan_blockchain_storage_account_pubkey);
             dispatch(sendUserDetails(values));
             sendLoanDetails(values, history);
           });
@@ -222,6 +227,9 @@ const AddNewLoanByBorrower = ({ values, history }) => {
           .confirmTransaction(signature, "processed")
           .then((res) => {
             // Creating the loan in our database
+            values.loan_blockchain_storage_account_pubkey =
+              loanInfoStorageAccount.publicKey.toString();
+            console.log(values.loan_blockchain_storage_account_pubkey);
             dispatch(sendUserDetails(values));
             sendLoanDetails(values, history);
           });
@@ -237,12 +245,7 @@ const AddNewLoanByBorrower = ({ values, history }) => {
   }, [publicKey, notify, connection, sendTransaction]);
 
   return (
-    <Button
-      variant="contained"
-      color="secondary"
-      onClick={onClick}
-      disabled={!publicKey}
-    >
+    <Button className={classes.buttonN} onClick={onClick} disabled={!publicKey}>
       Submit Loan Application
     </Button>
   );

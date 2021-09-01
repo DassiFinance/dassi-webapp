@@ -53,7 +53,7 @@ function renderStepContent(step, setFieldValue) {
 const steps = [1, 2, 3, 4, 5];
 const BorrowerApplication = (props) => {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = useState(4);
+  const [activeStep, setActiveStep] = useState(0);
   const currentValidationSchema = ValidationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
   const dispatch = useDispatch();
@@ -138,7 +138,6 @@ const BorrowerApplication = (props) => {
               >
                 {({ isSubmitting, setFieldValue, values }) => (
                   <Form id={formId}>
-                    {console.log(values)}
                     {renderStepContent(activeStep, setFieldValue)}
                     <div className={classes.buttons}>
                       {activeStep !== 0 && (
@@ -155,7 +154,6 @@ const BorrowerApplication = (props) => {
                             variant="contained"
                             values={values}
                             history={props.history}
-                            className={classes.buttonN}
                           />
                         ) : (
                           <Button

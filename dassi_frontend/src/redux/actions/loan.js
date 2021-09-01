@@ -18,8 +18,10 @@ export const sendLoanDetails = (values, history) => {
     emiRepetition: values.emiRepetition,
     repaymentStartDate: values.repaymentStartDate,
     photo: values.imgURL,
+    loanBlockchainStorageAccountPubkey:
+      values.loan_blockchain_storage_account_pubkey,
   };
-
+  console.log(loanDetails);
   const formData = new FormData();
   for (var key in loanDetails) {
     if (loanDetails.hasOwnProperty(key)) {
@@ -100,6 +102,7 @@ export const getLoanDetails = (id) => (dispatch) => {
   axios
     .get(`loan/reqLoan/${id}`)
     .then((res) => {
+      console.log(res.data);
       dispatch({
         type: GET_LOAN_BY_ID,
         payload: res.data,

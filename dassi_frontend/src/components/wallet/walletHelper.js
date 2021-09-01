@@ -18,6 +18,7 @@ import { useSnackbar } from "notistack";
 import React, { useCallback, useMemo } from "react";
 import RequestDassiCoinAirdrop from "./requestDassiAirDrop";
 import AddNewLoanByBorrower from "./addNewLoanByBorrower";
+import LendToBorrower from "./lendToBorrower";
 
 const useStyles = makeStyles((theme) => ({
   multiBtn: {
@@ -100,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Wallet = ({ name, values, history }) => {
+const Wallet = ({ name, values, history, amount, loanId }) => {
   const classes = useStyles();
   const endpoint = useMemo(() => clusterApiUrl("devnet"), []);
   // const [autoConnect, setAutoConnect] = useLocalStorage("autoConnect", true);
@@ -135,11 +136,13 @@ const Wallet = ({ name, values, history }) => {
             <div style={{ marginTop: "5%" }}>
               <RequestDassiCoinAirdrop />
             </div>
-            <AddNewLoanByBorrower />
           </MaterialUIWalletDialogProvider>
         )}
         {name === "submit" && (
           <AddNewLoanByBorrower history={history} values={values} />
+        )}
+        {name === "lend" && (
+          <LendToBorrower history={history} amount={amount} loanId={loanId} />
         )}
       </WalletProvider>
     </ConnectionProvider>
