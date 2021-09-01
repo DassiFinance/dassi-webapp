@@ -7,7 +7,19 @@ import {
 } from "../types";
 
 axios.defaults.baseURL = "http://localhost:8080/api/";
-export const sendLoanDetails = (loanDetails, history) => {
+export const sendLoanDetails = (values, history) => {
+  const loanDetails = {
+    loanAmount: values.loanAmount,
+    category: values.loanCategory,
+    description: values.loanDescription,
+    duration: values.loanDuration
+      .toString()
+      .concat(" ", values.loanDurationUnit),
+    emiRepetition: values.emiRepetition,
+    repaymentStartDate: values.repaymentStartDate,
+    photo: values.imgURL,
+  };
+
   const formData = new FormData();
   for (var key in loanDetails) {
     if (loanDetails.hasOwnProperty(key)) {

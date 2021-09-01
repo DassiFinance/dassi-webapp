@@ -13,6 +13,10 @@ import { useNotify } from "./notify";
 
 import * as BufferLayout from "buffer-layout";
 import BN from "bn.js";
+import { useSelector, useDispatch } from "react-redux";
+import { sendLoanDetails } from "../../redux/actions/loan";
+import { sendUserDetails } from "../../redux/actions/user";
+
 const toRawAmount = 1000000000;
 
 const LoanInfoArr = (property = "laon_info_arr_storage") => {
@@ -42,11 +46,14 @@ const BORROWER_ACCOUNT_LAYOUT = BufferLayout.struct([
   publicKey("active_loan_address"),
 ]);
 
-const AddNewLoanByBorrower = ({ values }) => {
-  console.log(values);
+const AddNewLoanByBorrower = ({ values, history }) => {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
   const notify = useNotify();
+  const publicKeyFromDatabase = useSelector(
+    (state) => state.user.credentials.walletId
+  );
+  const dispatch = useDispatch();
 
   const onClick = useCallback(async () => {
     if (!publicKey) {
@@ -63,18 +70,22 @@ const AddNewLoanByBorrower = ({ values }) => {
       let total_loan_amount_input = parseInt(values.loanAmount);
 
       // for prototype borrower is acting as guarantor
-
       let createBorrowerStorageAccountFlag = true;
+      let borrowerStorageAccount_pk_r;
+
       // read borrowerStorageAccount_pk_r from database (borrower_blockchain_storage_account_pubkey) and if its empty, then set createBorrowerStorageAccountFlag to true
       // if its not empty pass that string to PublicKey() below
-      let borrowerStorageAccount_pk_r = new PublicKey(
-        "6VtwpSZvVLmSLUZGo3g3PmpWq4HJSu4Mp1ZPxHMHCTsQ"
-      );
+      if (publicKeyFromDatabase) {
+        borrowerStorageAccount_pk_r = publicKeyFromDatabase;
+        createBorrowerStorageAccountFlag = false;
+        values.walletId = borrowerStorageAccount_pk_r.toString();
+      }
 
       let borrowerMainAccount_pk_r = publicKey;
       let borrowerStorageAccount = Keypair.generate();
       if (createBorrowerStorageAccountFlag) {
         borrowerStorageAccount_pk_r = borrowerStorageAccount.publicKey;
+        values.walletId = borrowerStorageAccount_pk_r.toString();
       }
 
       let total_loan_amount_raw = total_loan_amount_input * toRawAmount;
@@ -177,7 +188,13 @@ const AddNewLoanByBorrower = ({ values }) => {
         );
         notify("info", "Transaction sent:", signature);
 
-        await connection.confirmTransaction(signature, "processed");
+        await connection
+          .confirmTransaction(signature, "processed")
+          .then((res) => {
+            // Creating the loan in our database
+            dispatch(sendUserDetails(values));
+            sendLoanDetails(values, history);
+          });
         notify("success", "Transaction successful!", signature);
 
         // return/save loanInfoStorageAccount.publicKey and store this in database as loan for current borrower
@@ -201,7 +218,13 @@ const AddNewLoanByBorrower = ({ values }) => {
         );
         notify("info", "Transaction sent:", signature);
 
-        await connection.confirmTransaction(signature, "processed");
+        await connection
+          .confirmTransaction(signature, "processed")
+          .then((res) => {
+            // Creating the loan in our database
+            dispatch(sendUserDetails(values));
+            sendLoanDetails(values, history);
+          });
         notify("success", "Transaction successful!", signature);
 
         // return/save loanInfoStorageAccount.publicKey and store this in database as loan for current borrower
@@ -210,6 +233,7 @@ const AddNewLoanByBorrower = ({ values }) => {
       notify("error", `Transaction failed! ${error.message}`, signature);
       return;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [publicKey, notify, connection, sendTransaction]);
 
   return (

@@ -8,14 +8,7 @@ import {
   TableRow,
   Tooltip,
 } from "@material-ui/core";
-/* import {
-  WalletConnectButton as AntDesignWalletConnectButton,
-  WalletDisconnectButton as AntDesignWalletDisconnectButton,
-  WalletModalButton as AntDesignWalletModalButton,
-  WalletModalProvider as AntDesignWalletModalProvider,
-  WalletMultiButton as AntDesignWalletMultiButton,
-} from "@solana/wallet-adapter-ant-design";*/
-import { WalletError } from "@solana/wallet-adapter-base";
+
 import {
   WalletConnectButton as MaterialUIWalletConnectButton,
   WalletDialogButton as MaterialUIWalletDialogButton,
@@ -29,15 +22,8 @@ import {
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import {
-  getBitpieWallet,
-  getCoin98Wallet,
-  getLedgerWallet,
-  getMathWallet,
   getPhantomWallet,
-  getSolflareWallet,
   getSolletWallet,
-  getSolongWallet,
-  getTorusWallet,
 } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
 import { useSnackbar } from "notistack";

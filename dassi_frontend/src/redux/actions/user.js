@@ -100,10 +100,22 @@ export const getUser = () => (dispatch) => {
     });
 };
 
-export const sendUserDetails = (userDetails) => (dispatch) => {
+export const sendUserDetails = (values) => (dispatch) => {
+  const userDetails = {
+    fullName: values.fullName,
+    zipcode: values.zipcode,
+    bio: values.bio,
+    income: values.income,
+    occupation: values.occupation,
+    idNumber: values.idNumber,
+    idDoc: values.idDoc,
+    walletId: values.walletId,
+  };
+
   axios
     .post("user/userDetails", userDetails)
     .then((res) => {
+      console.log(res.data.user);
       dispatch({
         type: GET_USER,
         payload: res.data.user,

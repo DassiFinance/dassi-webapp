@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import useStyles from "../css/loanInfo";
-import LoanCard from "../components/LoanInfo/loanCard";
 
 import Borrow from "../components/MyLoans/borrow";
 import Lent from "../components/MyLoans/lent";

@@ -16,12 +16,9 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 
 //Icons
 import IconButton from "@material-ui/core/IconButton";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 
 import HomeIcon from "@material-ui/icons/Home";
@@ -95,7 +92,7 @@ function ResponsiveDrawer(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [active, setActive] = React.useState("Home");
   const authenticated = useSelector((state) => state.user.authenticated);
-  const username = useSelector((state) => state.user.credentials.username);
+  const fullName = useSelector((state) => state.user.credentials.fullName);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -110,7 +107,7 @@ function ResponsiveDrawer(props) {
           {/* <ListItemIcon className={classes.sideNav_text}>
             <InboxIcon />
           </ListItemIcon> */}
-          <ListItemText primary={`Hello ${username}!`} />
+          <ListItemText primary={`Hello ${fullName}!`} />
         </ListItem>
         <ListItem
           button
@@ -119,13 +116,13 @@ function ResponsiveDrawer(props) {
           to={`/`}
         >
           <ListItemIcon className={classes.sideNav_text}>
-            {active == "Home" ? <HomeIcon /> : <HomeOutlinedIcon />}
+            {active === "Home" ? <HomeIcon /> : <HomeOutlinedIcon />}
           </ListItemIcon>
           <ListItemText primary={`Home`} />
         </ListItem>
         <ListItem button onClick={() => setActive("Notifications")}>
           <ListItemIcon className={classes.sideNav_text}>
-            {active == "Notifications" ? (
+            {active === "Notifications" ? (
               <NotificationsIcon />
             ) : (
               <NotificationsNoneIcon />
@@ -140,13 +137,13 @@ function ResponsiveDrawer(props) {
           to={`/myLoans`}
         >
           <ListItemIcon className={classes.sideNav_text}>
-            {active == "MyLoans" ? <WorkIcon /> : <WorkOutlineIcon />}
+            {active === "MyLoans" ? <WorkIcon /> : <WorkOutlineIcon />}
           </ListItemIcon>
           <ListItemText primary={`My Loans`} />
         </ListItem>
         <ListItem button onClick={() => setActive("Bookmarks")}>
           <ListItemIcon className={classes.sideNav_text}>
-            {active == "Bookmarks" ? <BookmarkIcon /> : <BookmarkBorderIcon />}
+            {active === "Bookmarks" ? <BookmarkIcon /> : <BookmarkBorderIcon />}
           </ListItemIcon>
           <ListItemText primary={`Bookmarks`} />
         </ListItem>
@@ -157,7 +154,7 @@ function ResponsiveDrawer(props) {
           to={`/baForm`}
         >
           <ListItemIcon className={classes.sideNav_text}>
-            {active == "Borrow" ? (
+            {active === "Borrow" ? (
               <Icon>paid</Icon>
             ) : (
               <Icon>
@@ -174,7 +171,7 @@ function ResponsiveDrawer(props) {
           to={`/wallet`}
         >
           <ListItemIcon className={classes.sideNav_text}>
-            {active == "Wallet" ? (
+            {active === "Wallet" ? (
               <AccountBalanceWalletIcon />
             ) : (
               <AccountBalanceWalletOutlinedIcon />
@@ -190,7 +187,11 @@ function ResponsiveDrawer(props) {
         </ListItem>
         <ListItem button onClick={() => setActive("Settings")}>
           <ListItemIcon className={classes.sideNav_text}>
-            {active == "Settings" ? <SettingsIcon /> : <SettingsOutlinedIcon />}
+            {active === "Settings" ? (
+              <SettingsIcon />
+            ) : (
+              <SettingsOutlinedIcon />
+            )}
           </ListItemIcon>
           <ListItemText primary={`Settings`} />
         </ListItem>
@@ -217,7 +218,7 @@ function ResponsiveDrawer(props) {
           to={`/`}
         >
           <ListItemIcon className={classes.sideNav_text}>
-            {active == "Home" ? <HomeIcon /> : <HomeOutlinedIcon />}
+            {active === "Home" ? <HomeIcon /> : <HomeOutlinedIcon />}
           </ListItemIcon>
           <ListItemText primary={`Home`} />
         </ListItem>
@@ -234,7 +235,7 @@ function ResponsiveDrawer(props) {
           to={`/baForm`}
         >
           <ListItemIcon className={classes.sideNav_text}>
-            {active == "Borrow" ? (
+            {active === "Borrow" ? (
               <Icon>paid</Icon>
             ) : (
               <Icon>
@@ -251,7 +252,7 @@ function ResponsiveDrawer(props) {
           to={`/wallet`}
         >
           <ListItemIcon className={classes.sideNav_text}>
-            {active == "Wallet" ? (
+            {active === "Wallet" ? (
               <AccountBalanceWalletIcon />
             ) : (
               <AccountBalanceWalletOutlinedIcon />

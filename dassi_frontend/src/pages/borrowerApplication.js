@@ -64,29 +64,9 @@ const BorrowerApplication = (props) => {
   async function submitForm(values, actions) {
     console.log("submit 1");
     // await sleep(1000);
-    const personalDetails = {
-      fullName: values.fullName,
-      zipcode: values.zipcode,
-      bio: values.bio,
-      income: values.income,
-      occupation: values.occupation,
-      idNumber: values.idNumber,
-      idDoc: values.idDoc,
-    };
-    const loanDetails = {
-      loanAmount: values.loanAmount,
-      category: values.loanCategory,
-      description: values.loanDescription,
-      duration: values.loanDuration
-        .toString()
-        .concat(" ", values.loanDurationUnit),
-      emiRepetition: values.emiRepetition,
-      repaymentStartDate: values.repaymentStartDate,
-      photo: values.imgURL,
-    };
 
-    dispatch(sendUserDetails(personalDetails));
-    sendLoanDetails(loanDetails, props.history);
+    dispatch(sendUserDetails(values));
+    sendLoanDetails(values, props.history);
     actions.setSubmitting(false);
     setActiveStep(activeStep + 1);
   }
@@ -174,6 +154,7 @@ const BorrowerApplication = (props) => {
                             type="submit"
                             variant="contained"
                             values={values}
+                            history={props.history}
                             className={classes.buttonN}
                           />
                         ) : (

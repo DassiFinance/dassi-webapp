@@ -1,22 +1,13 @@
-import {
-  FormControlLabel,
-  Switch,
-  Tooltip,
-  makeStyles,
-} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 
 import {
-  WalletConnectButton as MaterialUIWalletConnectButton,
-  WalletDialogButton as MaterialUIWalletDialogButton,
   WalletDialogProvider as MaterialUIWalletDialogProvider,
   WalletDisconnectButton as MaterialUIWalletDisconnectButton,
   WalletMultiButton as MaterialUIWalletMultiButton,
 } from "@solana/wallet-adapter-material-ui";
 import {
   ConnectionProvider,
-  useLocalStorage,
   WalletProvider,
-  useWallet,
 } from "@solana/wallet-adapter-react";
 import {
   getPhantomWallet,
@@ -25,8 +16,6 @@ import {
 import { clusterApiUrl } from "@solana/web3.js";
 import { useSnackbar } from "notistack";
 import React, { useCallback, useMemo } from "react";
-import RequestAirdrop from "./requestAirdrop";
-import SendTransaction from "./sendTransaction";
 import RequestDassiCoinAirdrop from "./requestDassiAirDrop";
 import AddNewLoanByBorrower from "./addNewLoanByBorrower";
 
@@ -82,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
         padding: 0,
       },
       "& .MuiListItem-root": {
-        boxShadow: "inset 0 1px 0 0 " + "rgba(255, 255, 255, 0.1)",
+        // boxShadow: "inset 0 1px 0 0 " + "rgba(255, 255, 255, 0.1)",
         "&:hover": {
           boxShadow:
             "inset 0 1px 0 0 " +
@@ -111,10 +100,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Wallet = ({ name, values }) => {
+const Wallet = ({ name, values, history }) => {
   const classes = useStyles();
   const endpoint = useMemo(() => clusterApiUrl("devnet"), []);
-  const [autoConnect, setAutoConnect] = useLocalStorage("autoConnect", true);
+  // const [autoConnect, setAutoConnect] = useLocalStorage("autoConnect", true);
   const wallets = useMemo(() => [getPhantomWallet(), getSolletWallet()], []);
 
   const { enqueueSnackbar } = useSnackbar();
@@ -133,7 +122,7 @@ const Wallet = ({ name, values }) => {
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} onError={onError} autoConnect={true}>
         {console.log(endpoint)}
-        {name == "connect" && (
+        {name === "connect" && (
           <MaterialUIWalletDialogProvider className={classes.root}>
             <div style={{ marginTop: "5%" }}>
               <MaterialUIWalletMultiButton className={classes.multiBtn} />
@@ -149,7 +138,9 @@ const Wallet = ({ name, values }) => {
             <AddNewLoanByBorrower />
           </MaterialUIWalletDialogProvider>
         )}
-        {name == "submit" && <AddNewLoanByBorrower values={values} />}
+        {name === "submit" && (
+          <AddNewLoanByBorrower history={history} values={values} />
+        )}
       </WalletProvider>
     </ConnectionProvider>
   );
