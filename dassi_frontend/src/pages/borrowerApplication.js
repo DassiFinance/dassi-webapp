@@ -11,7 +11,7 @@ import {
 import { Formik, Form } from "formik";
 
 import Subnav from "../components/sideNav";
-import SubmitBtn from "../components/wallet/submitBtn";
+
 import LoanDetails1 from "../components/Forms/loanDetails1";
 import LoanDetails2 from "../components/Forms/loanDetails2";
 import LoanDetails3 from "../components/Forms/loanDetails3";
@@ -173,6 +173,7 @@ const BorrowerApplication = (props) => {
                             name="submit"
                             type="submit"
                             variant="contained"
+                            values={values}
                             className={classes.buttonN}
                           />
                         ) : (

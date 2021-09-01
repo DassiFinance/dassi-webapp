@@ -29,8 +29,6 @@ import RequestAirdrop from "./requestAirdrop";
 import SendTransaction from "./sendTransaction";
 import RequestDassiCoinAirdrop from "./requestDassiAirDrop";
 import AddNewLoanByBorrower from "./addNewLoanByBorrower";
-import ConnectBtn from "./connectBtn";
-import SubmitBtn from "./submitBtn";
 
 const useStyles = makeStyles((theme) => ({
   multiBtn: {
@@ -113,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Wallet = ({ name }) => {
+const Wallet = ({ name, values }) => {
   const classes = useStyles();
   const endpoint = useMemo(() => clusterApiUrl("devnet"), []);
   const [autoConnect, setAutoConnect] = useLocalStorage("autoConnect", true);
@@ -151,7 +149,7 @@ const Wallet = ({ name }) => {
             <AddNewLoanByBorrower />
           </MaterialUIWalletDialogProvider>
         )}
-        {name == "submit" && <AddNewLoanByBorrower />}
+        {name == "submit" && <AddNewLoanByBorrower values={values} />}
       </WalletProvider>
     </ConnectionProvider>
   );

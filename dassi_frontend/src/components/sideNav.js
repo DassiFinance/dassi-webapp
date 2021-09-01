@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../redux/actions/user";
-import ConnectBtn from "./wallet/connectBtn";
-import RequestAirDrop from "./wallet/requestAirdrop";
 
 // Material - UI
 import AppBar from "@material-ui/core/AppBar";

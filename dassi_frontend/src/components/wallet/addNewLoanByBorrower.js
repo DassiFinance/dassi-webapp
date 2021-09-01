@@ -42,7 +42,8 @@ const BORROWER_ACCOUNT_LAYOUT = BufferLayout.struct([
   publicKey("active_loan_address"),
 ]);
 
-const AddNewLoanByBorrower = () => {
+const AddNewLoanByBorrower = ({ values }) => {
+  console.log(values);
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
   const notify = useNotify();
@@ -59,7 +60,7 @@ const AddNewLoanByBorrower = () => {
       let num_days_left_for_first_repayment_input = 50;
       let num_emis_needed_to_repay_the_loan_input = 35;
       let num_days_for_fundraising_input = 25;
-      let total_loan_amount_input = 1000;
+      let total_loan_amount_input = parseInt(values.loanAmount);
 
       // for prototype borrower is acting as guarantor
 
