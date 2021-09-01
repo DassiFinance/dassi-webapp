@@ -76,7 +76,7 @@ const AddNewLoanByBorrower = ({ values, history }) => {
       // read borrowerStorageAccount_pk_r from database (borrower_blockchain_storage_account_pubkey) and if its empty, then set createBorrowerStorageAccountFlag to true
       // if its not empty pass that string to PublicKey() below
       if (publicKeyFromDatabase) {
-        borrowerStorageAccount_pk_r = publicKeyFromDatabase;
+        borrowerStorageAccount_pk_r = new PublicKey(publicKeyFromDatabase);
         createBorrowerStorageAccountFlag = false;
         values.walletId = borrowerStorageAccount_pk_r.toString();
       }
