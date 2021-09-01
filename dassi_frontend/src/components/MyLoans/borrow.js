@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import useStyles from "../../css/homepage";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -17,7 +16,6 @@ const Borrow = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const activeLoans = useSelector((state) => state.loan.activeLoans);
-  const filterCategory = useSelector((state) => state.loan.filterCategory);
 
   const getSlug = (description) => {
     return description.length > 100

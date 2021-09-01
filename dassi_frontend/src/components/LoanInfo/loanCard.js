@@ -4,7 +4,7 @@ import useStyles from "../../css/loanInfo";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
+
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import LinearProgress from "@material-ui/core/LinearProgress";
@@ -12,7 +12,7 @@ import Icon from "@material-ui/core/Icon";
 
 import FormControl from "@material-ui/core/FormControl";
 import NativeSelect from "@material-ui/core/NativeSelect";
-import { getLoanDetails, makePayment } from "../../redux/actions/loan";
+import { getLoanDetails } from "../../redux/actions/loan";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -22,7 +22,7 @@ const LoanCard = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const loanDetails = useSelector((state) => state.loan.loanDetails);
-  const [amt, setAmt] = React.useState(500);
+  const [amt, setAmt] = React.useState(50);
   const handleChange = (event) => {
     setAmt(event.target.value);
   };
@@ -123,15 +123,16 @@ const LoanCard = (props) => {
                       }}
                     >
                       <option value={10}>10</option>
+                      <option value={20}>20</option>
+                      <option value={30}>30</option>
+                      <option value={40}>40</option>
                       <option value={50}>50</option>
+
+                      <option value={60}>60</option>
                       <option value={100}>100</option>
+                      <option value={150}>150</option>
                       <option value={200}>200</option>
-                      <option value={300}>300</option>
-                      <option value={500}>500</option>
-                      <option value={1000}>1000</option>
-                      <option value={1500}>1500</option>
-                      <option value={2000}>2000</option>
-                      <option value={3000}>3000</option>
+                      <option value={250}>250</option>
                     </NativeSelect>
                   </FormControl>
 

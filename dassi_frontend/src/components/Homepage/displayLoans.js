@@ -116,7 +116,13 @@ const DisplayLoans = (props) => {
             Read More
           </Button>
 
-          <Button className={classes.loanCard_supportBtn}>Support</Button>
+          <Button
+            className={classes.loanCard_supportBtn}
+            component={Link}
+            to={`/loanInfo/${item._id}`}
+          >
+            Support
+          </Button>
         </CardActions>
       </Card>
     );
