@@ -133,7 +133,7 @@ const LoanCard = (props) => {
                   <Button
                     className={classes.loanCard_supportBtn}
                     onClick={() => {
-                      dispatch(makePayment(amt, loanDetails._id));
+                      dispatch(makePayment(parseInt(amt), loanDetails._id));
                     }}
                   >
                     Lend Now

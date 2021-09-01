@@ -89,6 +89,9 @@ export const makePayment = (amt, id) => (dispatch) => {
         payload: res.data,
       });
     })
+    .then(() => {
+      dispatch(getLoanDetails(id));
+    })
     .catch((err) => {
       console.log(err);
     });
