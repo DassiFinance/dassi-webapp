@@ -14,6 +14,9 @@ export default makeStyles((theme) => ({
   },
   homepage_subNav: {
     backgroundColor: "#15202B",
+    width: "22%",
+    maxWidth: "22% !important",
+    flexBasis: "22% !important",
   },
 
   header_subHeader: {
@@ -182,6 +185,9 @@ export default makeStyles((theme) => ({
   homepage_success: {
     padding: "0px 16px",
     backgroundColor: "#15202B",
+    width: "28%",
+    maxWidth: "28% !important",
+    flexBasis: "28% !important",
   },
   success_main: {
     backgroundColor: "#192734",

@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
-    width: "25% !important",
+    width: "22% !important",
     overflow: "hidden",
     backgroundColor: "#15202B",
     display: "flex",

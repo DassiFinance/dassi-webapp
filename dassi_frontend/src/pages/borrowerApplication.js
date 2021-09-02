@@ -181,7 +181,7 @@ const BorrowerApplication = (props) => {
           </React.Fragment>
         </React.Fragment>
       </Grid>
-      <Grid item xs={3} className={classes.ba_subNav}></Grid>
+      <Grid item xs={3} className={classes.homepage_success}></Grid>
     </Grid>
   );
 };

@@ -17,6 +17,15 @@ export default makeStyles((theme) => ({
   },
   ba_subNav: {
     backgroundColor: "#15202B",
+    width: "22%",
+    maxWidth: "22% !important",
+    flexBasis: "22% !important",
+  },
+  homepage_success: {
+    backgroundColor: "#15202B",
+    width: "28%",
+    maxWidth: "28% !important",
+    flexBasis: "28% !important",
   },
   textHeader: {
     color: "#fff",

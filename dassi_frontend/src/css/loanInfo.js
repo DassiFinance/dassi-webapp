@@ -2,12 +2,15 @@ import { makeStyles } from "@material-ui/core/styles";
 export default makeStyles((theme) => ({
   loanInfo_main: {
     backgroundColor: "#15202B",
-    position: "absolute",
     top: "0",
     bottom: "0",
+    height: "100%",
+    position: "absolute",
   },
   loanInfo_subNav: {
     backgroundColor: "#15202B",
+    width: "22%",
+    maxWidth: "22% !important",
   },
   loanInfo_subMain: {
     backgroundColor: "#15202B",
@@ -15,6 +18,9 @@ export default makeStyles((theme) => ({
     borderLeft: "2px solid #222D37",
     borderRight: "2px solid #222D37",
     padding: "0px 60px 0px 0px",
+    width: "78%",
+    maxWidth: "78% !important",
+    flexBasis: "78% !important",
   },
   //Header
   loanInfo_headerText: {
