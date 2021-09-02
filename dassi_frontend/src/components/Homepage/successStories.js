@@ -1,22 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import useStyles from "../../css/homepage";
 
 //Material-UI
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import Icon from "@material-ui/core/Icon";
-
-import Button from "@material-ui/core/Button";
-
-//Redux
-import { getActiveLoans } from "../../redux/actions/loan";
-import { useSelector, useDispatch } from "react-redux";
 
 const SuccessStories = (props) => {
   const classes = useStyles();
@@ -57,8 +46,8 @@ const SuccessStories = (props) => {
 
   const dispStories = stories.map((item, id) => {
     return (
-      <Link to={"/"} style={{ textDecoration: "none" }}>
-        <Card key={id} className={classes.successCard_main}>
+      <Link to={"/"} style={{ textDecoration: "none" }} key={id}>
+        <Card className={classes.successCard_main}>
           <p className={classes.successCard_category}> {item.category}</p>
           <CardMedia
             className={classes.successCard_media}
@@ -74,6 +63,14 @@ const SuccessStories = (props) => {
   if (dispStories.length) {
     return (
       <div className={classes.success_main}>
+        <div className={classes.success_solanaDiv}>
+          Built on :{" "}
+          <img
+            src="https://solana.com/branding/new/horizontal/logo-horizontal-gradient-dark.png"
+            alt="logo"
+            className={classes.success_solana}
+          />
+        </div>
         <div className={classes.search_div}>
           <Typography variant="h6" className={classes.header_subHeader}>
             Success Stories

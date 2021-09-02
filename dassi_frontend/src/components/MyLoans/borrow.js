@@ -100,9 +100,12 @@ const Borrow = (props) => {
             </div>
           </CardContent>
         </CardActionArea>
-        <CardActions className={classes.borrow_readBtn}>
+        <CardActions
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <Button className={classes.loanCard_readBtn}>Pay EMI</Button>
           <Button className={classes.loanCard_readBtn}>
-            View Detailed Application
+            Withdraw Collected Funds
           </Button>
         </CardActions>
       </Card>

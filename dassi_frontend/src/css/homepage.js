@@ -213,4 +213,12 @@ export default makeStyles((theme) => ({
     marginBottom: "8px",
     color: "#BBF146",
   },
+  success_solanaDiv: {
+    color: "#fff",
+    padding: "12px 16px",
+    fontSize: "25px",
+  },
+  success_solana: {
+    maxWidth: "50% !important",
+  },
 }));
