@@ -55,9 +55,10 @@ export default function PersonalDetails(props) {
           <Grid item xs={12}>
             <InputField
               multiline
-              rows={4}
+              rows={12}
               name={bio.name}
               label={bio.label}
+              placeholder="Tell potential lenders about yourself..."
               fullWidth
             />
           </Grid>

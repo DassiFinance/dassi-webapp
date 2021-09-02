@@ -42,6 +42,7 @@ export default function LoanDetails2(props) {
             label={emiRepetition.label}
             data={emiRepetitionUnit}
             fullWidth
+            defaultValue="Monthly"
           />
         </Grid>
       </Container>

@@ -75,6 +75,7 @@ export default function LoanDetailsDetails1(props) {
                 label={loanDurationUnit.label}
                 data={loanDurationUnits}
                 fullWidth
+                defaultValue="Months"
               />
             </Grid>
           </Grid>
@@ -82,6 +83,7 @@ export default function LoanDetailsDetails1(props) {
             <InputField
               multiline
               rows={4}
+              placeholder="Tell potential lenders about how this loan will help you..."
               name={loanDescription.name}
               label={loanDescription.label}
               fullWidth

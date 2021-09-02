@@ -43,11 +43,11 @@ const DefaultFields = {
   [loanCategory.name]: "",
   [loanDescription.name]: "",
   [loanDuration.name]: "",
-  [loanDurationUnit.name]: "",
+  [loanDurationUnit.name]: "Months",
 
   // LoanDetails2.js
   [repaymentStartDate.name]: "",
-  [emiRepetition.name]: "",
+  [emiRepetition.name]: "Monthly",
 
   // LoanDetails3.js
   [guarantor.name]: "",

@@ -12,7 +12,7 @@ import {
 
 function SelectField(props) {
   const classes = useStyles();
-  const { label, data, ...rest } = props;
+  const { label, data, defaultValue, ...rest } = props;
   const [field, meta] = useField(props);
   const { value: selectedValue } = field;
 
@@ -34,7 +34,7 @@ function SelectField(props) {
       </InputLabel>
       <Select
         {...field}
-        value={selectedValue ? selectedValue : ""}
+        value={selectedValue ? selectedValue : defaultValue}
         disableUnderline
         classes={{
           select: classes.textFieldInput,

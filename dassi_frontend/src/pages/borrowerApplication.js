@@ -145,7 +145,7 @@ const BorrowerApplication = (props) => {
                           Back
                         </Button>
                       )}
-
+                      {console.log(values.bio)}
                       <div className={classes.wrapper}>
                         {isLastStep ? (
                           <Wallet
