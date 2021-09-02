@@ -177,4 +177,34 @@ export default makeStyles((theme) => ({
   borrow_readBtn: {
     justifyContent: "flex-end !important",
   },
+
+  //SuccessStories
+  homepage_success: {
+    padding: "0px 16px",
+    backgroundColor: "#15202B",
+  },
+  success_main: {
+    backgroundColor: "#192734",
+  },
+  successCard_main: {
+    backgroundColor: "#192734",
+    boxShadow: "none",
+    padding: "12px 16px",
+    borderBottom: "2px solid #222D37",
+  },
+  successCard_media: {
+    height: "280px",
+  },
+  successCard_title: {
+    marginTop: "16px !important",
+    marginBottom: "0px !important",
+    color: "#fff",
+    letterSpacing: "1px",
+  },
+  successCard_category: {
+    textTransform: "uppercase",
+    letterSpacing: "1px",
+    marginBottom: "8px",
+    color: "#BBF146",
+  },
 }));
