@@ -177,4 +177,17 @@ export default makeStyles((theme) => ({
   borrow_readBtn: {
     justifyContent: "flex-end !important",
   },
+
+  // Stories
+  homepage_stories: {},
+  stories_header: {
+    color: "#fff",
+
+    height: "23px",
+    left: "16px",
+    top: "16px",
+    paddingTop: "15px",
+    paddingBottom: "15px",
+    paddingLeft: "10px",
+  },
 }));
