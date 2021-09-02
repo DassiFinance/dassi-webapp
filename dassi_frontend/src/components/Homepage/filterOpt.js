@@ -4,12 +4,6 @@ import { loanCategories } from "../../utils/json/loanCategories";
 import { setCategoryFilter } from "../../redux/actions/loan";
 import { useDispatch, useSelector } from "react-redux";
 
-// Unshift adds this to the start of the array
-loanCategories.unshift({
-  value: "",
-  label: "All",
-});
-
 const FilterOpt = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -35,6 +29,19 @@ const FilterOpt = (props) => {
     );
   });
 
-  return <div className={classes.filter_main}>{dispFilter}</div>;
+  return (
+    <div className={classes.filter_main}>
+      <div
+        key={""}
+        onClick={() => selectCategory("")}
+        className={
+          "" === filterCategory ? classes.active_filterBtn : classes.filterBtn
+        }
+      >
+        <p className={classes.filterBtnText}>All</p>
+      </div>
+      {dispFilter}
+    </div>
+  );
 };
 export default FilterOpt;

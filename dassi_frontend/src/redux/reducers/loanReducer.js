@@ -10,7 +10,7 @@ const initialState = {
   loanDetails: {
     loanUser: {},
   },
-  filterCategory: "",
+  filterCategory: "612335d32a61253fb0ac03f6", // This is the category id of "Potential Borrowers"
   payment: [],
 };
 export default function loanReducer(state = initialState, action) {
