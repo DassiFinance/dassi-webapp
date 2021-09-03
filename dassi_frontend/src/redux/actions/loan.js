@@ -6,7 +6,7 @@ import {
   CREATE_LEND_REQUEST,
 } from "../types";
 
-axios.defaults.baseURL = "http://localhost:8080/api/";
+axios.defaults.baseURL = "http://ec2-15-206-91-96.ap-south-1.compute.amazonaws.com:8080/api/";
 export const sendLoanDetails = (values, history) => {
   const loanDetails = {
     loanAmount: values.loanAmount,

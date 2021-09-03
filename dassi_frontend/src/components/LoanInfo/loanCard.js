@@ -43,7 +43,7 @@ const LoanCard = (props) => {
       <Card className={classes.loanCard_main}>
         <CardMedia
           className={classes.loanCard_media}
-          image={`http://localhost:8080/api/loan/loanPhoto/${loanDetails._id}`}
+          image={`http://ec2-15-206-91-96.ap-south-1.compute.amazonaws.com:8080/api/loan/loanPhoto/${loanDetails._id}`}
           title="loanImg"
         >
           <CardContent>
