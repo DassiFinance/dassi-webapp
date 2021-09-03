@@ -169,7 +169,7 @@ function ResponsiveDrawer(props) {
           button
           onClick={() => setActive("Wallet")}
           component={Link}
-          to={`/wallet`}
+          to={`/wallets`}
         >
           <ListItemIcon className={classes.sideNav_text}>
             {active === "Wallet" ? (
@@ -245,7 +245,7 @@ function ResponsiveDrawer(props) {
           button
           onClick={() => setActive("Wallet")}
           component={Link}
-          to={`/wallet`}
+          to={`/wallets`}
         >
           <ListItemIcon className={classes.sideNav_text}>
             {active === "Wallet" ? (

@@ -26,3 +26,15 @@ label
 .logout{
     color: red;
 }
+.custom-card{
+    width: 50%;
+    height: 2%;    
+
+}
+.wallet-details {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #DDE4EA;
+}

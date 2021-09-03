@@ -9,7 +9,7 @@ import BorrowerApplication from "./pages/borrowerApplication";
 import LoanInfo from "./pages/loanInfo";
 import Storage from "./config/storage";
 import MyLoans from "./pages/myLoans";
-import Wallet from "./pages/wallet";
+import Wallet from "./pages/WalletDetails";
 import Settings from "./pages/Settings";
 import Notification from "./pages/Notification";
 import { SnackbarProvider } from "notistack";
@@ -40,8 +40,7 @@ const App = () => {
             <Route path="/baForm" exact component={BorrowerApplication} />
             <Route path="/loanInfo/:id" exact component={LoanInfo} />
             <Route path="/myLoans" exact component={MyLoans} />
-            <Route path="/wallet" exact component={Wallet} />
-            <Route path="/wallet" exact component={Wallet} />
+            <Route path="/wallets" exact component={Wallet} />
             <Route path="/settings" exact component={Settings} />
             <Route path="/notifications" exact component={Notification} />
           </Switch>
