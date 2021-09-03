@@ -20,7 +20,7 @@ export default function Header() {
     <React.Fragment>
       <div className={classes.search_div}>
         <Typography variant="h6" className={classes.header_subHeader}>
-          Settings
+          Settings <span class="badge rounded-pill bg-info text-dark">Coming Soon</span>
         </Typography>
       </div>
       <div className="user-profile  w-100 m-2">
