@@ -22,7 +22,7 @@ const UserStory = (props) => {
       <p>
         <span className={classes.userStory_key}>Income</span> : {income}
       </p>
-      <p>
+      <p style={{ whiteSpace: "pre-wrap" }}>
         <span className={classes.userStory_key}>Bio</span> : {bio}
       </p>
     </div>

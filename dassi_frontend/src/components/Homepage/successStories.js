@@ -16,7 +16,7 @@ const SuccessStories = (props) => {
       title:
         "Dassi Finance helps a poor Indian man realize his dream of starting his food truck business. ",
       imgURL:
-        "https://images.livemint.com/img/2021/06/10/1140x641/1__bombay_food_truck_Mint_Lounge_1623295561174_1623295572117.png",
+        "https://cdn.discordapp.com/attachments/880926618577694730/883063286701101096/unknown.png",
     },
     {
       id: 1,
@@ -24,7 +24,7 @@ const SuccessStories = (props) => {
       title:
         "Mehmood on his way to become a new-age business man at the age of 60s.",
       imgURL:
-        "https://4.imimg.com/data4/QX/LT/MY-4293712/computerized-embroidery-machine-500x500.jpg",
+        "https://cdn.discordapp.com/attachments/880926618577694730/883063404649127936/unknown.png",
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ const SuccessStories = (props) => {
       title:
         "Dassi finance helped a boatman turned fisherman to secure a decent income for his family during the entire lockdown. ",
       imgURL:
-        "https://s01.sgp1.digitaloceanspaces.com/large/842300-47849-mxzyjytlob-1482319208.jpg",
+        "https://cdn.discordapp.com/attachments/880926618577694730/883063550829015050/unknown.png",
     },
     {
       id: 3,
@@ -40,7 +40,7 @@ const SuccessStories = (props) => {
       title:
         "A young mother started a women-only gym with the help of Dassi finance and became an inspiration for many. ",
       imgURL:
-        "https://www.weddingplz.com/images/portfolio/main/17/24073/Figurefit-7341-1-weddingplz.jpg",
+        "https://cdn.discordapp.com/attachments/880926618577694730/883067025721815160/unknown.png",
     },
   ];
 
