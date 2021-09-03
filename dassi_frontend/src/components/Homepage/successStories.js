@@ -12,51 +12,60 @@ const SuccessStories = (props) => {
   const stories = [
     {
       id: 0,
-      category: "Covid Affected",
+      link: "https://medium.com/@decentralizedworld/dassi-finance-helps-a-poor-indian-man-realize-his-dream-of-starting-his-own-food-truck-business-1ec259554df2",
+      category: "Business",
       title:
         "Dassi Finance helps a poor Indian man realize his dream of starting his food truck business. ",
-      imgURL:
-        "https://cdn.discordapp.com/attachments/880926618577694730/883063286701101096/unknown.png",
+      imgURL: "https://miro.medium.com/max/1250/0*j-S0ZxMqnChrM_I4",
+      position: "center",
     },
     {
       id: 1,
-      category: "Covid Affected",
+      link: "https://medium.com/@decentralizedworld/mehmood-on-his-way-to-become-a-modern-age-business-man-at-the-age-of-60s-adbec25dc0e3",
+      category: "Business",
       title:
         "Mehmood on his way to become a new-age business man at the age of 60s.",
-      imgURL:
-        "https://cdn.discordapp.com/attachments/880926618577694730/883063404649127936/unknown.png",
+      imgURL: "https://miro.medium.com/max/1250/0*eSHOwN20H__C3exd",
+      position: "center",
     },
     {
       id: 2,
+      link: "https://medium.com/@decentralizedworld/dassi-finance-helps-a-boatman-turned-fisherman-to-secure-a-decent-income-for-his-family-during-7124ce5954a8",
       category: "Covid Affected",
       title:
         "Dassi finance helped a boatman turned fisherman to secure a decent income for his family during the entire lockdown. ",
-      imgURL:
-        "https://cdn.discordapp.com/attachments/880926618577694730/883063550829015050/unknown.png",
+      imgURL: "https://miro.medium.com/max/875/0*hsFuW3tpybj-xCpw",
+      position: "top",
     },
     {
       id: 3,
-      category: "Women",
+      link: "https://medium.com/@decentralizedworld/a-young-mother-started-a-women-only-gym-with-the-help-of-dassi-finance-and-became-an-inspiration-86732b8483cd",
+      category: "Women Empowerment",
       title:
         "A young mother started a women-only gym with the help of Dassi finance and became an inspiration for many. ",
-      imgURL:
-        "https://cdn.discordapp.com/attachments/880926618577694730/883067025721815160/unknown.png",
+      imgURL: "https://miro.medium.com/max/750/0*JOB5mTqCvtHIKs-E",
+      position: "top",
     },
   ];
 
   const dispStories = stories.map((item, id) => {
     return (
-      <Link to={"/"} style={{ textDecoration: "none" }} key={id}>
+      <a
+        href={item.link}
+        style={{ textDecoration: "none !important" }}
+        key={id}
+      >
         <Card className={classes.successCard_main}>
           <p className={classes.successCard_category}> {item.category}</p>
           <CardMedia
+            style={{ backgroundPosition: item.position }}
             className={classes.successCard_media}
             image={item.imgURL}
             title="loanImg"
           />{" "}
           <p className={classes.successCard_title}>{item.title}</p>
         </Card>
-      </Link>
+      </a>
     );
   });
 
