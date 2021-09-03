@@ -32,7 +32,6 @@ const validationSchema = Yup.object().shape({
     "Passwords must match"
   ),
   username: Yup.string().defined("Required"),
-  checkbox: Yup.boolean().oneOf([true], "Must Accept Terms and Conditions"),
 });
 const Signup = (props) => {
   const {
@@ -62,7 +61,7 @@ const Signup = (props) => {
             email: "",
             password: "",
             confirmPassword: "",
-            checkbox: false,
+            //checkbox: false,
           }}
           validationSchema={validationSchema}
           onSubmit={(values) => {
@@ -152,7 +151,7 @@ const Signup = (props) => {
                 <p className="signupErrorP">*{errors.confirmPassword}</p>
               ) : null}
 
-              <Form.Group controlId="formBasicCheckbox">
+              {/* <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
                   className="signup_checkbox"
@@ -164,7 +163,7 @@ const Signup = (props) => {
                 {errors.checkbox && touched.checkbox ? (
                   <p className="signupErrorP">*{errors.checkbox}</p>
                 ) : null}
-              </Form.Group>
+              </Form.Group> */}
               <Button className="login_loginBtn" type="submit">
                 SIGN UP
               </Button>

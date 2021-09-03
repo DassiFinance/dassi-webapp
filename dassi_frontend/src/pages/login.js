@@ -139,7 +139,7 @@ const Login = (props) => {
             </Form>
           )}
         </Formik>
-        <p className="login_connect">Or connect using</p>
+        {/* <p className="login_connect">Or connect using</p>
         <div className="login_socialMedia">
           <Button className="login_socialMediaBtn" id="Facebook">
             <FontAwesomeIcon
@@ -155,7 +155,7 @@ const Login = (props) => {
             />
             Google
           </Button>
-        </div>
+        </div> */}
         <p className="login_signup">
           Don't have an account ?{" "}
           <Link to="/signup">
