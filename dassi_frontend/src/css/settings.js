@@ -33,6 +33,11 @@ export default makeStyles((theme) => ({
         "&:hover": {
             color : "#BBF146"
           },
+    },
+    profile : {
+        width:"120px",
+        height :"120px",
+        borderRadius: "50%"
     }
     
 }))

@@ -159,7 +159,7 @@ function ResponsiveDrawer(props) {
               <Icon>paid</Icon>
             ) : (
               <Icon>
-                <span className="material-icons-outlined">paid</span>
+               paid
               </Icon>
             )}
           </ListItemIcon>
@@ -235,7 +235,7 @@ function ResponsiveDrawer(props) {
               <Icon>paid</Icon>
             ) : (
               <Icon>
-                <span class="material-icons-outlined">paid</span>
+                paid
               </Icon>
             )}
           </ListItemIcon>

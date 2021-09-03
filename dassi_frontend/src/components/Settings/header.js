@@ -1,19 +1,17 @@
 import React from "react";
 import useStyles from "../../css/settings";
 import "../../css/setting.css";
-import Paper from "@material-ui/core/Paper";
-import InputBase from "@material-ui/core/InputBase";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import SearchIcon from "@material-ui/icons/Search";
-import { Container, Row, Col } from 'react-bootstrap'
 import Button from "@material-ui/core/Button";
 import verified from './Verified.svg'
+import profilePic from './profileImage.png'
+import {useSelector } from "react-redux";
 
 export default function Header() {
+  const fullName = useSelector((state) => state.user.credentials.fullName);
   const classes = useStyles();
   const userDetails= {
-    name:"Prabal Gupta",
+    name:fullName,
     location : "Lucknow, India",
     occupation:"Freelance Designer",
     loan:"I Love supporting cause"
@@ -30,7 +28,9 @@ export default function Header() {
       </div>
       <div className="d-flex flex-row justify-content-start align-items-center m-4 flex-md-row flex-sm-column flex-xs-column">
         <div>
-          <div className={classes.imgCircle}></div>
+          <div className={classes.imgCircle}>
+            <img className={classes.profile} src={profilePic}></img>
+          </div>
         </div>
         <div className="p-3 mx-3">
           <Button className={classes.btnChangeProPic}> Change Profile Pic</Button>
