@@ -10,10 +10,12 @@ import LoanInfo from "./pages/loanInfo";
 import Storage from "./config/storage";
 import MyLoans from "./pages/myLoans";
 import Wallet from "./pages/wallet";
+import Settings from "./pages/Settings";
+import Notification from "./pages/Notification";
 import { SnackbarProvider } from "notistack";
 import { getUser } from "./redux/actions/user";
 
-//import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import createHistory from "history/createBrowserHistory";
 const history = createHistory();
@@ -39,6 +41,9 @@ const App = () => {
             <Route path="/loanInfo/:id" exact component={LoanInfo} />
             <Route path="/myLoans" exact component={MyLoans} />
             <Route path="/wallet" exact component={Wallet} />
+            <Route path="/wallet" exact component={Wallet} />
+            <Route path="/settings" exact component={Settings} />
+            <Route path="/notifications" exact component={Notification} />
           </Switch>
         </BrowserRouter>
       </SnackbarProvider>

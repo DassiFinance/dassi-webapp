@@ -120,7 +120,8 @@ function ResponsiveDrawer(props) {
           </ListItemIcon>
           <ListItemText primary={`Home`} />
         </ListItem>
-        <ListItem button onClick={() => setActive("Notifications")}>
+        <ListItem button onClick={() => setActive("Notifications")} component={Link}
+          to={`/notifications`}>
           <ListItemIcon className={classes.sideNav_text}>
             {active === "Notifications" ? (
               <NotificationsIcon />
@@ -179,7 +180,8 @@ function ResponsiveDrawer(props) {
           </ListItemIcon>
           <ListItemText primary={`Wallet`} />
         </ListItem>
-        <ListItem button onClick={() => setActive("Settings")}>
+        <ListItem button onClick={() => setActive("Settings")} component={Link}
+          to={`/settings`}>
           <ListItemIcon className={classes.sideNav_text}>
             {active === "Settings" ? (
               <SettingsIcon />
