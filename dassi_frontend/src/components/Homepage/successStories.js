@@ -54,6 +54,7 @@ const SuccessStories = (props) => {
         href={item.link}
         style={{ textDecoration: "none !important" }}
         key={id}
+        target={"_blank"}
       >
         <Card className={classes.successCard_main}>
           <p className={classes.successCard_category}> {item.category}</p>
