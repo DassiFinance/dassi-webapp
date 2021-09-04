@@ -11,7 +11,7 @@ import {
 import Storage from "../../config/storage";
 const { setAuthorizationHeader } = Storage();
 
-axios.defaults.baseURL = "http://ec2-15-206-91-96.ap-south-1.compute.amazonaws.com:8080/api/";
+axios.defaults.baseURL = "http://ec2-13-233-132-94.ap-south-1.compute.amazonaws.com:8080/api/";
 export const loginUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_USER });
   console.log(userData);
