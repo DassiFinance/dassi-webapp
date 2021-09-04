@@ -62,26 +62,33 @@ async function findAssociatedTokenAddress(walletAddress, tokenMintAddress) {
 }
 
 const RequestDassiCoinAirdrop = () => {
+  console.log("RequestDassiCoin Inside");
   const classes = useStyles();
+  console.log("RequestDassiCoin 1");
   const { connection } = useConnection();
+  console.log("RequestDassiCoin 2");
   const { publicKey, sendTransaction } = useWallet();
+  console.log("RequestDassiCoin 3");
   const notify = useNotify();
   // calling this function will airdrop 250 DassiCoin Test tokens in user wallet at devnet network
   const onClick = useCallback(async () => {
+    console.log("RequestDassiCoin 5");
     if (!publicKey) {
       notify("error", "Wallet not connected!");
       return;
     }
-
+    console.log("RequestDassiCoin 4");
     let signature = "";
     try {
       // store publicKey as string in database User table as user_wallet_pubkey if it is not stored previously for this user
-      signature = await connection.requestAirdrop(publicKey, LAMPORTS_PER_SOL);
-      await connection.confirmTransaction(signature, "processed");
+      console.log("RequestDassiCoin 6");
+      // signature = await connection.requestAirdrop(publicKey, LAMPORTS_PER_SOL);
+      // await connection.confirmTransaction(signature, "processed");
       await findAssociatedTokenAddress(
         publicKey,
         DassiCoinTestTokenMintPubkey
       ).then(async function (dassiAssociatedAccPubkey) {
+        console.log("RequestDassiCoin 7");
         console.log(dassiAssociatedAccPubkey.toString());
         let isAssociatedAccountExists = true;
         let isUserAlreadyAirdroped = true;
@@ -95,12 +102,14 @@ const RequestDassiCoinAirdrop = () => {
             publicKey,
             publicKey
           );
-
+          console.log("RequestDassiCoin 8");
+          console.log(publicKey.toString());
         const dassiAirdropUserStorageAccountPk = await PublicKey.createWithSeed(
           publicKey,
           "DassiFinanceAirdrop",
           dassiProgramId
         );
+        console.log("RequestDassiCoin 9");
 
         const createFantAirdropUserStorageDataAccountIx =
           SystemProgram.createAccountWithSeed({
@@ -115,7 +124,7 @@ const RequestDassiCoinAirdrop = () => {
             seed: "DassiFinanceAirdrop",
             space: 8,
           });
-
+          console.log("RequestDassiCoin 10");
         await connection
           .getAccountInfo(dassiAirdropUserStorageAccountPk)
           .then((account_info) => {
@@ -123,7 +132,7 @@ const RequestDassiCoinAirdrop = () => {
               isUserAlreadyAirdroped = false;
             }
           });
-
+          console.log("RequestDassiCoin 11");
         await connection
           .getAccountInfo(dassiAssociatedAccPubkey)
           .then((account_info) => {
@@ -137,7 +146,7 @@ const RequestDassiCoinAirdrop = () => {
           [Buffer.from("DassiFinanceAirdrop")],
           dassiProgramId
         );
-
+        console.log("RequestDassiCoin 12");
         const getAirdropTokensIx = new TransactionInstruction({
           programId: dassiProgramId,
           keys: [
@@ -168,6 +177,7 @@ const RequestDassiCoinAirdrop = () => {
           ],
           data: Buffer.from(Uint8Array.of(9)),
         });
+        console.log("RequestDassiCoin 13");
 
         isUserAlreadyAirdroped = false;
         if (isAssociatedAccountExists) {
@@ -195,6 +205,7 @@ const RequestDassiCoinAirdrop = () => {
           await connection.confirmTransaction(signature, "processed");
           notify("success", "Transaction successful!", signature);
         }
+        console.log("RequestDassiCoin 14");
       });
     } catch (error) {
       notify("error", `Transaction failed! ${error.message}`, signature);
