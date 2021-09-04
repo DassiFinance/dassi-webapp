@@ -3,7 +3,7 @@ export default makeStyles((theme) => ({
     search_div: {
         padding: "12px 16px",
         borderBottom: "2px solid #222D37",
-        color: "#DDE4EA"
+        color: "#DDE4EA !important"
       },
     user_setting : {
         position: "absolute",

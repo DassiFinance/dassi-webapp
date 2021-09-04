@@ -43,21 +43,21 @@ export default makeStyles((theme) => ({
     backgroundBlendMode: "multiply",
   },
   loanCard_headerText: {
-    fontSize: "1.63rem",
+    fontSize: "1.63rem !important",
     color: "#fff",
 
     fontWeight: 500,
   },
   progressBar_main: {
-    height: "16px",
-    borderRadius: "40px",
-    marginBottom: "0.5rem",
+    height: "16px !important",
+    borderRadius: "40px !important",
+    marginBottom: "0.5rem !important",
   },
   progressBar_colorPrimary: {
-    backgroundColor: "#253341",
+    backgroundColor: "#253341 !important",
   },
   progressBar_barColorPrimary: {
-    backgroundColor: "#fff",
+    backgroundColor: "#fff !important",
   },
   loanCard_amtDiv: {
     display: "inline-flex",
@@ -66,13 +66,13 @@ export default makeStyles((theme) => ({
   },
   loanCard_keyIcon: {
     fontSize: "1.6rem",
-    color: "#8899A6",
+    color: "#8899A6 !important",
     marginTop: "5px",
     marginRight: "1%",
   },
   loanCard_key: {
     fontSize: "1.25rem",
-    color: "#C3CCD3",
+    color: "#C3CCD3 !important",
   },
   loanCard_value: {
     fontSize: "1.25rem",
@@ -100,14 +100,14 @@ export default makeStyles((theme) => ({
   },
   loanCard_readBtn: {
     width: "25%",
-    backgroundColor: "#15202B",
-    border: "2px solid #BBF146",
+    backgroundColor: "#15202B !important",
+    border: "2px solid #BBF146 !important",
     color: "#BBF146",
     letterSpacing: "1px !important",
   },
   loanCard_supportBtn: {
     width: "70%",
-    backgroundColor: "#BBF146",
+    backgroundColor: "#BBF146 !important",
     border: "2px solid #BBF146",
     color: "#15202B",
     letterSpacing: "1px !important",

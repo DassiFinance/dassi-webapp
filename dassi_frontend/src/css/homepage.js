@@ -32,17 +32,17 @@ export default makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     width: "100%",
-    backgroundColor: "#253341",
+    backgroundColor: "#253341 !important",
     boxShadow: "none",
-    color: "#fff",
+    color: "#fff !important",
   },
   search_input: {
     flex: 1,
-    color: "#8899A6",
+    color: "#8899A6 !important",
   },
   search_iconButton: {
     padding: 10,
-    color: "#fff",
+    color: "#fff !important",
   },
   //FilterOpt
   filter_main: {
@@ -100,13 +100,13 @@ export default makeStyles((theme) => ({
     margin: "16px 12px",
   },
   loanCard_main: {
-    backgroundColor: "#192734",
+    backgroundColor: "#192734 !important",
     margin: "18px 0",
     boxShadow: "none",
     padding: "12px 16px",
   },
   loanCard_headerText: {
-    fontSize: "1.63rem",
+    fontSize: "1.63rem !important",
     color: "#fff",
 
     fontWeight: 500,
@@ -120,10 +120,10 @@ export default makeStyles((theme) => ({
     marginBottom: "0.5rem",
   },
   progressBar_colorPrimary: {
-    backgroundColor: "#253341",
+    backgroundColor: "#253341 !important",
   },
   progressBar_barColorPrimary: {
-    backgroundColor: "#DCFF8F",
+    backgroundColor: "#DCFF8F !important",
   },
   loanCard_amtDiv: {
     display: "inline-flex",
@@ -131,7 +131,7 @@ export default makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   loanCard_xtraInfoDiv: {
-    backgroundColor: "#253341",
+    backgroundColor: "#253341 !important",
     padding: "16px 12px",
 
     width: "100%",
@@ -150,31 +150,31 @@ export default makeStyles((theme) => ({
 
   loanCard_readBtn: {
     width: "25%",
-    backgroundColor: "#15202B",
-    border: "2px solid #BBF146",
-    color: "#BBF146",
+    backgroundColor: "#15202B !important",
+    border: "2px solid #BBF146 !important",
+    color: "#BBF146 !important",
     letterSpacing: "1px !important",
   },
   loanCard_supportBtn: {
     width: "75%",
-    backgroundColor: "#BBF146",
-    border: "2px solid #BBF146",
+    backgroundColor: "#BBF146 !important",
+    border: "2px solid #BBF146 !important",
     color: "#15202B",
     letterSpacing: "1px !important",
   },
   loanCard_keyIcon: {
     fontSize: "1.6rem",
-    color: "#8899A6",
+    color: "#8899A6 !important",
     marginTop: "5px",
     marginRight: "1%",
   },
   loanCard_key: {
     fontSize: "1.25rem",
-    color: "#8899A6",
+    color: "#8899A6 !important",
   },
   loanCard_value: {
     fontSize: "1.25rem",
-    color: "#fff",
+    color: "#fff !important",
   },
   //Borrow
   borrow_readBtn: {
@@ -193,7 +193,7 @@ export default makeStyles((theme) => ({
     backgroundColor: "#192734",
   },
   successCard_main: {
-    backgroundColor: "#192734",
+    backgroundColor: "#192734 !important",
     boxShadow: "none",
     padding: "12px 16px",
     borderBottom: "2px solid #222D37",
