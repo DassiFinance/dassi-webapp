@@ -6,7 +6,7 @@ import {
   CREATE_LEND_REQUEST,
 } from "../types";
 
-axios.defaults.baseURL = "http://ec2-13-233-132-94.ap-south-1.compute.amazonaws.com:8080/api/";
+axios.defaults.baseURL = "https://dassi-api.herokuapp.com/api/";
 export const sendLoanDetails = (values, history) => {
   const loanDetails = {
     loanAmount: values.loanAmount,

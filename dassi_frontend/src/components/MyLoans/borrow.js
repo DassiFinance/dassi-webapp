@@ -46,7 +46,7 @@ const Borrow = (props) => {
           </CardContent>
           <CardMedia
             className={classes.loanCard_media}
-            image={`http://ec2-13-233-132-94.ap-south-1.compute.amazonaws.com:8080/api/loan/loanPhoto/${item._id}`}
+            image={`https://dassi-api.herokuapp.com/api/loan/loanPhoto/${item._id}`}
             title="loanImg"
           />
           <CardContent>
