@@ -63,13 +63,17 @@ const Borrow = (props) => {
               <p className={classes.loanCard_key}>
                 Raising :{" "}
                 <span className={classes.loanCard_value}>
-                  ₹ {item.loanAmount}
+                <svg width="17" height="20" viewBox="0 0 45 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M37.0082 36.3714C38.0162 35.2857 38.5202 34.019 38.5202 32.5714V16.6738H45V11.2453H38.5202V5.42857C38.5202 3.98095 38.0162 2.71429 37.0082 1.62857C36.0002 0.542857 34.8242 0 33.4802 0H8.28018V5.42857H13.2357L8.28018 9.97781V9.98474L0 16.6737L8.28018 16.674V38H33.4802C34.8242 38 36.0002 37.4571 37.0082 36.3714ZM14.76 36.4492V16.674L32.7602 16.6738V32.5714H18.3602L14.76 36.4492ZM32.7602 11.2453V5.42857H14.76V11.0663L21.2331 11.2453H32.7602Z" fill="#BBF146" />
+                    </svg>{item.loanAmount}
                 </span>
               </p>
               <p className={classes.loanCard_key}>
                 Amount Left :{" "}
                 <span className={classes.loanCard_value}>
-                  ₹ {item.amountLeft}
+                <svg width="17" height="20" viewBox="0 0 45 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M37.0082 36.3714C38.0162 35.2857 38.5202 34.019 38.5202 32.5714V16.6738H45V11.2453H38.5202V5.42857C38.5202 3.98095 38.0162 2.71429 37.0082 1.62857C36.0002 0.542857 34.8242 0 33.4802 0H8.28018V5.42857H13.2357L8.28018 9.97781V9.98474L0 16.6737L8.28018 16.674V38H33.4802C34.8242 38 36.0002 37.4571 37.0082 36.3714ZM14.76 36.4492V16.674L32.7602 16.6738V32.5714H18.3602L14.76 36.4492ZM32.7602 11.2453V5.42857H14.76V11.0663L21.2331 11.2453H32.7602Z" fill="#BBF146" />
+                    </svg> {item.amountLeft}
                 </span>
               </p>
             </div>
