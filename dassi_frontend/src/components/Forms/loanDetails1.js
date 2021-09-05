@@ -42,6 +42,8 @@ export default function LoanDetailsDetails1(props) {
             <InputField
               name={loanAmount.name}
               label={loanAmount.label}
+              type="number"
+              inputProps={{ min: 200, max: 2000 }}
               fullWidth
             />
           </Grid>

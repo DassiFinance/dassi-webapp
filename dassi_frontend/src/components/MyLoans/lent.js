@@ -93,7 +93,7 @@ const Lent = (props) => {
                   <Icon className={classes.loanCard_keyIcon}>schedule</Icon>
                   <p className={classes.loanCard_key}>
                     Time Left :{" "}
-                    <span className={classes.loanCard_value}>{8} hours</span>
+                    <span className={classes.loanCard_value}>{24} Days</span>
                   </p>
                 </div>
               </div>

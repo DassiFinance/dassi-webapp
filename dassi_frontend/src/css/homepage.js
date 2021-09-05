@@ -221,4 +221,7 @@ export default makeStyles((theme) => ({
   success_solana: {
     maxWidth: "50% !important",
   },
+  dassi_logo : {
+    width:"1.25rem !important"
+  }
 }));

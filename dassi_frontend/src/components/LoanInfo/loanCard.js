@@ -72,7 +72,7 @@ const LoanCard = (props) => {
                       <p className={classes.loanCard_key}>
                         Time Left :{" "}
                         <span className={classes.loanCard_value}>
-                          {8} hours
+                          {24} Days
                         </span>
                       </p>
                     </div>

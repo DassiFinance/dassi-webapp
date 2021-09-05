@@ -11,12 +11,21 @@ const SuccessStories = (props) => {
   const classes = useStyles();
   const stories = [
     {
+      id: 3,
+      link: "https://medium.com/@decentralizedworld/a-young-mother-started-a-women-only-gym-with-the-help-of-dassi-finance-and-became-an-inspiration-86732b8483cd",
+      category: "Women Empowerment",
+      title:
+        "A young mother started a women-only gym with the help of Dassi finance and became an inspiration for many. ",
+      imgURL: "https://miro.medium.com/max/750/0*JOB5mTqCvtHIKs-E",
+      position: "top",
+    },
+    {
       id: 0,
       link: "https://medium.com/@decentralizedworld/dassi-finance-helps-a-poor-indian-man-realize-his-dream-of-starting-his-own-food-truck-business-1ec259554df2",
       category: "Business",
       title:
         "Dassi Finance helps a poor Indian man realize his dream of starting his food truck business. ",
-      imgURL: "https://miro.medium.com/max/1250/0*j-S0ZxMqnChrM_I4",
+      imgURL: "https://miro.medium.com/max/1000/0*mPbzcmTL2yj6UvuX",
       position: "center",
     },
     {
@@ -35,15 +44,6 @@ const SuccessStories = (props) => {
       title:
         "Dassi finance helped a boatman turned fisherman to secure a decent income for his family during the entire lockdown. ",
       imgURL: "https://miro.medium.com/max/875/0*hsFuW3tpybj-xCpw",
-      position: "top",
-    },
-    {
-      id: 3,
-      link: "https://medium.com/@decentralizedworld/a-young-mother-started-a-women-only-gym-with-the-help-of-dassi-finance-and-became-an-inspiration-86732b8483cd",
-      category: "Women Empowerment",
-      title:
-        "A young mother started a women-only gym with the help of Dassi finance and became an inspiration for many. ",
-      imgURL: "https://miro.medium.com/max/750/0*JOB5mTqCvtHIKs-E",
       position: "top",
     },
   ];
