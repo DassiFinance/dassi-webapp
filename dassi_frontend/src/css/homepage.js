@@ -1,0 +1,227 @@
+import { makeStyles } from "@material-ui/core/styles";
+export default makeStyles((theme) => ({
+  homepage_main: {
+    backgroundColor: "#15202B",
+    position: "absolute",
+    top: "0",
+    bottom: "0",
+  },
+  homepage_subMain: {
+    backgroundColor: "#15202B",
+    position: "relative",
+    borderLeft: "2px solid #222D37",
+    borderRight: "2px solid #222D37",
+  },
+  homepage_subNav: {
+    backgroundColor: "#15202B",
+    width: "22%",
+    maxWidth: "22% !important",
+    flexBasis: "22% !important",
+  },
+
+  header_subHeader: {
+    color: "#fff",
+  },
+  //Header
+  search_div: {
+    padding: "12px 16px",
+    borderBottom: "2px solid #222D37",
+  },
+  search_root: {
+    padding: "2px 4px",
+    display: "flex",
+    alignItems: "center",
+    width: "100%",
+    backgroundColor: "#253341 !important",
+    boxShadow: "none",
+    color: "#fff !important",
+  },
+  search_input: {
+    flex: 1,
+    color: "#8899A6 !important",
+  },
+  search_iconButton: {
+    padding: 10,
+    color: "#fff !important",
+  },
+  //FilterOpt
+  filter_main: {
+    textAlign: "-webkit-center",
+    overflow: "auto !important",
+    whiteSpace: "nowrap !important",
+    padding: "12px 16px 0px 16px",
+    "&::-webkit-scrollbar": {
+      width: "0px !important",
+    },
+    borderBottom: "2px solid #222D37",
+  },
+  filterBtn: {
+    display: "inline-flex",
+    minWidth: "100px",
+    // height: "3rem !important",
+    zIndex: "1",
+    margin: "0 0.5rem",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center !important",
+    fontWeight: "600",
+    height: "40px",
+    padding: "0px 24px",
+    cursor: "pointer",
+
+    borderRadius: "2rem",
+    backgroundColor: "#C3CCD3",
+  },
+  active_filterBtn: {
+    display: "inline-flex",
+    minWidth: "100px",
+    // height: "3rem !important",
+    zIndex: "1",
+    margin: "0 0.5rem",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center !important",
+    fontWeight: 600,
+    height: "40px",
+    cursor: "pointer",
+    padding: "0px 24px",
+    borderRadius: "2rem",
+    backgroundColor: "#8899A6",
+  },
+  filterBtnText: {
+    marginTop: "1rem !important",
+  },
+
+  //DisplayLoans
+  dispLoans_text: {
+    fontSize: "18px",
+    color: "#fff",
+    fontWeight: 400,
+    margin: "16px 12px",
+  },
+  loanCard_main: {
+    backgroundColor: "#192734 !important",
+    margin: "18px 0",
+    boxShadow: "none",
+    padding: "12px 16px",
+  },
+  loanCard_headerText: {
+    fontSize: "1.63rem !important",
+    color: "#fff",
+
+    fontWeight: 500,
+  },
+  loanCard_media: {
+    height: "280px",
+  },
+  progressBar_main: {
+    height: "16px !important",
+    borderRadius: "40px !important",
+    marginBottom: "0.5rem !important",
+  },
+  progressBar_colorPrimary: {
+    backgroundColor: "#253341 !important",
+  },
+  progressBar_barColorPrimary: {
+    backgroundColor: "#DCFF8F !important",
+  },
+  loanCard_amtDiv: {
+    display: "inline-flex",
+    width: "100%",
+    justifyContent: "space-between",
+  },
+  loanCard_xtraInfoDiv: {
+    backgroundColor: "#253341 !important",
+    padding: "16px 12px",
+
+    width: "100%",
+  },
+  loanCard_infoDiv: {
+    width: " 100%",
+    display: " inline-flex",
+    justifyContent: " space-between",
+
+    backgroundColor: " #253341",
+  },
+  loanCard_infoItem: {
+    display: "inline-flex",
+    width: "50%",
+  },
+
+  loanCard_readBtn: {
+    width: "25%",
+    backgroundColor: "#15202B !important",
+    border: "2px solid #BBF146 !important",
+    color: "#BBF146 !important",
+    letterSpacing: "1px !important",
+  },
+  loanCard_supportBtn: {
+    width: "75%",
+    backgroundColor: "#BBF146 !important",
+    border: "2px solid #BBF146 !important",
+    color: "#15202B",
+    letterSpacing: "1px !important",
+  },
+  loanCard_keyIcon: {
+    fontSize: "1.6rem",
+    color: "#8899A6 !important",
+    marginTop: "5px",
+    marginRight: "1%",
+  },
+  loanCard_key: {
+    fontSize: "1.25rem",
+    color: "#8899A6 !important",
+  },
+  loanCard_value: {
+    fontSize: "1.25rem",
+    color: "#fff !important",
+  },
+  //Borrow
+  borrow_readBtn: {
+    justifyContent: "flex-end !important",
+  },
+
+  //SuccessStories
+  homepage_success: {
+    padding: "0px 16px",
+    backgroundColor: "#15202B",
+    width: "28%",
+    maxWidth: "28% !important",
+    flexBasis: "28% !important",
+  },
+  success_main: {
+    backgroundColor: "#192734",
+  },
+  successCard_main: {
+    backgroundColor: "#192734 !important",
+    boxShadow: "none",
+    padding: "12px 16px",
+    borderBottom: "2px solid #222D37",
+  },
+  successCard_media: {
+    height: "280px",
+  },
+  successCard_title: {
+    marginTop: "16px !important",
+    marginBottom: "0px !important",
+    color: "#fff",
+    letterSpacing: "1px",
+  },
+  successCard_category: {
+    textTransform: "uppercase",
+    letterSpacing: "1px",
+    marginBottom: "8px",
+    color: "#BBF146",
+  },
+  success_solanaDiv: {
+    color: "#fff",
+    padding: "12px 16px",
+    fontSize: "25px",
+  },
+  success_solana: {
+    maxWidth: "50% !important",
+  },
+  dassi_logo : {
+    width:"1.25rem !important"
+  }
+}));

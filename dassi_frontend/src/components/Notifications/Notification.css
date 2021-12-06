@@ -1,0 +1,34 @@
+.card-outline {
+    border : solid #192734 1px
+}
+
+.custom-card{
+    width: 75%;
+    height: 10%;    
+
+}
+.card-icon{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #EB5757;;
+}
+.custom-card-title{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    text-transform: uppercase;  
+    color: #DDE4EA
+}
+.custom-card-body{
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.card-outline :hover {
+    background-color: #192734;
+
+}

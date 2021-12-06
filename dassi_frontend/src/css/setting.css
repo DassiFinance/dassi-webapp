@@ -1,0 +1,40 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+.user-profile
+{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #DDE4EA;
+}
+.profile-details{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+}
+label 
+{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+}
+.disabled {
+    color: #8899A6;
+}
+.logout{
+    color: red;
+}
+.custom-card{
+    width: 50%;
+    height: 2%;    
+
+}
+.wallet-details {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #DDE4EA;
+}
